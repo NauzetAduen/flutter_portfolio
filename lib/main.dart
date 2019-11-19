@@ -6,10 +6,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+          primarySwatch: Colors.blue,
+          textTheme: Theme.of(context).textTheme.apply(fontFamily: 'OpenSans')),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -22,8 +23,8 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(child: Text("Hello World")),
+    return Container(
+      child: Center(child: Text("Hello World 2")),
     );
   }
 }
