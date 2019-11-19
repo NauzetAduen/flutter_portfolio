@@ -6,4 +6,9 @@ class Styles {
       fontFamily: 'Nunito',
       fontSize: 18,
       color: Colors.black);
+  static final TextStyle nauTextStyle = TextStyle(
+      fontWeight: FontWeight.bold,
+      fontFamily: 'Nunito',
+      fontSize: 48,
+      color: Colors.black);
 }
