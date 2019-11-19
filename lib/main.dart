@@ -8,9 +8,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-          primarySwatch: Colors.blue,
-          textTheme: Theme.of(context).textTheme.apply(fontFamily: 'OpenSans')),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -24,7 +21,11 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Center(child: Text("Hello World 2")),
+      child: Center(
+          child: Text(
+        "Hello World h",
+        style: TextStyle(fontWeight: FontWeight.bold, fontFamily: 'Nunito'),
+      )),
     );
   }
 }
