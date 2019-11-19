@@ -7,9 +7,12 @@ class NavBarElement extends StatelessWidget {
   const NavBarElement(this.text);
   @override
   Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: Styles.navBarElement,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Text(
+        text,
+        style: Styles.navBarElement,
+      ),
     );
   }
 }
