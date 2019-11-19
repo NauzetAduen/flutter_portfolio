@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio/widgets/centered_widget.dart';
+
+import 'widgets/customTopNavBar.dart';
 
 void main() => runApp(MyApp());
 
@@ -20,12 +23,12 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-          child: Text(
-        "Hello World h",
-        style: TextStyle(fontWeight: FontWeight.bold, fontFamily: 'Nunito'),
-      )),
+    return CenteredWidget(
+      child: Scaffold(
+          backgroundColor: Colors.white,
+          body: Column(
+            children: <Widget>[CustomTopNavBar()],
+          )),
     );
   }
 }
