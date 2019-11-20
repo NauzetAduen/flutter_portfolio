@@ -5,13 +5,14 @@ class NavBarElement extends StatelessWidget {
   final String text;
 
   const NavBarElement(this.text);
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Text(
         text,
-        style: Styles.navBarElement,
+        style: Styles.navBarElementBold,
       ),
     );
   }
