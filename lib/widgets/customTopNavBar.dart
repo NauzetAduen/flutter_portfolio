@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/style/styles.dart';
-import 'package:flutter_portfolio/widgets/navBarElement.dart';
+import 'package:flutter_portfolio/widgets/navbar_item.dart';
 
 class CustomTopNavBar extends StatelessWidget {
   @override
