@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/style/styles.dart';
 import 'package:flutter_portfolio/widgets/navbar_item.dart';
 
-class CustomTopNavBar extends StatelessWidget {
+class NavigationBarTabletDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(

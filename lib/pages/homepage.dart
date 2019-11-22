@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/style/styles.dart';
 import 'package:flutter_portfolio/widgets/centered_widget.dart';
-import 'package:flutter_portfolio/widgets/customTopNavBar.dart';
+import 'package:flutter_portfolio/widgets/navigation_bar/navigation_bar.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
           backgroundColor: Colors.white,
           body: Column(
             children: <Widget>[
-              CustomTopNavBar(),
+              NavigationBar(),
               Expanded(
                 child: Container(
                   child: Center(
