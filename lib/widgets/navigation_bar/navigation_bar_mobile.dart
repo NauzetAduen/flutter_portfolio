@@ -6,7 +6,13 @@ class NavigationBarMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: <Widget>[Text("Mobile"), NavBarLogo()],
+      children: <Widget>[
+        IconButton(
+          icon: Icon(Icons.menu),
+          onPressed: () => print("iconbutton"),
+        ),
+        NavBarLogo(),
+      ],
     );
   }
 }
