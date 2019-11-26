@@ -16,11 +16,9 @@ class NavigationBarTabletDesktop extends StatelessWidget {
           ),
           Wrap(
             children: <Widget>[
-              NavBarElement('Home'),
+              NavBarElement('Me'),
               NavBarElement('Experience'),
               NavBarElement('Projects'),
-              NavBarElement('Skills and interests'),
-              NavBarElement('Contact'),
             ],
           )
         ],
