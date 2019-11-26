@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio/widgets/navigation_bar/navbar_logo.dart';
 
 class NavigationBarMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: <Widget>[Text("Mobile"), NavBarLogo()],
+    );
   }
 }
