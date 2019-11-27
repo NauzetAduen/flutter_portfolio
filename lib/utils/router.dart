@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio/pages/experience.dart';
 import 'package:flutter_portfolio/pages/homepage.dart';
 
 class Router {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case '/':
+      case '/home':
         return MaterialPageRoute(builder: (_) => HomePage());
-      // case '/feed':
-      //   return MaterialPageRoute(builder: (_) => Feed());
+      case '/experience':
+        return MaterialPageRoute(builder: (_) => Experience());
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(
