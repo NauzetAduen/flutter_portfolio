@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/widgets/navigation_bar/navbar_item.dart';
+import 'package:flutter_portfolio/utils/navbar_item_list.dart';
 import 'package:flutter_portfolio/widgets/navigation_bar/navbar_logo.dart';
 
 class NavigationBarTabletDesktop extends StatelessWidget {
@@ -10,13 +10,7 @@ class NavigationBarTabletDesktop extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         NavBarLogo(),
-        Wrap(
-          children: <Widget>[
-            NavBarElement('Me'),
-            NavBarElement('Experience'),
-            NavBarElement('Projects'),
-          ],
-        )
+        Wrap(children: NavBarItemList.list),
       ],
     );
   }
