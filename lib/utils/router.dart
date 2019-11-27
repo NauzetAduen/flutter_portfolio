@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio/pages/error_page.dart';
 import 'package:flutter_portfolio/pages/experience.dart';
 import 'package:flutter_portfolio/pages/homepage.dart';
 import 'package:flutter_portfolio/pages/projects.dart';
@@ -13,11 +14,7 @@ class Router {
       case '/projects':
         return MaterialPageRoute(builder: (_) => Projects());
       default:
-        return MaterialPageRoute(
-            builder: (_) => Scaffold(
-                  body: Center(
-                      child: Text('No route defined for ${settings.name}')),
-                ));
+        return MaterialPageRoute(builder: (_) => ErrorPage());
     }
   }
 }
