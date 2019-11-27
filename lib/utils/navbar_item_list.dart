@@ -3,8 +3,14 @@ import 'package:flutter_portfolio/widgets/navigation_bar/navbar_item.dart';
 
 class NavBarItemList {
   static List<Widget> list = [
-    NavBarElement('Me'),
-    NavBarElement('Experience'),
-    NavBarElement('Projects'),
+    NavBarItem(
+      text: "home",
+    ),
+    NavBarItem(
+      text: "experience",
+    ),
+    NavBarItem(
+      text: "experience",
+    ),
   ];
 }
