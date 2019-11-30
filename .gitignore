@@ -40,3 +40,6 @@ lib/generated_plugin_registrant.dart
 /.firebase/*
 .firebaserc
 firebase.json
+
+#launcher
+.flutter-plugins-dependencies
