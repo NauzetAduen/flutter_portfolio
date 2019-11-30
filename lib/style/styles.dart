@@ -50,6 +50,16 @@ class Styles {
       height: 2,
       fontWeight: FontWeight.bold,
       fontFamily: 'Nunito',
-      fontSize: 26,
+      fontSize: 20,
       color: Colors.black);
+  static final TextStyle chipWhite = TextStyle(
+    color: Colors.white,
+    fontFamily: 'Nunito',
+    fontSize: 14,
+  );
+  static final TextStyle chipBlack = TextStyle(
+    color: Colors.black,
+    fontFamily: 'Nunito',
+    fontSize: 14,
+  );
 }
