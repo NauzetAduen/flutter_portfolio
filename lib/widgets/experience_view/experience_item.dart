@@ -6,8 +6,10 @@ class ExperienceItem extends StatelessWidget {
   final String title;
   final String desc;
   final String url;
+  final List<Chip> chips;
 
-  const ExperienceItem({this.date, this.title, this.desc, this.url});
+  const ExperienceItem(
+      {this.date, this.title, this.desc, this.url, this.chips});
 
   @override
   Widget build(BuildContext context) {
@@ -33,13 +35,19 @@ class ExperienceItem extends StatelessWidget {
             textAlign: TextAlign.justify,
             style: Styles.experienceDesc,
           ),
-          Align(
-            alignment: Alignment.centerRight,
-            child: Text(
-              url,
-              style: Styles.experienceURL,
-            ),
-          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Wrap(
+                children: chips,
+                spacing: 5,
+              ),
+              Text(
+                "URL",
+                style: Styles.experienceURL,
+              ),
+            ],
+          )
         ],
       ),
     );
