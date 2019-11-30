@@ -46,12 +46,13 @@ class Styles {
       fontSize: 24,
       color: Colors.black);
   static final TextStyle experienceURL = TextStyle(
+      decoration: TextDecoration.underline,
       letterSpacing: 2,
       height: 2,
       fontWeight: FontWeight.bold,
       fontFamily: 'Nunito',
       fontSize: 20,
-      color: Colors.black);
+      color: Colors.lightBlue);
   static final TextStyle chipWhite = TextStyle(
     color: Colors.white,
     fontFamily: 'Nunito',
