@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Nauzet, Portfolio',
       onGenerateRoute: Router.generateRoute,
       initialRoute: "/experience",
     );

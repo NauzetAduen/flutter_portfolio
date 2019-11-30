@@ -162,7 +162,7 @@ class ExperienceItemList {
       desc:
           "A small project to create my portfolio in Flutter and learn Flutter web.",
       url: "https://github.com/NauzetAduen/flutter_portfolio",
-      linkMessage: "PortFolio - Github",
+      linkMessage: "Portfolio - Github",
       chips: [
         Chip(
           backgroundColor: Color(0xff1389FD),
