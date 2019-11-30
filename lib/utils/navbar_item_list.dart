@@ -10,7 +10,7 @@ class NavBarItemList {
       text: "experience",
     ),
     NavBarItem(
-      text: "projects",
+      text: "about",
     ),
   ];
 }

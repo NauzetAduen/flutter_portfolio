@@ -39,7 +39,7 @@ class ExperienceItem extends StatelessWidget {
               url,
               style: Styles.experienceURL,
             ),
-          )
+          ),
         ],
       ),
     );
