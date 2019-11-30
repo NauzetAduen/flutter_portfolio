@@ -9,6 +9,7 @@ class ExperienceItem extends StatelessWidget {
   final String url;
   final String linkMessage;
   final List<Chip> chips;
+  final String image;
 
   const ExperienceItem(
       {this.date,
@@ -16,7 +17,8 @@ class ExperienceItem extends StatelessWidget {
       this.desc,
       this.url,
       this.linkMessage,
-      this.chips});
+      this.chips,
+      this.image});
 
   @override
   Widget build(BuildContext context) {
@@ -37,10 +39,25 @@ class ExperienceItem extends StatelessWidget {
             style: Styles.experienceTitle,
             textAlign: TextAlign.justify,
           ),
-          Text(
-            desc,
-            textAlign: TextAlign.justify,
-            style: Styles.experienceDesc,
+          Stack(
+            children: <Widget>[
+              Positioned(
+                  top: 0,
+                  right: 0,
+                  child: Image(
+                    fit: BoxFit.fill,
+                    image: AssetImage("assets/images/$image"),
+                  )),
+              Container(
+                width: double.infinity,
+                // color: Colors.red,
+                child: Text(
+                  desc,
+                  textAlign: TextAlign.justify,
+                  style: Styles.experienceDesc,
+                ),
+              ),
+            ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
