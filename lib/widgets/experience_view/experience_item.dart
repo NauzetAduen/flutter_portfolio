@@ -56,43 +56,24 @@ class ExperienceItem extends StatelessWidget {
               ),
             ],
           ),
-
-          // Stack(
-          //   children: <Widget>[
-          //     Positioned(
-          //         top: 0,
-          //         right: 0,
-          //         child: Image(
-          //           fit: BoxFit.fill,
-          //           image: AssetImage("assets/images/$image"),
-          //         )),
-          //     Container(
-          //       width: double.infinity,
-          //       // color: Colors.red,
-          //       child: Text(
-          //         desc,
-          //         textAlign: TextAlign.justify,
-          //         style: Styles.experienceDesc,
-          //       ),
-          //     ),
-          //   ],
-          // ),
           Row(
+            mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Wrap(
-                children: chips,
-                spacing: 5,
-              ),
-              GestureDetector(
-                onTap: () {
-                  js.context.callMethod("open", ["$url"]);
-                },
-                child: Text(
-                  linkMessage,
-                  style: Styles.experienceURL,
+              Expanded(
+                child: Wrap(
+                  direction: Axis.horizontal,
+                  spacing: 5,
+                  children: chips,
                 ),
               ),
+              IconButton(
+                  icon: Icon(
+                    Icons.link,
+                    color: Colors.lightBlue,
+                    size: 35,
+                  ),
+                  onPressed: () => js.context.callMethod("open", ["$url"]))
             ],
           )
         ],
