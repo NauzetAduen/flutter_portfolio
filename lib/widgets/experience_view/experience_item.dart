@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/style/styles.dart';
+import 'package:flutter_portfolio/widgets/experience_view/ColDescImage.dart';
+import 'package:flutter_portfolio/widgets/experience_view/RowDescImage.dart';
 import 'dart:js' as js;
+
+import 'package:responsive_builder/responsive_builder.dart';
 
 class ExperienceItem extends StatelessWidget {
   final String date;
@@ -39,22 +43,9 @@ class ExperienceItem extends StatelessWidget {
             style: Styles.experienceTitle,
             textAlign: TextAlign.justify,
           ),
-          Row(
-            children: <Widget>[
-              Expanded(
-                child: Text(
-                  desc,
-                  textAlign: TextAlign.justify,
-                  style: Styles.experienceDesc,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: Image(
-                  image: AssetImage("assets/images/$image"),
-                ),
-              ),
-            ],
+          ScreenTypeLayout(
+            mobile: ColDescImage(desc: desc, image: image),
+            tablet: RowDescImage(desc: desc, image: image),
           ),
           Row(
             mainAxisSize: MainAxisSize.max,
