@@ -11,6 +11,7 @@ class HomePage extends StatelessWidget {
     String stackOverFlowURL = "https://stackoverflow.com/users/6155494/nauzet";
     String linkdinURL =
         "https://www.linkedin.com/in/nauzet-aduen-hern%C3%A1ndez-hern%C3%A1ndez-036b4118b/";
+    String redditURL = "https://www.reddit.com/user/Nauzet/";
     return CenteredWidget(
       child: Scaffold(
           backgroundColor: Colors.white,
@@ -49,6 +50,12 @@ class HomePage extends StatelessWidget {
                               icon: Image.asset("assets/images/linkdin.png"),
                               onPressed: () {
                                 js.context.callMethod("open", ["$linkdinURL"]);
+                              },
+                            ),
+                            IconButton(
+                              icon: Image.asset("assets/images/reddit.png"),
+                              onPressed: () {
+                                js.context.callMethod("open", ["$redditURL"]);
                               },
                             ),
                           ],
