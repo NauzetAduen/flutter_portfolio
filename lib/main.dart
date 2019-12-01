@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Nauzet, Portfolio',
       onGenerateRoute: Router.generateRoute,
-      initialRoute: "/experience",
+      initialRoute: "/home",
     );
   }
 }
