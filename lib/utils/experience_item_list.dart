@@ -49,6 +49,7 @@ class ExperienceItemList {
           ),
         ),
       ],
+      image: "16jornadassue.png",
     ),
     ExperienceItem(
       date: "09/2018 – 12/2018",
@@ -57,6 +58,7 @@ class ExperienceItemList {
           "Improve and increase test coverage in a mobile app\nTested app’s CORE and API REST behind it\nGit, Testing, RESTful web services, Mobile development, Jenkins, SonarQube, Tomcat, DBeaver, ARC, …",
       url: "https://play.google.com/store/apps/details?id=com.inerza.miplaza",
       linkMessage: "PlayStore - miPlaza",
+      image: "miplaza.png",
       chips: [
         Chip(
           backgroundColor: Colors.yellow,
@@ -88,6 +90,7 @@ class ExperienceItemList {
           "Developed a “Mobile app and backend to manage hiking trails”\nLearned Flutter framework, Dart Programming Language and cloud firestore ecosystem\nGoogle+ Auth, Firestore Auth, Google Maps, Json serialization and NoSQL, Reactive Programming, …",
       url: "https://github.com/NauzetAduen/HikingApp",
       linkMessage: "HikingApp - Github (Private)",
+      image: "hiking.png",
       chips: [
         Chip(
           backgroundColor: Colors.red,
@@ -132,6 +135,7 @@ class ExperienceItemList {
       desc: "Developed a personal Project Grocery list app with Flutter",
       url: "https://github.com/NauzetAduen/grocery_list_app",
       linkMessage: "GroceryList App - Github",
+      image: "grocery.png",
       chips: [
         Chip(
           backgroundColor: Colors.indigo,
@@ -163,6 +167,7 @@ class ExperienceItemList {
           "A small project to create my portfolio in Flutter and learn Flutter web.",
       url: "https://github.com/NauzetAduen/flutter_portfolio",
       linkMessage: "Portfolio - Github",
+      image: "flutterweb.png",
       chips: [
         Chip(
           backgroundColor: Color(0xff1389FD),
