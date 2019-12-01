@@ -39,26 +39,44 @@ class ExperienceItem extends StatelessWidget {
             style: Styles.experienceTitle,
             textAlign: TextAlign.justify,
           ),
-          Stack(
+          Row(
             children: <Widget>[
-              Positioned(
-                  top: 0,
-                  right: 0,
-                  child: Image(
-                    fit: BoxFit.fill,
-                    image: AssetImage("assets/images/$image"),
-                  )),
-              Container(
-                width: double.infinity,
-                // color: Colors.red,
+              Expanded(
                 child: Text(
                   desc,
                   textAlign: TextAlign.justify,
                   style: Styles.experienceDesc,
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: Image(
+                  image: AssetImage("assets/images/$image"),
+                ),
+              ),
             ],
           ),
+
+          // Stack(
+          //   children: <Widget>[
+          //     Positioned(
+          //         top: 0,
+          //         right: 0,
+          //         child: Image(
+          //           fit: BoxFit.fill,
+          //           image: AssetImage("assets/images/$image"),
+          //         )),
+          //     Container(
+          //       width: double.infinity,
+          //       // color: Colors.red,
+          //       child: Text(
+          //         desc,
+          //         textAlign: TextAlign.justify,
+          //         style: Styles.experienceDesc,
+          //       ),
+          //     ),
+          //   ],
+          // ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
