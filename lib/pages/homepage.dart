@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/style/styles.dart';
 import 'package:flutter_portfolio/widgets/centered_widget.dart';
+import 'package:flutter_portfolio/widgets/home/IconButtonLinked.dart';
 import 'package:flutter_portfolio/widgets/navigation_bar/navigation_bar.dart';
 import 'dart:js' as js;
 
@@ -38,32 +39,13 @@ class HomePage extends StatelessWidget {
                         Row(
                           mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
-                            IconButton(
-                              icon: Image.asset("assets/images/github.png"),
-                              onPressed: () {
-                                js.context.callMethod("open", ["$githubURL"]);
-                              },
-                            ),
-                            IconButton(
-                              icon: Image.asset(
-                                  "assets/images/stackoverflow.png"),
-                              onPressed: () {
-                                js.context
-                                    .callMethod("open", ["$stackOverFlowURL"]);
-                              },
-                            ),
-                            IconButton(
-                              icon: Image.asset("assets/images/linkdin.png"),
-                              onPressed: () {
-                                js.context.callMethod("open", ["$linkdinURL"]);
-                              },
-                            ),
-                            IconButton(
-                              icon: Image.asset("assets/images/reddit.png"),
-                              onPressed: () {
-                                js.context.callMethod("open", ["$redditURL"]);
-                              },
-                            ),
+                            IconButtonLinked(url: githubURL, picture: "github"),
+                            IconButtonLinked(
+                                url: stackOverFlowURL,
+                                picture: "stackoverflow"),
+                            IconButtonLinked(
+                                url: linkdinURL, picture: "linkdin"),
+                            IconButtonLinked(url: redditURL, picture: "reddit"),
                           ],
                         )
                       ],
