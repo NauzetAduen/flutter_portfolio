@@ -63,4 +63,17 @@ class Styles {
     fontFamily: 'Nunito',
     fontSize: 14,
   );
+  static final TextStyle aboutTitle = TextStyle(
+      color: Colors.black,
+      fontFamily: 'Nunito',
+      fontSize: 26,
+      letterSpacing: 2,
+      height: 2,
+      fontWeight: FontWeight.bold);
+  static final TextStyle aboutInfo = TextStyle(
+    fontFamily: 'Nunito',
+    letterSpacing: 2,
+    height: 2,
+    fontSize: 24,
+  );
 }
