@@ -24,6 +24,12 @@ class HomePage extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
+                        CircleAvatar(
+                          child:
+                              Image.asset("assets/images/profilepicture.png"),
+                          radius: 70,
+                          backgroundColor: Colors.blueGrey,
+                        ),
                         Text(
                           "Hello, welcome to my portfolio.\nI'm Nauzet, a mobile and Flutter developer.",
                           style: Styles.welcomeText,
