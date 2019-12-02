@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio/utils/about_item_list.dart';
 import 'package:flutter_portfolio/widgets/centered_widget.dart';
 import 'package:flutter_portfolio/widgets/navigation_bar/navigation_bar.dart';
 
@@ -12,9 +13,10 @@ class About extends StatelessWidget {
             children: <Widget>[
               NavigationBar(),
               Expanded(
-                  child: Center(
-                child: Text("About"),
-              ))
+                child: ListView(
+                  children: AboutItemList.list,
+                ),
+              ),
             ],
           )),
     );
