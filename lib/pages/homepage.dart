@@ -3,7 +3,6 @@ import 'package:flutter_portfolio/style/styles.dart';
 import 'package:flutter_portfolio/widgets/centered_widget.dart';
 import 'package:flutter_portfolio/widgets/home/IconButtonLinked.dart';
 import 'package:flutter_portfolio/widgets/navigation_bar/navigation_bar.dart';
-import 'dart:js' as js;
 
 class HomePage extends StatelessWidget {
   @override
