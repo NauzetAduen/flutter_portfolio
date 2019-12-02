@@ -21,7 +21,7 @@ class AboutItemList {
     AboutItem(
       title: "Interests",
       info:
-          "Fltuter and mobile development\nClean Arqchitecture, TDD\nImprove programming skills",
+          "Flutter and mobile development\nClean Architecture, TDD\nImprove programming skills",
     ),
     AboutItem(
       title: "Objetives",
