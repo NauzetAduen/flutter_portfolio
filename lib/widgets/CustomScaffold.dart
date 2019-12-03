@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio/utils/navbar_item_list.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 import 'navigation_bar/navbar_logo.dart';
@@ -23,13 +24,12 @@ class CustomScaffold extends StatelessWidget {
             : null,
         backgroundColor: Colors.white,
         drawer: isMobile
-            ? Drawer(
-                child: ListView(
-                  children: <Widget>[
-                    DrawerHeader(
-                      child: Text("PUTO SUSO"),
-                    ),
-                  ],
+            ? SizedBox(
+                width: 150,
+                child: Drawer(
+                  child: ListView(
+                    children: NavBarItemList.list,
+                  ),
                 ),
               )
             : null,
