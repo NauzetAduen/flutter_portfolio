@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class CenteredWidget extends StatelessWidget {
+class CenteredWidgetDesktop extends StatelessWidget {
   final Widget child;
 
-  const CenteredWidget({Key key, this.child}) : super(key: key);
+  const CenteredWidgetDesktop({Key key, this.child}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
