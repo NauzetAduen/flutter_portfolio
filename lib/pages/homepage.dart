@@ -21,8 +21,8 @@ class HomePage extends StatelessWidget {
               Expanded(
                 child: Container(
                   child: Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    child: ListView(
+                      shrinkWrap: true,
                       children: <Widget>[
                         CircleAvatar(
                           child:
@@ -30,12 +30,19 @@ class HomePage extends StatelessWidget {
                           radius: 70,
                           backgroundColor: Colors.blueGrey,
                         ),
+                        SizedBox(
+                          height: 50,
+                        ),
                         Text(
                           "Hello, welcome to my portfolio.\nI'm Nauzet, a mobile and Flutter developer.",
                           style: Styles.welcomeText,
                           textAlign: TextAlign.center,
                         ),
+                        SizedBox(
+                          height: 50,
+                        ),
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
                             IconButtonLinked(url: githubURL, picture: "github"),
