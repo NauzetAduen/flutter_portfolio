@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/utils/navbar_item_list.dart';
+import 'package:flutter_portfolio/widgets/CustomCircleAvatar.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 import 'navigation_bar/navbar_logo.dart';
@@ -27,8 +28,17 @@ class CustomScaffold extends StatelessWidget {
             ? SizedBox(
                 width: 150,
                 child: Drawer(
-                  child: ListView(
-                    children: NavBarItemList.list,
+                  child: Column(
+                    // children: NavBarItemList.list,
+                    children: <Widget>[
+                      DrawerHeader(
+                        child: CustomCircleAvatar(),
+                      ),
+                      ListView(
+                        shrinkWrap: true,
+                        children: NavBarItemList.list,
+                      )
+                    ],
                   ),
                 ),
               )
