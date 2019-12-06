@@ -10,7 +10,7 @@ class NavBarItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: GestureDetector(
-        onTap: () => Navigator.pushNamed(context, "/$text"),
+        onTap: () => Navigator.pushReplacementNamed(context, "/$text"),
         child: Text(
           '$text',
           style: Styles.navBarElementBold,
