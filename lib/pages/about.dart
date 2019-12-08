@@ -13,8 +13,17 @@ class About extends StatelessWidget {
         children: <Widget>[
           NavigationBar(),
           Expanded(
-            child: ListView(
-              children: AboutItemList.list,
+            // child: ListView(
+            //   children: AboutItemList.list,
+            // ),
+            child: ListView.builder(
+              itemCount: AboutItemList.list.length,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  child: AboutItemList.list[index],
+                );
+              },
             ),
           ),
         ],
