@@ -13,13 +13,14 @@ class ColDescImage extends StatelessWidget {
         Align(
           alignment: Alignment.topCenter,
           child: Image(
+            width: 150,
             image: AssetImage("assets/images/$image"),
           ),
         ),
         Text(
           desc,
           textAlign: TextAlign.justify,
-          style: Styles.experienceDesc,
+          style: Styles.experienceDescMobile,
         ),
       ],
     );

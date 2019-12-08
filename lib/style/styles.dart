@@ -43,12 +43,22 @@ class Styles {
       fontFamily: 'Nunito',
       fontSize: 26,
       color: Colors.black);
+  static final TextStyle experienceTitleMobile = TextStyle(
+      fontWeight: FontWeight.bold,
+      fontFamily: 'Nunito',
+      fontSize: 18,
+      color: Colors.black);
   static final TextStyle experienceDesc = TextStyle(
       letterSpacing: 2,
       height: 2,
       fontWeight: FontWeight.normal,
       fontFamily: 'Nunito',
       fontSize: 24,
+      color: Colors.black);
+  static final TextStyle experienceDescMobile = TextStyle(
+      fontWeight: FontWeight.normal,
+      fontFamily: 'Nunito',
+      fontSize: 16,
       color: Colors.black);
   static final TextStyle experienceURL = TextStyle(
       decoration: TextDecoration.underline,

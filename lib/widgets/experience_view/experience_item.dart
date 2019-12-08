@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/style/styles.dart';
-import 'package:flutter_portfolio/widgets/experience_view/ColDescImage.dart';
-import 'package:flutter_portfolio/widgets/experience_view/RowDescImage.dart';
+import 'package:flutter_portfolio/widgets/experience_view/exp_item_mobile.dart';
+import 'package:flutter_portfolio/widgets/experience_view/exp_item_tablet_desktop.dart';
 import 'dart:js' as js;
 
 import 'package:responsive_builder/responsive_builder.dart';
@@ -26,48 +25,24 @@ class ExperienceItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 40),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Align(
-            alignment: Alignment.topCenter,
-            child: Text(
-              date,
-              style: Styles.experienceDate,
-            ),
-          ),
-          Text(
-            title,
-            style: Styles.experienceTitle,
-            textAlign: TextAlign.justify,
-          ),
-          ScreenTypeLayout(
-            mobile: ColDescImage(desc: desc, image: image),
-            tablet: RowDescImage(desc: desc, image: image),
-          ),
-          Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Expanded(
-                child: Wrap(
-                  direction: Axis.horizontal,
-                  spacing: 5,
-                  children: chips,
-                ),
-              ),
-              IconButton(
-                  icon: Icon(
-                    Icons.link,
-                    color: Colors.lightBlue,
-                    size: 35,
-                  ),
-                  onPressed: () => js.context.callMethod("open", ["$url"]))
-            ],
-          )
-        ],
+    return ScreenTypeLayout(
+      mobile: ExperienceItemMobile(
+        date: date,
+        title: title,
+        desc: desc,
+        url: url,
+        linkMessage: linkMessage,
+        chips: chips,
+        image: image,
+      ),
+      tablet: ExperienceItemTabletDesktop(
+        date: date,
+        title: title,
+        desc: desc,
+        url: url,
+        linkMessage: linkMessage,
+        chips: chips,
+        image: image,
       ),
     );
   }
