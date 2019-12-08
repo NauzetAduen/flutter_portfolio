@@ -23,6 +23,11 @@ class Styles {
       fontFamily: 'Nunito',
       fontSize: 32,
       color: Colors.black);
+  static final TextStyle welcomeTextMobile = TextStyle(
+      fontWeight: FontWeight.bold,
+      fontFamily: 'Nunito',
+      fontSize: 20,
+      color: Colors.black);
 
   static final TextStyle experienceDate = TextStyle(
       letterSpacing: 2,
