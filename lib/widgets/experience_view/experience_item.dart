@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/widgets/experience_view/exp_item_mobile.dart';
 import 'package:flutter_portfolio/widgets/experience_view/exp_item_tablet_desktop.dart';
-import 'dart:js' as js;
 
 import 'package:responsive_builder/responsive_builder.dart';
 
