@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/utils/experience_item_list.dart';
 import 'package:flutter_portfolio/widgets/CustomScaffold.dart';
 import 'package:flutter_portfolio/widgets/centered_widget/centered_widget.dart';
 import 'package:flutter_portfolio/widgets/experience_view/experience_mobile.dart';

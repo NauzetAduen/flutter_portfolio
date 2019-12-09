@@ -91,4 +91,8 @@ class Styles {
     height: 2,
     fontSize: 24,
   );
+  static final TextStyle aboutInfoMobile = TextStyle(
+    fontFamily: 'Nunito',
+    fontSize: 18,
+  );
 }
