@@ -88,7 +88,7 @@ class ExperienceItemList {
       title: "University final degree project",
       desc:
           "Developed a “Mobile app and backend to manage hiking trails”\nLearned Flutter framework, Dart Programming Language and cloud firestore ecosystem\nGoogle+ Auth, Firestore Auth, Google Maps, Json serialization and NoSQL, Reactive Programming, …",
-      url: "https://github.com/NauzetAduen/HikingApp",
+      url: "https://github.com/NauzetAduen/hiking_app_public",
       linkMessage: "HikingApp - Github (Private)",
       image: "hiking.png",
       chips: [
