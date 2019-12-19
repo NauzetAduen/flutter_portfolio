@@ -10,7 +10,7 @@ class ExperienceTabletDesktop extends StatelessWidget {
         NavigationBar(),
         Expanded(
           child: ListView(
-            children: ExperienceItemList.list.reversed.toList(),
+            children: ExperienceItemList.list,
           ),
         )
       ],
