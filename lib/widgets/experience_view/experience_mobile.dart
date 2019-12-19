@@ -5,8 +5,7 @@ class ExperienceMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      reverse: true,
-      children: ExperienceItemList.list,
+      children: ExperienceItemList.list.reversed.toList(),
     );
   }
 }
