@@ -10,9 +10,6 @@ class ExperienceTabletDesktop extends StatelessWidget {
       children: <Widget>[
         NavigationBar(),
         Expanded(
-          // child: ListView(
-          //   children: ExperienceItemList.list,
-          // ),
           child: ListView.builder(
             itemCount: listSize,
             itemBuilder: (context, index) {
@@ -20,7 +17,7 @@ class ExperienceTabletDesktop extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   ExperienceItemList.list[index],
-                  _isLastElement(listSize, index)
+                  listSize - 1 != index
                       ? Divider(
                           indent: 145.0,
                           endIndent: 145.0,
@@ -35,9 +32,5 @@ class ExperienceTabletDesktop extends StatelessWidget {
         )
       ],
     );
-  }
-
-  bool _isLastElement(int listSize, int index) {
-    return listSize - 1 != index;
   }
 }
