@@ -7,29 +7,40 @@ class ExperienceMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     int listSize = ExperienceItemList.list.length;
-    return ListView.builder(
-      itemCount: listSize,
-      itemBuilder: (context, index) {
-        ExperienceItem expItem = ExperienceItemList.list[index];
+    return Padding(
+      padding: const EdgeInsets.only(top: 30),
+      child: ListView.builder(
+        itemCount: listSize,
+        itemBuilder: (context, index) {
+          ExperienceItem expItem = ExperienceItemList.list[index];
 
-        return IconButton(
-          icon: Row(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: <Widget>[
-              Icon(Icons.keyboard_arrow_right, size: 45),
-              Text(expItem.title),
-            ],
-          ),
-          onPressed: () {
-            showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return AlertDialog(
-                      title: Text(expItem.title), content: expItem.toMobile());
-                });
-          },
-        );
-      },
+          return IconButton(
+            padding: const EdgeInsets.only(bottom: 10),
+            alignment: Alignment.centerLeft,
+            icon: Row(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Icon(Icons.keyboard_arrow_right, size: 45),
+                Flexible(
+                  flex: 1,
+                  child: Text(expItem.title),
+                ),
+              ],
+            ),
+            onPressed: () {
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                        title: Text(expItem.title),
+                        content: expItem.toMobile());
+                  });
+            },
+          );
+        },
+      ),
     );
   }
 }
