@@ -100,4 +100,15 @@ class Styles {
       fontSize: 22,
       letterSpacing: 2,
       fontWeight: FontWeight.bold);
+  static final TextStyle experienceListitemMobile = TextStyle(
+      fontFamily: 'Nunito',
+      fontSize: 16,
+      letterSpacing: 2,
+      fontWeight: FontWeight.bold);
+
+  static final TextStyle dialogTitle = TextStyle(
+    fontWeight: FontWeight.bold,
+    fontSize: 22,
+    fontFamily: 'Nunito',
+  );
 }
