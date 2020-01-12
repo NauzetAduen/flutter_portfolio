@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/utils/experience_item_list.dart';
+import 'package:flutter_portfolio/widgets/experience_view/exp_item_tablet_desktop.dart';
 import 'package:flutter_portfolio/widgets/navigation_bar/navigation_bar.dart';
 
 import 'experience_item.dart';
@@ -26,7 +28,14 @@ class ExperienceTabletDesktop extends StatelessWidget {
                   ],
                 ),
                 onPressed: () {
-                  Navigator.pushNamed(context, "/detailed", arguments: index);
+                  // Navigator.pushNamed(context, "/detailed", arguments: index);
+                  showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                            title: Text(expItem.title),
+                            content: expItem.toDesktop());
+                      });
                 },
               );
               // return Padding(

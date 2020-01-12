@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/utils/experience_item_list.dart';
 
+import 'experience_item.dart';
+
 class ExperienceMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -8,19 +10,25 @@ class ExperienceMobile extends StatelessWidget {
     return ListView.builder(
       itemCount: listSize,
       itemBuilder: (context, index) {
-        return Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            ExperienceItemList.list[index],
-            listSize - 1 != index
-                ? Divider(
-                    indent: 50.0,
-                    endIndent: 50.0,
-                    thickness: 1.0,
-                    color: Colors.black,
-                  )
-                : SizedBox()
-          ],
+        ExperienceItem expItem = ExperienceItemList.list[index];
+
+        return IconButton(
+          icon: Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: <Widget>[
+              Icon(Icons.keyboard_arrow_right, size: 45),
+              Text(expItem.title),
+            ],
+          ),
+          onPressed: () {
+            // Navigator.pushNamed(context, "/detailed", arguments: index);
+            showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                      title: Text(expItem.title), content: expItem.toMobile());
+                });
+          },
         );
       },
     );
