@@ -24,6 +24,7 @@ class ExperienceTabletDesktop extends StatelessWidget {
                 ExperienceItem expItem = ExperienceItemList.list[index];
 
                 return IconButton(
+                  padding: const EdgeInsets.only(bottom: 55),
                   alignment: Alignment.centerLeft,
                   icon: Row(
                     mainAxisSize: MainAxisSize.min,
@@ -32,7 +33,7 @@ class ExperienceTabletDesktop extends StatelessWidget {
                     children: <Widget>[
                       Icon(
                         Icons.keyboard_arrow_right,
-                        size: 35,
+                        size: 30,
                       ),
                       Flexible(
                         flex: 1,
