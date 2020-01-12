@@ -95,4 +95,9 @@ class Styles {
     fontFamily: 'Nunito',
     fontSize: 18,
   );
+  static final TextStyle experienceListitem = TextStyle(
+      fontFamily: 'Nunito',
+      fontSize: 22,
+      letterSpacing: 2,
+      fontWeight: FontWeight.bold);
 }
