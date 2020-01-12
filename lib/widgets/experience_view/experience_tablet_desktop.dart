@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio/style/styles.dart';
 import 'package:flutter_portfolio/utils/experience_item_list.dart';
-import 'package:flutter_portfolio/widgets/experience_view/exp_item_tablet_desktop.dart';
 import 'package:flutter_portfolio/widgets/navigation_bar/navigation_bar.dart';
 
 import 'experience_item.dart';
@@ -11,24 +11,39 @@ class ExperienceTabletDesktop extends StatelessWidget {
   Widget build(BuildContext context) {
     int listSize = ExperienceItemList.list.length;
     return Column(
+      mainAxisSize: MainAxisSize.max,
       children: <Widget>[
         NavigationBar(),
-        Expanded(
+        Padding(
+          padding: const EdgeInsets.only(top: 40),
           child: ListView.builder(
+            shrinkWrap: true,
             itemCount: listSize,
             itemBuilder: (context, index) {
               ExperienceItem expItem = ExperienceItemList.list[index];
 
               return IconButton(
+                alignment: Alignment.centerLeft,
                 icon: Row(
-                  crossAxisAlignment: CrossAxisAlignment.end,
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Icon(Icons.keyboard_arrow_right, size: 45),
-                    Text(expItem.title),
+                    Icon(
+                      Icons.keyboard_arrow_right,
+                      size: 35,
+                    ),
+                    Flexible(
+                      flex: 1,
+                      child: Text(
+                        expItem.title,
+                        style: Styles.experienceListitem,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
                   ],
                 ),
                 onPressed: () {
-                  // Navigator.pushNamed(context, "/detailed", arguments: index);
                   showDialog(
                       context: context,
                       builder: (BuildContext context) {
@@ -38,27 +53,6 @@ class ExperienceTabletDesktop extends StatelessWidget {
                       });
                 },
               );
-              // return Padding(
-              //     padding: const EdgeInsets.symmetric(vertical: 20),
-              //     child: Text(expItem.title));
-              //   return Column(
-              //     mainAxisSize: MainAxisSize.min,
-              //     children: <Widget>[
-              //       Container(
-              //         height: 15,
-              //         color: Colors.red,
-              //       ),
-              //       // ExperienceItemList.list[index],
-              //       listSize - 1 != index
-              //           ? Divider(
-              //               indent: 145.0,
-              //               endIndent: 145.0,
-              //               thickness: 3.0,
-              //               color: Colors.black,
-              //             )
-              //           : SizedBox()
-              //     ],
-              //   );
             },
           ),
         )
