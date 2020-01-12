@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio/style/styles.dart';
 import 'package:flutter_portfolio/utils/experience_item_list.dart';
 
 import 'experience_item.dart';
@@ -25,7 +26,8 @@ class ExperienceMobile extends StatelessWidget {
                 Icon(Icons.keyboard_arrow_right, size: 45),
                 Flexible(
                   flex: 1,
-                  child: Text(expItem.title),
+                  child: Text(expItem.title,
+                      style: Styles.experienceListitemMobile),
                 ),
               ],
             ),
