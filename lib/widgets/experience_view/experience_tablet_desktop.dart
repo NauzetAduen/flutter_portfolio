@@ -23,37 +23,51 @@ class ExperienceTabletDesktop extends StatelessWidget {
               itemBuilder: (context, index) {
                 ExperienceItem expItem = ExperienceItemList.list[index];
 
-                return IconButton(
-                  padding: const EdgeInsets.only(bottom: 55),
-                  alignment: Alignment.centerLeft,
-                  icon: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      Icon(
-                        Icons.keyboard_arrow_right,
-                        size: 30,
+                return Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: Card(
+                    elevation: 2,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
+                    child: IconButton(
+                      padding: const EdgeInsets.symmetric(vertical: 25),
+                      alignment: Alignment.centerLeft,
+                      icon: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(
+                            Icons.keyboard_arrow_right,
+                            size: 30,
+                          ),
+                          Flexible(
+                            flex: 1,
+                            child: Text(
+                              expItem.title,
+                              style: Styles.experienceListitem,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                        ],
                       ),
-                      Flexible(
-                        flex: 1,
-                        child: Text(
-                          expItem.title,
-                          style: Styles.experienceListitem,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      ),
-                    ],
+                      onPressed: () {
+                        showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return AlertDialog(
+                                content: expItem.toDesktop(),
+                                title: Text(
+                                  expItem.title,
+                                  style: Styles.dialogTitle,
+                                  textAlign: TextAlign.center,
+                                ),
+                              );
+                            });
+                      },
+                    ),
                   ),
-                  onPressed: () {
-                    showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return AlertDialog(
-                              title: Text(expItem.title),
-                              content: expItem.toDesktop());
-                        });
-                  },
                 );
               },
             ),
