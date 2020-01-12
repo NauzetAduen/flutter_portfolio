@@ -26,6 +26,7 @@ class RowDescImage extends StatelessWidget {
           padding: const EdgeInsets.only(left: 10),
           child: Container(
             width: 300,
+            height: 300,
             child: Image(
               image: AssetImage("assets/images/$image"),
             ),
