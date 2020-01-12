@@ -6,7 +6,7 @@ class CustomCircleAvatar extends StatelessWidget {
     return CircleAvatar(
       child: Image.asset("assets/images/profilepicture.png"),
       radius: 70,
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: Colors.white,
     );
   }
 }
