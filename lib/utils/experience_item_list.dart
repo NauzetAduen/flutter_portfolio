@@ -3,7 +3,7 @@ import 'package:flutter_portfolio/style/styles.dart';
 import 'package:flutter_portfolio/widgets/experience_view/experience_item.dart';
 
 class ExperienceItemList {
-  static List<Widget> list = [
+  static List<ExperienceItem> list = [
     ExperienceItem(
       date: "01/2017 – 12/2017",
       title:
