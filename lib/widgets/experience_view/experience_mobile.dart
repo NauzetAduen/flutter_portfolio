@@ -21,7 +21,6 @@ class ExperienceMobile extends StatelessWidget {
             ],
           ),
           onPressed: () {
-            // Navigator.pushNamed(context, "/detailed", arguments: index);
             showDialog(
                 context: context,
                 builder: (BuildContext context) {
