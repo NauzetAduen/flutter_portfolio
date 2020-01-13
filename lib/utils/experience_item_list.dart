@@ -127,7 +127,7 @@ class ExperienceItemList {
     ExperienceItem(
         date: "01/2019 - 02/2019",
         title: "Simple Debt Manager - First Flutter App",
-        desc: "mall project to learn flutter where you can manage your debts. Flutter version of my first Android App.\n" +
+        desc: "Small project to learn flutter where you can manage your debts. Flutter version of my first Android App.\n" +
             "In this project you can create debts and store them in a small sqlite database.\nDebts will be listed colored by state. Fully paid, not paid or partialy paid.\nYou have a tab where you get a summary of your debts with graphs.\nMore screenshots in the readme.md in the repository.",
         url: "https://github.com/NauzetAduen/simple-debt-manager",
         linkMessage: "",
