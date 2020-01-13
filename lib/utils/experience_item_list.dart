@@ -8,8 +8,10 @@ class ExperienceItemList {
       date: "01/2017 – 12/2017",
       title:
           "Collaboration scholarship at ULPGC’s Vice-chancellor for students and employability",
-      desc:
-          "Webs maintenance with Joomla and vanilla PHP\nMySQL Databases maintenance\nWebsite development for university event with Wordpress\n",
+      desc: "I was an intern for my univeristy for a whole year, where I had a wide range of responsabilities, from making phone calls to answering emails, write official documents, etc...\n" +
+          "From a tech standpoint I did a few things:\nWebs maintenance with Joomla and vanilla PHP, mostly adding articles to our university pages.\n" +
+          "MySQL Databases maintenance, backups, and that sort of things.\n" +
+          "Website development for an university event with Wordpress, now closed. The hardest part was a page where I developed a GoogleMap in JavaScript where the invited chancellors could pick their hotel and then it would draw a route depeding of your choosen transport system.\n",
       linkMessage: "16 jornadas Sue - Closed",
       url: "http://16jornadasdesue.ulpgc.es/",
       chips: [
