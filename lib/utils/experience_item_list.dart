@@ -125,6 +125,37 @@ class ExperienceItemList {
       ],
     ),
     ExperienceItem(
+        date: "01/2019 - 02/2019",
+        title: "Simple Debt Manager - First Flutter App",
+        desc: "mall project to learn flutter where you can manage your debts. Flutter version of my first Android App.\n" +
+            "In this project you can create debts and store them in a small sqlite database.\nDebts will be listed colored by state. Fully paid, not paid or partialy paid.\nYou have a tab where you get a summary of your debts with graphs.\nMore screenshots in the readme.md in the repository.",
+        url: "https://github.com/NauzetAduen/simple-debt-manager",
+        linkMessage: "",
+        image: "simpledebtmanager.png",
+        chips: [
+          Chip(
+            backgroundColor: Color(0xff1389FD),
+            label: Text(
+              "Flutter",
+              style: Styles.chipWhite,
+            ),
+          ),
+          Chip(
+            backgroundColor: Colors.indigo,
+            label: Text(
+              "Mobile Dev",
+              style: Styles.chipWhite,
+            ),
+          ),
+          Chip(
+            backgroundColor: Color(0xff1C2834),
+            label: Text(
+              "Dart",
+              style: Styles.chipWhite,
+            ),
+          ),
+        ]),
+    ExperienceItem(
       date: "04/2019 – 07/2019",
       title: "University final degree project",
       desc:
