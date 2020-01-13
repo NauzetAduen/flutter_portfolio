@@ -25,9 +25,9 @@ class ExperienceItemTabletDesktop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 40),
+    return SingleChildScrollView(
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Align(
@@ -36,11 +36,6 @@ class ExperienceItemTabletDesktop extends StatelessWidget {
               date,
               style: Styles.experienceDate,
             ),
-          ),
-          Text(
-            title,
-            style: Styles.experienceTitle,
-            textAlign: TextAlign.justify,
           ),
           RowDescImage(desc: desc, image: image),
           Row(
