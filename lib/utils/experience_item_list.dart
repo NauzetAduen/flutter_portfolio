@@ -23,6 +23,13 @@ class ExperienceItemList {
           ),
         ),
         Chip(
+          backgroundColor: Colors.deepPurple,
+          label: Text(
+            "JavaScript",
+            style: Styles.chipWhite,
+          ),
+        ),
+        Chip(
           label: Text(
             "Joomla",
             style: Styles.chipWhite,
@@ -47,6 +54,13 @@ class ExperienceItemList {
           backgroundColor: Color(0xffe97b00),
           label: Text(
             "MySQL",
+            style: Styles.chipWhite,
+          ),
+        ),
+        Chip(
+          backgroundColor: Colors.red,
+          label: Text(
+            "Google Maps",
             style: Styles.chipWhite,
           ),
         ),
