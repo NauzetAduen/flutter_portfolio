@@ -25,61 +25,54 @@ class ExperienceTabletDesktop extends StatelessWidget {
 
                 return Padding(
                   padding: const EdgeInsets.only(top: 10),
-                  child: Card(
-                    elevation: 2,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15.0),
-                    ),
-                    child: IconButton(
-                      color: Colors.blueGrey,
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 25, horizontal: 10),
-                      alignment: Alignment.centerLeft,
-                      icon: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          Icon(
-                            Icons.keyboard_arrow_right,
-                            size: 30,
-                          ),
-                          Flexible(
-                            flex: 1,
-                            child: Text(
+                  child: GestureDetector(
+                    onTap: () => showGeneralDialog(
+                        barrierDismissible: true,
+                        barrierColor: Colors.blueGrey.withOpacity(0.4),
+                        barrierLabel: "",
+                        context: context,
+                        transitionDuration: Duration(milliseconds: 666),
+                        pageBuilder: (BuildContext context, _, __) {
+                          return AlertDialog(
+                            content: expItem.toDesktop(),
+                            title: Text(
                               expItem.title,
-                              style: Styles.experienceListitem,
-                              overflow: TextOverflow.ellipsis,
+                              style: Styles.dialogTitle,
+                              textAlign: TextAlign.center,
                             ),
-                          ),
-                          Flexible(
-                            flex: 1,
-                            child: Text(
-                              expItem.date,
-                              style: Styles.experienceListitem,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
-                        ],
+                          );
+                        }),
+                    child: Card(
+                      elevation: 2,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15.0),
                       ),
-                      onPressed: () {
-                        showGeneralDialog(
-                            barrierDismissible: true,
-                            barrierColor: Colors.blueGrey.withOpacity(0.4),
-                            barrierLabel: "",
-                            context: context,
-                            transitionDuration: Duration(milliseconds: 666),
-                            pageBuilder: (BuildContext context, _, __) {
-                              return AlertDialog(
-                                content: expItem.toDesktop(),
-                                title: Text(
-                                  expItem.title,
-                                  style: Styles.dialogTitle,
-                                  textAlign: TextAlign.center,
-                                ),
-                              );
-                            });
-                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(25.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Flexible(
+                              flex: 1,
+                              child: Text(
+                                expItem.date,
+                                style: Styles.experienceListitem,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                            Flexible(
+                              flex: 3,
+                              child: Text(
+                                expItem.title,
+                                style: Styles.experienceListitemBigger,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                 );
