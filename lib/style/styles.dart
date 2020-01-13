@@ -100,6 +100,11 @@ class Styles {
       fontSize: 22,
       letterSpacing: 2,
       fontWeight: FontWeight.bold);
+  static final TextStyle experienceListitemBigger = TextStyle(
+      fontFamily: 'Nunito',
+      fontSize: 26,
+      letterSpacing: 2,
+      fontWeight: FontWeight.bold);
   static final TextStyle experienceListitemMobile = TextStyle(
       fontFamily: 'Nunito',
       fontSize: 16,
