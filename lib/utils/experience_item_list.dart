@@ -6,8 +6,7 @@ class ExperienceItemList {
   static List<ExperienceItem> list = [
     ExperienceItem(
       date: "01/2017 – 12/2017",
-      title:
-          "Collaboration scholarship at ULPGC’s Vice-chancellor for students and employability",
+      title: "Collaboration scholarship",
       desc: "I was an intern for my univeristy for a whole year, where I had a wide range of responsabilities, from making phone calls to answering emails, write official documents, etc...\n" +
           "From a tech standpoint I did a few things:\nWebs maintenance with Joomla and vanilla PHP, mostly adding articles to our university pages.\n" +
           "MySQL Databases maintenance, backups, and that sort of things.\n" +
@@ -69,7 +68,7 @@ class ExperienceItemList {
     ),
     ExperienceItem(
       date: "08/2018 – 08/2018",
-      title: "DebControl - First native Android App",
+      title: "DebControl",
       desc:
           "First native Android app, where you have a list of your debts.\nLearned a bunch of concepts: LiveData, ViewModel, Room, etc...",
       url: "https://github.com/NauzetAduen/DebtControl",
@@ -94,7 +93,7 @@ class ExperienceItemList {
     ),
     ExperienceItem(
       date: "09/2018 – 12/2018",
-      title: "External university intership at inerza.com",
+      title: "External university intership",
       desc:
           "Improve and increase test coverage in a mobile app\nTested app’s CORE and API REST behind it\nGit, Testing, RESTful web services, Mobile development, Jenkins, SonarQube, Tomcat, DBeaver, ARC, …",
       url: "https://play.google.com/store/apps/details?id=com.inerza.miplaza",
@@ -126,7 +125,7 @@ class ExperienceItemList {
     ),
     ExperienceItem(
         date: "01/2019 - 02/2019",
-        title: "Simple Debt Manager - First Flutter App",
+        title: "Simple Debt Manager",
         desc: "Small project to learn flutter where you can manage your debts. Flutter version of my first Android App.\n" +
             "In this project you can create debts and store them in a small sqlite database.\nDebts will be listed colored by state. Fully paid, not paid or partialy paid.\nYou have a tab where you get a summary of your debts with graphs.\nMore screenshots in the readme.md in the repository.",
         url: "https://github.com/NauzetAduen/simple-debt-manager",
@@ -210,7 +209,7 @@ class ExperienceItemList {
     ),
     ExperienceItem(
       date: "08/2019 – 10/2019",
-      title: "Personal project GroceryListApp",
+      title: "GroceryListApp",
       desc: "Developed a personal Project Grocery list app with Flutter",
       url: "https://github.com/NauzetAduen/grocery_list_app",
       linkMessage: "GroceryList App - Github",
