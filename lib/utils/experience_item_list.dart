@@ -154,6 +154,13 @@ class ExperienceItemList {
               style: Styles.chipWhite,
             ),
           ),
+          Chip(
+            backgroundColor: Colors.blueGrey,
+            label: Text(
+              "SQLite",
+              style: Styles.chipWhite,
+            ),
+          ),
         ]),
     ExperienceItem(
       date: "04/2019 – 07/2019",
