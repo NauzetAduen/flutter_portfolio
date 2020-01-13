@@ -68,6 +68,31 @@ class ExperienceItemList {
       image: "16jornadassue.png",
     ),
     ExperienceItem(
+      date: "08/2018 – 08/2018",
+      title: "DebControl - First native Android App",
+      desc:
+          "First native Android app, where you have a list of your debts\nLearned a bunch of concepts: LiveData, ViewModel, Room, etc...",
+      url: "https://github.com/NauzetAduen/DebtControl",
+      linkMessage: "",
+      image: "android.png",
+      chips: [
+        Chip(
+          backgroundColor: Color(0xff99cc00),
+          label: Text(
+            "Android",
+            style: Styles.chipBlack,
+          ),
+        ),
+        Chip(
+          label: Text(
+            "Mobile Dev",
+            style: Styles.chipWhite,
+          ),
+          backgroundColor: Colors.indigo,
+        )
+      ],
+    ),
+    ExperienceItem(
       date: "09/2018 – 12/2018",
       title: "External university intership at inerza.com",
       desc:
