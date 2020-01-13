@@ -30,13 +30,6 @@ class ExperienceItemTabletDesktop extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Align(
-            alignment: Alignment.topCenter,
-            child: Text(
-              date,
-              style: Styles.experienceDate,
-            ),
-          ),
           RowDescImage(desc: desc, image: image),
           Row(
             mainAxisSize: MainAxisSize.max,

@@ -36,8 +36,8 @@ class ExperienceTabletDesktop extends StatelessWidget {
                           vertical: 25, horizontal: 10),
                       alignment: Alignment.centerLeft,
                       icon: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                           Icon(
@@ -48,6 +48,14 @@ class ExperienceTabletDesktop extends StatelessWidget {
                             flex: 1,
                             child: Text(
                               expItem.title,
+                              style: Styles.experienceListitem,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                          Flexible(
+                            flex: 1,
+                            child: Text(
+                              expItem.date,
                               style: Styles.experienceListitem,
                               overflow: TextOverflow.ellipsis,
                             ),

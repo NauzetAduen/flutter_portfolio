@@ -71,7 +71,7 @@ class ExperienceItemList {
       date: "08/2018 – 08/2018",
       title: "DebControl - First native Android App",
       desc:
-          "First native Android app, where you have a list of your debts\nLearned a bunch of concepts: LiveData, ViewModel, Room, etc...",
+          "First native Android app, where you have a list of your debts.\nLearned a bunch of concepts: LiveData, ViewModel, Room, etc...",
       url: "https://github.com/NauzetAduen/DebtControl",
       linkMessage: "",
       image: "android.png",
