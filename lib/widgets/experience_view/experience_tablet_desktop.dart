@@ -31,7 +31,9 @@ class ExperienceTabletDesktop extends StatelessWidget {
                       borderRadius: BorderRadius.circular(15.0),
                     ),
                     child: IconButton(
-                      padding: const EdgeInsets.symmetric(vertical: 25),
+                      color: Colors.blueGrey,
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 25, horizontal: 10),
                       alignment: Alignment.centerLeft,
                       icon: Row(
                         mainAxisSize: MainAxisSize.min,
@@ -53,9 +55,13 @@ class ExperienceTabletDesktop extends StatelessWidget {
                         ],
                       ),
                       onPressed: () {
-                        showDialog(
+                        showGeneralDialog(
+                            barrierDismissible: true,
+                            barrierColor: Colors.blueGrey.withOpacity(0.4),
+                            barrierLabel: "",
                             context: context,
-                            builder: (BuildContext context) {
+                            transitionDuration: Duration(milliseconds: 666),
+                            pageBuilder: (BuildContext context, _, __) {
                               return AlertDialog(
                                 content: expItem.toDesktop(),
                                 title: Text(
