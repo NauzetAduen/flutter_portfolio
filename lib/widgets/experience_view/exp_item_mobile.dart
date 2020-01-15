@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'dart:js' as js;
 
 import 'package:flutter_portfolio/style/styles.dart';
-import 'package:flutter_portfolio/widgets/experience_view/ColDescImage.dart';
 
 class ExperienceItemMobile extends StatelessWidget {
   final String date;
@@ -25,48 +24,57 @@ class ExperienceItemMobile extends StatelessWidget {
       : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Align(
-            alignment: Alignment.topCenter,
-            child: Text(
-              date,
-              style: Styles.experienceDate,
-            ),
-          ),
-          Text(
-            title,
-            style: Styles.experienceTitleMobile,
-            textAlign: TextAlign.justify,
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          ColDescImage(desc: desc, image: image),
-          Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Expanded(
-                child: Wrap(
-                  direction: Axis.horizontal,
-                  spacing: 5,
-                  children: chips,
-                ),
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Align(
+              alignment: Alignment.topCenter,
+              child: Text(
+                date,
+                style: Styles.experienceDate,
               ),
-              IconButton(
-                  icon: Icon(
-                    Icons.link,
-                    color: Colors.lightBlue,
-                    size: 35,
+            ),
+            Align(
+              alignment: Alignment.topCenter,
+              child: Image(
+                height: 150,
+                width: 150,
+                image: AssetImage("assets/images/$image"),
+              ),
+            ),
+            Text(
+              desc,
+              textAlign: TextAlign.justify,
+              style: Styles.experienceDescMobile,
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Expanded(
+                  child: Wrap(
+                    direction: Axis.horizontal,
+                    spacing: 3,
+                    children: chips,
                   ),
-                  onPressed: () => js.context.callMethod("open", ["$url"]))
-            ],
-          )
-        ],
+                ),
+                IconButton(
+                    icon: Icon(
+                      Icons.link,
+                      color: Colors.lightBlue,
+                      size: 25,
+                    ),
+                    onPressed: () => js.context.callMethod("open", ["$url"]))
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
