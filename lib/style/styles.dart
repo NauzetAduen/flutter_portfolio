@@ -34,8 +34,8 @@ class Styles {
       height: 2,
       fontWeight: FontWeight.bold,
       fontFamily: 'Nunito',
-      fontSize: 32,
-      color: Colors.black);
+      fontSize: 16,
+      color: Colors.grey);
   static final TextStyle experienceTitle = TextStyle(
       letterSpacing: 2,
       height: 2,
