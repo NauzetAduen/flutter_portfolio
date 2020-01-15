@@ -116,4 +116,10 @@ class Styles {
     fontSize: 22,
     fontFamily: 'Nunito',
   );
+  static final TextStyle errorMessage = TextStyle(
+    fontWeight: FontWeight.bold,
+    fontSize: 84,
+    letterSpacing: 4,
+    fontFamily: 'Nunito',
+  );
 }
