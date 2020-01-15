@@ -14,33 +14,40 @@ class ExperienceMobile extends StatelessWidget {
         itemCount: listSize,
         itemBuilder: (context, index) {
           ExperienceItem expItem = ExperienceItemList.list[index];
-
-          return IconButton(
-            padding: const EdgeInsets.only(bottom: 10),
-            alignment: Alignment.centerLeft,
-            icon: Row(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Icon(Icons.keyboard_arrow_right, size: 45),
-                Flexible(
-                  flex: 1,
-                  child: Text(expItem.title,
-                      style: Styles.experienceListitemMobile),
+          return Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: GestureDetector(
+                onTap: () => showGeneralDialog(
+                    barrierDismissible: true,
+                    barrierColor: Colors.blueGrey.withOpacity(0.4),
+                    barrierLabel: "",
+                    context: context,
+                    transitionDuration: Duration(milliseconds: 666),
+                    pageBuilder: (BuildContext context, _, __) {
+                      return AlertDialog(
+                        content: expItem.toMobile(),
+                        title: Text(
+                          expItem.title,
+                          style: Styles.dialogTitle,
+                          textAlign: TextAlign.center,
+                        ),
+                      );
+                    }),
+                child: Card(
+                  elevation: 4,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15.0),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(25.0),
+                    child: Text(
+                      expItem.title,
+                      style: Styles.experienceListitemMobile,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
                 ),
-              ],
-            ),
-            onPressed: () {
-              showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return AlertDialog(
-                        title: Text(expItem.title),
-                        content: expItem.toMobile());
-                  });
-            },
-          );
+              ));
         },
       ),
     );
