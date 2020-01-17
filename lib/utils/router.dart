@@ -7,6 +7,7 @@ import 'package:flutter_portfolio/pages/homepage.dart';
 class Router {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
+      case '/':
       case '/home':
         return MaterialPageRoute(builder: (_) => HomePage());
       case '/experience':
