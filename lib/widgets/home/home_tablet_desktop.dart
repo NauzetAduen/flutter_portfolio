@@ -21,7 +21,7 @@ class HomeTabletDesktop extends StatelessWidget {
                     height: 50,
                   ),
                   Text(
-                    "Hello, welcome to my portfolio.\nI'm Nauzet, a mobile and Flutter developer.",
+                    "Hello, welcome to my portfolio.\nI'm Nauzet, a mobile and Flutter developer.\nYou can contact me: nauzet.aduen@gmail.com",
                     style: Styles.welcomeText,
                     textAlign: TextAlign.center,
                   ),
