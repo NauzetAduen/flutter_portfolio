@@ -14,7 +14,7 @@ class IconButtonLinked extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      icon: Image.asset("assets/images/$picture.png"),
+      icon: Image.asset("assets/images/logos/$picture.png"),
       onPressed: () {
         js.context.callMethod("open", ["$url"]);
       },

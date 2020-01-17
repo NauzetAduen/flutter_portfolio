@@ -42,7 +42,7 @@ class ExperienceItemMobile extends StatelessWidget {
               child: Image(
                 height: 150,
                 width: 150,
-                image: AssetImage("assets/images/$image"),
+                image: AssetImage("assets/images/previews/$image"),
               ),
             ),
             Text(
