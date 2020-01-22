@@ -10,12 +10,16 @@ class NavBarItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: GestureDetector(
-        onTap: () => Navigator.pushReplacementNamed(context, "/$text"),
+        onTap: () => Navigator.pushReplacementNamed(context, _getRoute()),
         child: Text(
           '$text',
           style: Styles.navBarElementBold,
         ),
       ),
     );
+  }
+
+  String _getRoute() {
+    return text == "home" ? "/" : "$text";
   }
 }
