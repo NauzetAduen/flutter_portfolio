@@ -20,6 +20,6 @@ class NavBarItem extends StatelessWidget {
   }
 
   String _getRoute() {
-    return text == "home" ? "/" : "$text";
+    return text == "home" ? "/" : "/$text";
   }
 }
