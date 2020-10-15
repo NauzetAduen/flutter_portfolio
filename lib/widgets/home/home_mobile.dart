@@ -11,7 +11,7 @@ class HomeMobile extends StatelessWidget {
         shrinkWrap: true,
         children: <Widget>[
           Text(
-            "Hello, welcome to my portfolio.\nI'm Nauzet, a mobile and Flutter developer.\nYou can contact me: nauzet.aduen@gmail.com",
+            "Hello, welcome to my portfolio.\nI'm Nauzet, a mobile and Flutter developer.",
             style: Styles.welcomeTextMobile,
             textAlign: TextAlign.center,
           ),
