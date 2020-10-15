@@ -318,5 +318,29 @@ class ExperienceItemList {
           ),
         ],
         image: "diabetiary.png"),
+    ExperienceItem(
+      date: "10/2020 – Present",
+      title: "Flutter portfolio, the remake",
+      desc: "Re-design of my portfolio. Nothing else.",
+      url: "https://github.com/NauzetAduen/flutter_portfolio",
+      linkMessage: "Portfolio - Github",
+      image: "flutterweb.png",
+      chips: [
+        Chip(
+          backgroundColor: Color(0xff1389FD),
+          label: Text(
+            "Flutter Web",
+            style: Styles.chipWhite,
+          ),
+        ),
+        Chip(
+          backgroundColor: Colors.lime,
+          label: Text(
+            "Web Dev",
+            style: Styles.chipBlack,
+          ),
+        )
+      ],
+    ),
   ].reversed.toList();
 }
