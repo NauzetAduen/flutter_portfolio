@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/utils/router.dart';
+import 'package:flutter_portfolio/utils/router.dart' as router;
 
 void main() => runApp(MyApp());
 
@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Nauzet, Portfolio',
-      onGenerateRoute: Router.generateRoute,
+      onGenerateRoute: router.Router.generateRoute,
       initialRoute: "/",
     );
   }
