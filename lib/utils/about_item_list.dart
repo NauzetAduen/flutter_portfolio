@@ -8,7 +8,7 @@ class AboutItemList {
       title: "Education 2013-2019",
       info: [
         "Computer Engineer at University of Las Palmas de Gran Canaria, Spain",
-        "Software Engineer intensification"
+        "Software Engineer intensification "
       ],
     ),
     AboutItem(
