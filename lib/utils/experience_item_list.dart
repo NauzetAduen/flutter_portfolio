@@ -279,6 +279,44 @@ class ExperienceItemList {
           ),
         )
       ],
-    )
+    ),
+    ExperienceItem(
+        date: "3/2020 - Present",
+        title: "Diabetiary",
+        desc:
+            "Diabetiary, an app for diabetic patients. This app will simplify the user interface in order to help the user to understand how the illness is working, in order to fix it.\nWork In Progress.",
+        url: "https://bitbucket.org/NauzetAduen/diabetiary",
+        linkMessage: "Diabetiary repository",
+        chips: [
+          Chip(
+            backgroundColor: Color(0xff1389FD),
+            label: Text(
+              "Flutter",
+              style: Styles.chipWhite,
+            ),
+          ),
+          Chip(
+            backgroundColor: Colors.indigo,
+            label: Text(
+              "Mobile Dev",
+              style: Styles.chipWhite,
+            ),
+          ),
+          Chip(
+            backgroundColor: Color(0xff1C2834),
+            label: Text(
+              "Dart",
+              style: Styles.chipWhite,
+            ),
+          ),
+          Chip(
+            backgroundColor: Color(0xffe3b31c),
+            label: Text(
+              "Hive",
+              style: Styles.chipWhite,
+            ),
+          ),
+        ],
+        image: "diabetiary.png"),
   ].reversed.toList();
 }
