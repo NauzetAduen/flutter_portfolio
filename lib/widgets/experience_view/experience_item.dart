@@ -23,25 +23,13 @@ class ExperienceItem {
 
   ExperienceItemTabletDesktop toDesktop() {
     return ExperienceItemTabletDesktop(
-      date: date,
-      title: title,
-      desc: desc,
-      url: url,
-      linkMessage: linkMessage,
-      chips: chips,
-      image: image,
+      item: this,
     );
   }
 
   ExperienceItemMobile toMobile() {
     return ExperienceItemMobile(
-      date: date,
-      title: title,
-      desc: desc,
-      url: url,
-      linkMessage: linkMessage,
-      chips: chips,
-      image: image,
+      item: this,
     );
   }
 }
