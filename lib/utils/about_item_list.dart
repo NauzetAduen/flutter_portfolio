@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/widgets/about_view/about_item.dart';
+
+import '../widgets/about_view/about_item.dart';
 
 class AboutItemList {
   static List<Widget> list = [

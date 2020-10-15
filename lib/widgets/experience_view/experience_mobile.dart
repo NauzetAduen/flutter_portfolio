@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/style/styles.dart';
-import 'package:flutter_portfolio/utils/experience_item_list.dart';
 
+import '../../style/styles.dart';
+import '../../utils/experience_item_list.dart';
 import 'experience_item.dart';
 
 class ExperienceMobile extends StatelessWidget {

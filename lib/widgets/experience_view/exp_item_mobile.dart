@@ -1,7 +1,8 @@
-import 'package:flutter/material.dart';
 import 'dart:js' as js;
 
-import 'package:flutter_portfolio/style/styles.dart';
+import 'package:flutter/material.dart';
+
+import '../../style/styles.dart';
 
 class ExperienceItemMobile extends StatelessWidget {
   final String date;

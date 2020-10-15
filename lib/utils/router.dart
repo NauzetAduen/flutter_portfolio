@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/pages/about.dart';
-import 'package:flutter_portfolio/pages/error_page.dart';
-import 'package:flutter_portfolio/pages/experience.dart';
-import 'package:flutter_portfolio/pages/homepage.dart';
+
+import '../pages/about.dart';
+import '../pages/error_page.dart';
+import '../pages/experience.dart';
+import '../pages/homepage.dart';
 
 class Router {
   static Route<dynamic> generateRoute(RouteSettings settings) {

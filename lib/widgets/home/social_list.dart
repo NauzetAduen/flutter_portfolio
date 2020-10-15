@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/utils/url_lists.dart';
-import 'package:flutter_portfolio/widgets/home/IconButtonLinked.dart';
+
+import '../../utils/url_lists.dart';
+import 'IconButtonLinked.dart';
 
 class SocialList extends StatelessWidget {
   const SocialList({

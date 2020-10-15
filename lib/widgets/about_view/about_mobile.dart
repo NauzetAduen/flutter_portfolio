@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/utils/about_item_list.dart';
+
+import '../../utils/about_item_list.dart';
 
 class AboutMobile extends StatelessWidget {
   @override

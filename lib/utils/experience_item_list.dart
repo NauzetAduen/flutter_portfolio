@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/style/styles.dart';
-import 'package:flutter_portfolio/widgets/experience_view/experience_item.dart';
+import '../style/styles.dart';
+import '../widgets/experience_view/experience_item.dart';
 
 class ExperienceItemList {
   static List<ExperienceItem> list = [

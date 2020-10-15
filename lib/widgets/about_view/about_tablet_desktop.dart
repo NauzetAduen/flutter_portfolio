@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/utils/about_item_list.dart';
-import 'package:flutter_portfolio/utils/navbar_item_list.dart';
-import 'package:flutter_portfolio/widgets/navigation_bar/navbar_logo.dart';
+
+import '../../utils/about_item_list.dart';
+import '../../utils/navbar_item_list.dart';
+import '../navigation_bar/navbar_logo.dart';
 
 class AboutTabletDesktop extends StatelessWidget {
   @override

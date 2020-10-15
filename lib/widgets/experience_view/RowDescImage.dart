@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/style/styles.dart';
+
+import '../../style/styles.dart';
 
 class RowDescImage extends StatelessWidget {
   const RowDescImage({

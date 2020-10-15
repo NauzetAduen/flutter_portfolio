@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/widgets/CustomScaffold.dart';
-import 'package:flutter_portfolio/widgets/centered_widget/centered_widget.dart';
-import 'package:flutter_portfolio/widgets/home/home_mobile.dart';
-import 'package:flutter_portfolio/widgets/home/home_tablet_desktop.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+
+import '../widgets/CustomScaffold.dart';
+import '../widgets/centered_widget/centered_widget.dart';
+import '../widgets/home/home_mobile.dart';
+import '../widgets/home/home_tablet_desktop.dart';
 
 class HomePage extends StatelessWidget {
   @override

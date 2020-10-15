@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/style/styles.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+
+import '../../style/styles.dart';
 
 class AboutItem extends StatelessWidget {
   final String title;

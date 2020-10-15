@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/style/styles.dart';
-import 'package:flutter_portfolio/utils/experience_item_list.dart';
-import 'package:flutter_portfolio/widgets/navigation_bar/navigation_bar.dart';
 
+import '../../style/styles.dart';
+import '../../utils/experience_item_list.dart';
+import '../navigation_bar/navigation_bar.dart';
 import 'experience_item.dart';
 
 class ExperienceTabletDesktop extends StatelessWidget {

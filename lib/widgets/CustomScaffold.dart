@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/utils/navbar_item_list.dart';
-import 'package:flutter_portfolio/widgets/CustomCircleAvatar.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
+import '../utils/navbar_item_list.dart';
+import 'CustomCircleAvatar.dart';
 import 'navigation_bar/navbar_logo.dart';
 
 class CustomScaffold extends StatelessWidget {

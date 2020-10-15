@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/style/styles.dart';
-import 'package:flutter_portfolio/widgets/CustomCircleAvatar.dart';
-import 'package:flutter_portfolio/widgets/home/social_list.dart';
-import 'package:flutter_portfolio/widgets/navigation_bar/navigation_bar.dart';
+
+import '../../style/styles.dart';
+import '../CustomCircleAvatar.dart';
+import '../navigation_bar/navigation_bar.dart';
+import 'social_list.dart';
 
 class HomeTabletDesktop extends StatelessWidget {
   @override
