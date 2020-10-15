@@ -256,7 +256,7 @@ class ExperienceItemList {
       ],
     ),
     ExperienceItem(
-      date: "11/2019 – Present",
+      date: "11/2019 – 01/2020",
       title: "Flutter portfolio",
       desc: "I created a simple web to learn what Flutter web was about. If we combine that with the constant idea of having a portfolio, this is what we got.\n" +
           "A simple 'minimalistic' portfolio. Somewhere in the near future I will redesign it and improve it, maybe adding a blog.",
