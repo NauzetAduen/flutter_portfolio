@@ -29,7 +29,7 @@ class RowDescImage extends StatelessWidget {
             width: 300,
             height: 300,
             child: Image(
-              image: AssetImage("assets/images/$image"),
+              image: AssetImage("assets/images/previews/$image"),
             ),
           ),
         ),
