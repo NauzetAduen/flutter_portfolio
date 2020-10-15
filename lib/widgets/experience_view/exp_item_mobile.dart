@@ -3,26 +3,12 @@ import 'dart:js' as js;
 import 'package:flutter/material.dart';
 
 import '../../style/styles.dart';
+import 'experience_item.dart';
 
 class ExperienceItemMobile extends StatelessWidget {
-  final String date;
-  final String title;
-  final String desc;
-  final String url;
-  final String linkMessage;
-  final List<Chip> chips;
-  final String image;
+  final ExperienceItem item;
+  const ExperienceItemMobile({this.item});
 
-  const ExperienceItemMobile(
-      {Key key,
-      this.date,
-      this.title,
-      this.desc,
-      this.url,
-      this.linkMessage,
-      this.chips,
-      this.image})
-      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -34,7 +20,7 @@ class ExperienceItemMobile extends StatelessWidget {
             Align(
               alignment: Alignment.topCenter,
               child: Text(
-                date,
+                item.date,
                 style: Styles.experienceDate,
               ),
             ),
@@ -43,11 +29,11 @@ class ExperienceItemMobile extends StatelessWidget {
               child: Image(
                 height: 150,
                 width: 150,
-                image: AssetImage("assets/images/previews/$image"),
+                image: AssetImage("assets/images/previews/${item.image}"),
               ),
             ),
             Text(
-              desc,
+              item.desc,
               textAlign: TextAlign.justify,
               style: Styles.experienceDescMobile,
             ),
@@ -62,7 +48,7 @@ class ExperienceItemMobile extends StatelessWidget {
                   child: Wrap(
                     direction: Axis.horizontal,
                     spacing: 3,
-                    children: chips,
+                    children: item.chips,
                   ),
                 ),
                 IconButton(
@@ -71,7 +57,8 @@ class ExperienceItemMobile extends StatelessWidget {
                       color: Colors.lightBlue,
                       size: 25,
                     ),
-                    onPressed: () => js.context.callMethod("open", ["$url"]))
+                    onPressed: () =>
+                        js.context.callMethod("open", ["${item.url}"]))
               ],
             )
           ],

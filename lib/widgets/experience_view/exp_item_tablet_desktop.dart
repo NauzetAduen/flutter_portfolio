@@ -3,26 +3,12 @@ import 'dart:js' as js;
 import 'package:flutter/material.dart';
 
 import 'RowDescImage.dart';
+import 'experience_item.dart';
 
 class ExperienceItemTabletDesktop extends StatelessWidget {
-  final String date;
-  final String title;
-  final String desc;
-  final String url;
-  final String linkMessage;
-  final List<Chip> chips;
-  final String image;
+  final ExperienceItem item;
 
-  const ExperienceItemTabletDesktop(
-      {Key key,
-      this.date,
-      this.title,
-      this.desc,
-      this.url,
-      this.linkMessage,
-      this.chips,
-      this.image})
-      : super(key: key);
+  const ExperienceItemTabletDesktop({this.item});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +17,7 @@ class ExperienceItemTabletDesktop extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          RowDescImage(desc: desc, image: image),
+          RowDescImage(desc: item.desc, image: item.image),
           Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -40,7 +26,7 @@ class ExperienceItemTabletDesktop extends StatelessWidget {
                 child: Wrap(
                   direction: Axis.horizontal,
                   spacing: 5,
-                  children: chips,
+                  children: item.chips,
                 ),
               ),
               IconButton(
@@ -49,7 +35,8 @@ class ExperienceItemTabletDesktop extends StatelessWidget {
                     color: Colors.lightBlue,
                     size: 35,
                   ),
-                  onPressed: () => js.context.callMethod("open", ["$url"]))
+                  onPressed: () =>
+                      js.context.callMethod("open", ["${item.url}"]))
             ],
           )
         ],
