@@ -137,7 +137,7 @@ class ExperienceItemList {
       ],
     ),
     ExperienceItem(
-        date: "01/2019 - 02/2019",
+        date: "01/2019 – 02/2019",
         title: "Simple Debt Manager",
         desc: "Small project to learn flutter where you can manage your debts. Flutter version of my first Android App 'DebtControl'.\n" +
             "In this project you can create debts and store them in a small sqlite database.\nDebts will be listed colored by state. Fully paid, not paid or partialy paid.\nYou also can check a summary of your debts with graphs.\nMore screenshots in the readme.md in the repository.",
@@ -281,7 +281,7 @@ class ExperienceItemList {
       ],
     ),
     ExperienceItem(
-        date: "3/2020 - Present",
+        date: "03/2020 – Present",
         title: "Diabetiary",
         desc:
             "Diabetiary, an app for diabetic patients. This app will simplify the user interface in order to help the user to understand how the illness is working, in order to fix it.\nWork In Progress.",
