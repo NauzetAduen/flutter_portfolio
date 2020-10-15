@@ -9,13 +9,30 @@ class Router {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case '/':
-        return MaterialPageRoute(builder: (_) => HomePage());
+        return pageRouteBuilder(HomePage());
       case '/experience':
-        return MaterialPageRoute(builder: (_) => Experience());
+        return pageRouteBuilder(Experience());
       case '/about':
-        return MaterialPageRoute(builder: (_) => About());
+        return pageRouteBuilder(About());
       default:
-        return MaterialPageRoute(builder: (_) => ErrorPage());
+        return pageRouteBuilder(ErrorPage());
+      // return MaterialPageRoute(builder: (_) => ErrorPage());
     }
   }
+}
+
+PageRouteBuilder pageRouteBuilder(Widget destination) {
+  return PageRouteBuilder(
+      pageBuilder: (context, animation, another) {
+        return destination;
+      },
+      transitionDuration: const Duration(milliseconds: 1000),
+      transitionsBuilder: (context, animation, another, child) {
+        animation =
+            CurvedAnimation(parent: animation, curve: Curves.decelerate);
+        return FadeTransition(
+          opacity: animation,
+          child: child,
+        );
+      });
 }
