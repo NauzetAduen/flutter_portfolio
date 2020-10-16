@@ -45,6 +45,9 @@ class HomeTabletDesktop extends StatelessWidget {
                             "mobile developer",
                             "Flutter developer",
                             "software engineer",
+                            "sex symbol",
+                            "drug addict",
+                            "super genius"
                           ],
                           textStyle: Styles.rotatedDesktopText,
                           textAlign: TextAlign.center,
