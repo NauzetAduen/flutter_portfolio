@@ -15,6 +15,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   responsive_builder:
   animated_text_kit: ^2.4.0
+  timeline_tile: ^1.0.0
 
 dev_dependencies:
   flutter_test:
