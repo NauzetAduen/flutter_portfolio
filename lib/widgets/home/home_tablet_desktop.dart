@@ -53,6 +53,9 @@ class HomeTabletDesktop extends StatelessWidget {
                     ],
                   ),
                 ),
+                SizedBox(
+                  height: 100,
+                ),
                 SocialList()
               ],
             ),
