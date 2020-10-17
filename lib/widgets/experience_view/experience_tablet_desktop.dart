@@ -1,13 +1,15 @@
-import 'dart:developer';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:timeline_tile/timeline_tile.dart';
 
 import '../../style/styles.dart';
 import '../../utils/experience_item_list.dart';
 import '../navigation_bar/navigation_bar.dart';
 import 'experience_item.dart';
-import 'package:timeline_tile/timeline_tile.dart';
+
+final double indicatorSize = 35.0;
+final LineStyle lineStyle = LineStyle(color: Colors.green, thickness: 4);
 
 class ExperienceTabletDesktop extends StatelessWidget {
   @override
@@ -43,17 +45,22 @@ class FirstTimeLine extends StatelessWidget {
     return Column(
       children: [
         TimelineTile(
+          afterLineStyle: lineStyle,
+          indicatorStyle: IndicatorStyle(
+              width: indicatorSize,
+              height: indicatorSize,
+              indicator: CircleIndicator(
+                completed: item.completed,
+              )),
           lineXY: 0.1,
           alignment: TimelineAlign.manual,
           isFirst: true,
-          endChild: CustomColumn(
-            item: item,
+          endChild: CustomTitle(
+            expItem: item,
+            isLeft: true,
           ),
         ),
-        TimelineDivider(
-          begin: 0.1,
-          end: 0.9,
-        ),
+        CustomDivider()
       ],
     );
   }
@@ -68,11 +75,19 @@ class LastTimeLine extends StatelessWidget {
     return Column(
       children: [
         TimelineTile(
+          beforeLineStyle: lineStyle,
+          indicatorStyle: IndicatorStyle(
+              width: indicatorSize,
+              height: indicatorSize,
+              indicator: CircleIndicator(
+                completed: item.completed,
+              )),
           lineXY: 0.1,
           alignment: TimelineAlign.manual,
           isLast: true,
-          endChild: CustomColumn(
-            item: item,
+          endChild: CustomTitle(
+            expItem: item,
+            isLeft: true,
           ),
         )
       ],
@@ -89,125 +104,106 @@ class MiddleTimeLine extends StatelessWidget {
     return Column(
       children: [
         TimelineTile(
+          beforeLineStyle: lineStyle,
+          afterLineStyle: lineStyle,
           lineXY: index.isOdd ? 0.9 : 0.1,
           alignment: TimelineAlign.manual,
+          indicatorStyle: IndicatorStyle(
+              width: indicatorSize,
+              height: indicatorSize,
+              indicator: CircleIndicator(
+                completed: item.completed,
+              )),
           endChild: index.isEven
-              ? CustomColumn(
-                  item: item,
+              ? CustomTitle(
+                  expItem: item,
+                  isLeft: true,
                 )
               : null,
           startChild: index.isOdd
-              ? CustomColumn(
-                  item: item,
+              ? CustomTitle(
+                  expItem: item,
+                  isLeft: false,
                 )
               : null,
         ),
-        TimelineDivider(
-          begin: 0.1,
-          end: 0.9,
-        ),
+        CustomDivider(),
       ],
     );
   }
 }
 
-class CustomColumn extends StatelessWidget {
-  final ExperienceItem item;
-
-  const CustomColumn({Key key, this.item}) : super(key: key);
+class CustomDivider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 300,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(
-            item.date,
-            style: Styles.experienceListitemBigger,
+    return TimelineDivider(
+      color: Colors.green,
+      begin: 0.1,
+      end: 0.9,
+      thickness: 4,
+    );
+  }
+}
+
+class CustomTitle extends StatelessWidget {
+  final ExperienceItem expItem;
+  final bool isLeft;
+
+  const CustomTitle({Key key, this.expItem, this.isLeft}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(12.0),
+      child: GestureDetector(
+        onTap: () => showGeneralDialog(
+            barrierDismissible: true,
+            barrierColor: Colors.blueGrey.withOpacity(0.4),
+            barrierLabel: "",
+            context: context,
+            transitionDuration: Duration(milliseconds: 666),
+            pageBuilder: (BuildContext context, _, __) {
+              return AlertDialog(
+                content: expItem.toDesktop(),
+                title: Text(
+                  "${expItem.title} _ ${expItem.date}",
+                  style: Styles.dialogTitle,
+                  textAlign: TextAlign.center,
+                ),
+              );
+            }),
+        child: Container(
+          height: 200,
+          child: Align(
+            alignment: isLeft ? Alignment.centerLeft : Alignment.centerRight,
+            child: Text(
+              expItem.title,
+              style: Styles.experienceListitem,
+            ),
           ),
-          Text(
-            item.title,
-            style: Styles.experienceListitem,
-          ),
-        ],
+        ),
       ),
     );
   }
 }
-/*
-int listSize = ExperienceItemList.list.length;
-    return SingleChildScrollView(
-      child: Column(
-        mainAxisSize: MainAxisSize.max,
-        children: <Widget>[
-          NavigationBar(),
-          Padding(
-            padding: const EdgeInsets.only(top: 40),
-            child: ListView.builder(
-              shrinkWrap: true,
-              itemCount: listSize,
-              itemBuilder: (context, index) {
-                ExperienceItem expItem = ExperienceItemList.list[index];
 
-                return Padding(
-                  padding: const EdgeInsets.only(top: 10),
-                  child: GestureDetector(
-                    onTap: () => showGeneralDialog(
-                        barrierDismissible: true,
-                        barrierColor: Colors.blueGrey.withOpacity(0.4),
-                        barrierLabel: "",
-                        context: context,
-                        transitionDuration: Duration(milliseconds: 666),
-                        pageBuilder: (BuildContext context, _, __) {
-                          return AlertDialog(
-                            content: expItem.toDesktop(),
-                            title: Text(
-                              expItem.title,
-                              style: Styles.dialogTitle,
-                              textAlign: TextAlign.center,
-                            ),
-                          );
-                        }),
-                    child: Card(
-                      elevation: 4,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15.0),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(25.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            Flexible(
-                              flex: 1,
-                              child: Text(
-                                expItem.date,
-                                style: Styles.experienceListitem,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            ),
-                            Flexible(
-                              flex: 3,
-                              child: Text(
-                                expItem.title,
-                                style: Styles.experienceListitemBigger,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                );
-              },
-            ),
-          )
-        ],
-      ),
+class CircleIndicator extends StatelessWidget {
+  final bool completed;
+
+  const CircleIndicator({Key key, this.completed}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+          shape: BoxShape.circle, color: Colors.green, border: Border.all()),
+      child: Center(
+          child: FaIcon(
+        _getIconData(completed),
+        size: 18,
+      )),
     );
-*/
+  }
+}
+
+IconData _getIconData(bool completed) {
+  return completed ? FontAwesomeIcons.check : FontAwesomeIcons.cog;
+}
