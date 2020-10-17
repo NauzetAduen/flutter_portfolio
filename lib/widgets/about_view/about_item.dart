@@ -27,7 +27,7 @@ class AboutItem extends StatelessWidget {
             shrinkWrap: true,
             itemBuilder: (context, index) {
               return ResponsiveBuilder(builder: (context, size) {
-                return size.deviceScreenType != DeviceScreenType.Mobile
+                return size.deviceScreenType != DeviceScreenType.mobile
                     ? Row(
                         children: <Widget>[
                           Padding(
