@@ -4,7 +4,7 @@ description: Personal portfolio
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
   
@@ -16,6 +16,7 @@ dependencies:
   responsive_builder:
   animated_text_kit: ^2.4.0
   timeline_tile: ^1.0.0
+  font_awesome_flutter:
 
 dev_dependencies:
   flutter_test:
