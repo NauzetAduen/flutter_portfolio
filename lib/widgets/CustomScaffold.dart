@@ -12,7 +12,7 @@ class CustomScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ResponsiveBuilder(builder: (context, sizingInfo) {
-      bool isMobile = sizingInfo.deviceScreenType == DeviceScreenType.Mobile;
+      bool isMobile = sizingInfo.deviceScreenType == DeviceScreenType.mobile;
       return Scaffold(
         appBar: isMobile
             ? AppBar(
