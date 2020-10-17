@@ -65,6 +65,7 @@ class ExperienceItemList {
         ),
       ],
       image: "16jornadassue.png",
+      completed: true,
     ),
     ExperienceItem(
       date: "08/2018 – 08/2018",
@@ -96,6 +97,7 @@ class ExperienceItemList {
             ),
             backgroundColor: Colors.redAccent)
       ],
+      completed: true,
     ),
     ExperienceItem(
       date: "09/2018 – 12/2018",
@@ -135,45 +137,48 @@ class ExperienceItemList {
           backgroundColor: Colors.redAccent,
         ),
       ],
+      completed: true,
     ),
     ExperienceItem(
-        date: "01/2019 – 02/2019",
-        title: "Simple Debt Manager",
-        desc: "Small project to learn flutter where you can manage your debts. Flutter version of my first Android App 'DebtControl'.\n" +
-            "In this project you can create debts and store them in a small sqlite database.\nDebts will be listed colored by state. Fully paid, not paid or partialy paid.\nYou also can check a summary of your debts with graphs.\nMore screenshots in the readme.md in the repository.",
-        url: "https://github.com/NauzetAduen/simple-debt-manager",
-        linkMessage: "",
-        image: "simpledebtmanager.png",
-        chips: [
-          Chip(
-            backgroundColor: Color(0xff1389FD),
-            label: Text(
-              "Flutter",
-              style: Styles.chipWhite,
-            ),
+      date: "01/2019 – 02/2019",
+      title: "Simple Debt Manager",
+      desc: "Small project to learn flutter where you can manage your debts. Flutter version of my first Android App 'DebtControl'.\n" +
+          "In this project you can create debts and store them in a small sqlite database.\nDebts will be listed colored by state. Fully paid, not paid or partialy paid.\nYou also can check a summary of your debts with graphs.\nMore screenshots in the readme.md in the repository.",
+      url: "https://github.com/NauzetAduen/simple-debt-manager",
+      linkMessage: "",
+      image: "simpledebtmanager.png",
+      chips: [
+        Chip(
+          backgroundColor: Color(0xff1389FD),
+          label: Text(
+            "Flutter",
+            style: Styles.chipWhite,
           ),
-          Chip(
-            backgroundColor: Colors.indigo,
-            label: Text(
-              "Mobile Dev",
-              style: Styles.chipWhite,
-            ),
+        ),
+        Chip(
+          backgroundColor: Colors.indigo,
+          label: Text(
+            "Mobile Dev",
+            style: Styles.chipWhite,
           ),
-          Chip(
-            backgroundColor: Color(0xff1C2834),
-            label: Text(
-              "Dart",
-              style: Styles.chipWhite,
-            ),
+        ),
+        Chip(
+          backgroundColor: Color(0xff1C2834),
+          label: Text(
+            "Dart",
+            style: Styles.chipWhite,
           ),
-          Chip(
-            backgroundColor: Colors.blueGrey,
-            label: Text(
-              "SQLite",
-              style: Styles.chipWhite,
-            ),
+        ),
+        Chip(
+          backgroundColor: Colors.blueGrey,
+          label: Text(
+            "SQLite",
+            style: Styles.chipWhite,
           ),
-        ]),
+        ),
+      ],
+      completed: true,
+    ),
     ExperienceItem(
       date: "04/2019 – 07/2019",
       title: "University final degree project",
@@ -222,6 +227,7 @@ class ExperienceItemList {
           ),
         ),
       ],
+      completed: true,
     ),
     ExperienceItem(
       date: "08/2019 – 10/2019",
@@ -254,6 +260,7 @@ class ExperienceItemList {
           ),
         ),
       ],
+      completed: true,
     ),
     ExperienceItem(
       date: "11/2019 – 01/2020",
@@ -279,48 +286,51 @@ class ExperienceItemList {
           ),
         )
       ],
+      completed: true,
     ),
     ExperienceItem(
-        date: "03/2020 – Present",
-        title: "Diabetiary",
-        desc:
-            "Diabetiary, an app for diabetic patients. This app will simplify the user interface in order to help the user to understand how the illness is working, in order to fix it.\nWork In Progress.",
-        url: "https://bitbucket.org/NauzetAduen/diabetiary",
-        linkMessage: "Diabetiary repository",
-        chips: [
-          Chip(
-            backgroundColor: Color(0xff1389FD),
-            label: Text(
-              "Flutter",
-              style: Styles.chipWhite,
-            ),
+      date: "03/2020 – Present",
+      title: "Diabetiary",
+      desc:
+          "Diabetiary, an app for diabetic patients. This app will simplify the user interface in order to help the user to understand how the illness is working, in order to fix it.\nWork In Progress.",
+      url: "https://bitbucket.org/NauzetAduen/diabetiary",
+      linkMessage: "Diabetiary repository",
+      chips: [
+        Chip(
+          backgroundColor: Color(0xff1389FD),
+          label: Text(
+            "Flutter",
+            style: Styles.chipWhite,
           ),
-          Chip(
-            backgroundColor: Colors.indigo,
-            label: Text(
-              "Mobile Dev",
-              style: Styles.chipWhite,
-            ),
+        ),
+        Chip(
+          backgroundColor: Colors.indigo,
+          label: Text(
+            "Mobile Dev",
+            style: Styles.chipWhite,
           ),
-          Chip(
-            backgroundColor: Color(0xff1C2834),
-            label: Text(
-              "Dart",
-              style: Styles.chipWhite,
-            ),
+        ),
+        Chip(
+          backgroundColor: Color(0xff1C2834),
+          label: Text(
+            "Dart",
+            style: Styles.chipWhite,
           ),
-          Chip(
-            backgroundColor: Color(0xffe3b31c),
-            label: Text(
-              "Hive",
-              style: Styles.chipWhite,
-            ),
+        ),
+        Chip(
+          backgroundColor: Color(0xffe3b31c),
+          label: Text(
+            "Hive",
+            style: Styles.chipWhite,
           ),
-        ],
-        image: "diabetiary.png"),
+        ),
+      ],
+      image: "diabetiary.png",
+      completed: false,
+    ),
     ExperienceItem(
       date: "10/2020 – Present",
-      title: "Flutter portfolio, the remake",
+      title: "Portfolio re-design",
       desc: "Re-design of my portfolio. Nothing else.",
       url: "https://github.com/NauzetAduen/flutter_portfolio",
       linkMessage: "Portfolio - Github",
@@ -341,6 +351,7 @@ class ExperienceItemList {
           ),
         )
       ],
+      completed: false,
     ),
   ].reversed.toList();
 }

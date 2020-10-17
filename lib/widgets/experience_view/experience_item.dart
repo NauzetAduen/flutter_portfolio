@@ -11,15 +11,18 @@ class ExperienceItem {
   final String linkMessage;
   final List<Chip> chips;
   final String image;
+  final bool completed;
 
-  const ExperienceItem(
-      {this.date,
-      this.title,
-      this.desc,
-      this.url,
-      this.linkMessage,
-      this.chips,
-      this.image});
+  const ExperienceItem({
+    this.date,
+    this.title,
+    this.desc,
+    this.url,
+    this.linkMessage,
+    this.chips,
+    this.image,
+    this.completed,
+  });
 
   ExperienceItemTabletDesktop toDesktop() {
     return ExperienceItemTabletDesktop(
