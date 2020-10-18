@@ -6,6 +6,7 @@ import 'exp_item_tablet_desktop.dart';
 class ExperienceItem {
   final String date;
   final String title;
+  final String smallDesc;
   final String desc;
   final String url;
   final String linkMessage;
@@ -16,6 +17,7 @@ class ExperienceItem {
   const ExperienceItem({
     this.date,
     this.title,
+    this.smallDesc,
     this.desc,
     this.url,
     this.linkMessage,
