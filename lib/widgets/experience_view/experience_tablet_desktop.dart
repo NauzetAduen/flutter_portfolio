@@ -10,6 +10,7 @@ import 'experience_item.dart';
 
 final double indicatorSize = 35.0;
 final LineStyle lineStyle = LineStyle(color: Colors.green, thickness: 4);
+final EdgeInsets indicatorPadding = EdgeInsets.symmetric(vertical: 12);
 
 class ExperienceTabletDesktop extends StatelessWidget {
   @override
@@ -47,6 +48,7 @@ class FirstTimeLine extends StatelessWidget {
         TimelineTile(
           afterLineStyle: lineStyle,
           indicatorStyle: IndicatorStyle(
+              padding: indicatorPadding,
               width: indicatorSize,
               height: indicatorSize,
               indicator: CircleIndicator(
@@ -77,6 +79,7 @@ class LastTimeLine extends StatelessWidget {
         TimelineTile(
           beforeLineStyle: lineStyle,
           indicatorStyle: IndicatorStyle(
+              padding: indicatorPadding,
               width: indicatorSize,
               height: indicatorSize,
               indicator: CircleIndicator(
@@ -109,6 +112,7 @@ class MiddleTimeLine extends StatelessWidget {
           lineXY: index.isOdd ? 0.9 : 0.1,
           alignment: TimelineAlign.manual,
           indicatorStyle: IndicatorStyle(
+              padding: indicatorPadding,
               width: indicatorSize,
               height: indicatorSize,
               indicator: CircleIndicator(
