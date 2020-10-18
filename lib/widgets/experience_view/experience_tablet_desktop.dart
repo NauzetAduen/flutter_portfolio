@@ -165,7 +165,7 @@ class CustomTitle extends StatelessWidget {
               return AlertDialog(
                 content: expItem.toDesktop(),
                 title: Text(
-                  "${expItem.title} _ ${expItem.date}",
+                  "${expItem.title}, ${expItem.date}",
                   style: Styles.dialogTitle,
                   textAlign: TextAlign.center,
                 ),
@@ -177,7 +177,7 @@ class CustomTitle extends StatelessWidget {
             alignment: isLeft ? Alignment.centerLeft : Alignment.centerRight,
             child: Text(
               expItem.title,
-              style: Styles.experienceListitem,
+              style: Styles.experienceListItemTimeLineDeskt,
             ),
           ),
         ),
@@ -194,7 +194,9 @@ class CircleIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          shape: BoxShape.circle, color: Colors.green, border: Border.all()),
+          shape: BoxShape.circle,
+          color: completed ? Colors.green : Colors.deepOrange,
+          border: Border.all()),
       child: Center(
           child: FaIcon(
         _getIconData(completed),
