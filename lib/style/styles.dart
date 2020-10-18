@@ -113,13 +113,7 @@ class Styles {
       fontSize: 26,
       letterSpacing: 2,
       fontWeight: FontWeight.bold);
-  static final TextStyle experienceListItemTimeLineDeskt = TextStyle(
-    fontFamily: 'Nunito',
-    height: 2,
-    fontSize: 36,
-    letterSpacing: 3,
-    fontWeight: FontWeight.bold,
-  );
+
   static final TextStyle experienceListitemMobile = TextStyle(
       fontFamily: 'Nunito',
       fontSize: 16,
@@ -137,4 +131,18 @@ class Styles {
     letterSpacing: 4,
     fontFamily: 'Nunito',
   );
+  //EXP
+  static final TextStyle expItemTimeLineDesktDate = TextStyle(
+    fontFamily: 'ArchitectsDaughter',
+    height: 2,
+    fontSize: 36,
+    // letterSpacing: 4,
+    fontWeight: FontWeight.bold,
+  );
+  static final TextStyle expItemTimeLineDeskTitle = TextStyle(
+    fontFamily: 'Nunito',
+    fontSize: 26,
+  );
+
+  Color green = Color(0xfffffffff);
 }

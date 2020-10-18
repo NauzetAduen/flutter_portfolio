@@ -108,7 +108,7 @@ class ExperienceItemList {
       // date: "09/2018 – 12/2018",
       date: "SEP, 2018",
       title: "External university internship",
-      smallDesc: "Intership at Inerza, test coverage of existing app",
+      smallDesc: "Intership at Inerza, test coverage of existing app.",
       desc:
           "My university have a program where you have to do an internship in a company for 300 hours. Inerza.com choose me to help them improve and increase the test coverage in a mobile app, made with the codename one framework.\nMy main role was testing the app’s CORE and the API REST behind the app.\nImproved a lot in certain fields like Git, Testing, RESTful web services and Mobile development in general.\nWe did use a lot of software like Jenkins, SonarQube, Tomcat, DBeaver, ARC, …",
       url: "https://play.google.com/store/apps/details?id=com.inerza.miplaza",

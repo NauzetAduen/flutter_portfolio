@@ -137,7 +137,7 @@ class CustomDivider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TimelineDivider(
-      color: Colors.green,
+      color: Colors.lightGreen,
       begin: 0.1,
       end: 0.9,
       thickness: 4,
@@ -180,15 +180,18 @@ class CustomTile extends StatelessWidget {
                   isLeft ? CrossAxisAlignment.start : CrossAxisAlignment.end,
               children: [
                 Text(
-                  expItem.date,
-                  style: Styles.experienceListItemTimeLineDeskt,
+                  "${expItem.date} - ${expItem.title}",
+                  style: Styles.expItemTimeLineDesktDate,
                   textAlign: isLeft ? TextAlign.left : TextAlign.right,
                 ),
-                Text(
-                  expItem.title,
-                  textAlign: isLeft ? TextAlign.left : TextAlign.right,
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 10),
+                  child: Text(
+                    expItem.smallDesc,
+                    style: Styles.expItemTimeLineDeskTitle,
+                    textAlign: isLeft ? TextAlign.left : TextAlign.right,
+                  ),
                 ),
-                Text(expItem.smallDesc),
               ],
             ),
           ),
