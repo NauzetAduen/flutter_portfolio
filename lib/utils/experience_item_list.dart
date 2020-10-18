@@ -292,7 +292,7 @@ class ExperienceItemList {
       date: "03/2020 – Present",
       title: "Diabetiary",
       desc:
-          "Diabetiary, an app for diabetic patients. This app will simplify the user interface in order to help the user to understand how the illness is working, in order to fix it.\nWork In Progress.",
+          "Diabetiary, an app for diabetic patients. This app will simplify the user interface in order to help the user to understand how the illness is working, in order to fix it or keep it right.\nWork In Progress.",
       url: "https://bitbucket.org/NauzetAduen/diabetiary",
       linkMessage: "Diabetiary repository",
       chips: [
