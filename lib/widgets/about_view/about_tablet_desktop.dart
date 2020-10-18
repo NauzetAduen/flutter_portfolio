@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio/widgets/navigation_bar/navigation_bar.dart';
 
 import '../../utils/about_item_list.dart';
 import '../../utils/navbar_item_list.dart';
@@ -9,13 +10,7 @@ class AboutTabletDesktop extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            NavBarLogo(),
-            Wrap(children: NavBarItemList.list),
-          ],
-        ),
+        NavigationBar(),
         Expanded(
           child: ListView.builder(
             itemCount: AboutItemList.list.length,
