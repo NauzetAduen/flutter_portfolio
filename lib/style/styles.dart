@@ -113,6 +113,13 @@ class Styles {
       fontSize: 26,
       letterSpacing: 2,
       fontWeight: FontWeight.bold);
+  static final TextStyle experienceListItemTimeLineDeskt = TextStyle(
+    fontFamily: 'Nunito',
+    height: 2,
+    fontSize: 36,
+    letterSpacing: 3,
+    fontWeight: FontWeight.bold,
+  );
   static final TextStyle experienceListitemMobile = TextStyle(
       fontFamily: 'Nunito',
       fontSize: 16,
