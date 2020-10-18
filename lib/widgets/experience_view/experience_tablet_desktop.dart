@@ -14,26 +14,27 @@ final EdgeInsets indicatorPadding = EdgeInsets.symmetric(vertical: 12);
 class ExperienceTabletDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-        child: Column(
-      mainAxisSize: MainAxisSize.max,
+    return Column(
+      // mainAxisSize: MainAxisSize.max,
       children: <Widget>[
         NavigationBar(),
-        ListView.builder(
-          shrinkWrap: true,
-          itemBuilder: (context, index) {
-            ExperienceItem item = ExperienceItemList.list[index];
-            if (index == 0)
-              return FirstTimeLine(item);
-            else if (index == ExperienceItemList.list.length - 1)
-              return LastTimeLine(item);
-            else
-              return MiddleTimeLine(item, index);
-          },
-          itemCount: ExperienceItemList.list.length,
+        Expanded(
+          child: ListView.builder(
+            shrinkWrap: true,
+            itemBuilder: (context, index) {
+              ExperienceItem item = ExperienceItemList.list[index];
+              if (index == 0)
+                return FirstTimeLine(item);
+              else if (index == ExperienceItemList.list.length - 1)
+                return LastTimeLine(item);
+              else
+                return MiddleTimeLine(item, index);
+            },
+            itemCount: ExperienceItemList.list.length,
+          ),
         ),
       ],
-    ));
+    );
   }
 }
 
