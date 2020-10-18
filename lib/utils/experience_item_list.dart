@@ -233,7 +233,7 @@ class ExperienceItemList {
       date: "08/2019 – 10/2019",
       title: "GroceryListApp",
       desc: "A simple grocery list app. It allows you to manage groups and have differents grocery lists. (Family, friends, X's Birthday party, etc.) It also allow you to add new products, organized by category.\n" +
-          "The app is completely reactive. One of the most interesting things of the app is the phone authentification.\nYou can see more in the readme.md in the repository.",
+          "The app is completely reactive. One of the most interesting things of the app is the phone authentification.\nYou can see more in the readme.md in the repository.\nNow with 15 stars and 7 forks in github!",
       url: "https://github.com/NauzetAduen/grocery_list_app",
       linkMessage: "GroceryList App - Github",
       image: "grocery.png",
@@ -331,7 +331,8 @@ class ExperienceItemList {
     ExperienceItem(
       date: "10/2020 – Present",
       title: "Portfolio re-design",
-      desc: "Re-design of my portfolio. Nothing else.",
+      desc:
+          "Re-design of my portfolio. Adding a timeline in the experience view, adding small animations and improving scrolling.\nWork In Progress.",
       url: "https://github.com/NauzetAduen/flutter_portfolio",
       linkMessage: "Portfolio - Github",
       image: "flutterweb.png",
