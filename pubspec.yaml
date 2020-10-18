@@ -16,7 +16,6 @@ dependencies:
   responsive_builder:
   animated_text_kit: ^2.4.0
   timeline_tile: ^1.0.0
-  font_awesome_flutter:
 
 dev_dependencies:
   flutter_test:
