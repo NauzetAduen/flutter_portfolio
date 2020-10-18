@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
 import '../../style/styles.dart';
@@ -8,8 +7,8 @@ import '../../utils/experience_item_list.dart';
 import '../navigation_bar/navigation_bar.dart';
 import 'experience_item.dart';
 
-final double indicatorSize = 35.0;
-final LineStyle lineStyle = LineStyle(color: Colors.green, thickness: 4);
+final double indicatorSize = 25.0;
+final LineStyle lineStyle = LineStyle(color: Colors.lightGreen, thickness: 4);
 final EdgeInsets indicatorPadding = EdgeInsets.symmetric(vertical: 12);
 
 class ExperienceTabletDesktop extends StatelessWidget {
@@ -48,16 +47,14 @@ class FirstTimeLine extends StatelessWidget {
         TimelineTile(
           afterLineStyle: lineStyle,
           indicatorStyle: IndicatorStyle(
-              padding: indicatorPadding,
-              width: indicatorSize,
-              height: indicatorSize,
-              indicator: CircleIndicator(
-                completed: item.completed,
-              )),
+            padding: indicatorPadding,
+            width: indicatorSize,
+            height: indicatorSize,
+          ),
           lineXY: 0.1,
           alignment: TimelineAlign.manual,
           isFirst: true,
-          endChild: CustomTitle(
+          endChild: CustomTile(
             expItem: item,
             isLeft: true,
           ),
@@ -79,20 +76,18 @@ class LastTimeLine extends StatelessWidget {
         TimelineTile(
           beforeLineStyle: lineStyle,
           indicatorStyle: IndicatorStyle(
-              padding: indicatorPadding,
-              width: indicatorSize,
-              height: indicatorSize,
-              indicator: CircleIndicator(
-                completed: item.completed,
-              )),
+            padding: indicatorPadding,
+            width: indicatorSize,
+            height: indicatorSize,
+          ),
           lineXY: 0.1,
           alignment: TimelineAlign.manual,
           isLast: true,
-          endChild: CustomTitle(
+          endChild: CustomTile(
             expItem: item,
             isLeft: true,
           ),
-        )
+        ),
       ],
     );
   }
@@ -112,20 +107,21 @@ class MiddleTimeLine extends StatelessWidget {
           lineXY: index.isOdd ? 0.9 : 0.1,
           alignment: TimelineAlign.manual,
           indicatorStyle: IndicatorStyle(
-              padding: indicatorPadding,
-              width: indicatorSize,
-              height: indicatorSize,
-              indicator: CircleIndicator(
-                completed: item.completed,
-              )),
+            padding: indicatorPadding,
+            width: indicatorSize,
+            height: indicatorSize,
+            // indicator: CircleIndicator(
+            //   completed: item.completed,
+            // ),
+          ),
           endChild: index.isEven
-              ? CustomTitle(
+              ? CustomTile(
                   expItem: item,
                   isLeft: true,
                 )
               : null,
           startChild: index.isOdd
-              ? CustomTitle(
+              ? CustomTile(
                   expItem: item,
                   isLeft: false,
                 )
@@ -149,11 +145,11 @@ class CustomDivider extends StatelessWidget {
   }
 }
 
-class CustomTitle extends StatelessWidget {
+class CustomTile extends StatelessWidget {
   final ExperienceItem expItem;
   final bool isLeft;
 
-  const CustomTitle({Key key, this.expItem, this.isLeft}) : super(key: key);
+  const CustomTile({Key key, this.expItem, this.isLeft}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -176,40 +172,28 @@ class CustomTitle extends StatelessWidget {
               );
             }),
         child: Container(
-          height: 200,
+          padding: EdgeInsets.symmetric(vertical: 10),
           child: Align(
             alignment: isLeft ? Alignment.centerLeft : Alignment.centerRight,
-            child: Text(
-              expItem.title,
-              style: Styles.experienceListItemTimeLineDeskt,
+            child: Column(
+              crossAxisAlignment:
+                  isLeft ? CrossAxisAlignment.start : CrossAxisAlignment.end,
+              children: [
+                Text(
+                  expItem.date,
+                  style: Styles.experienceListItemTimeLineDeskt,
+                  textAlign: isLeft ? TextAlign.left : TextAlign.right,
+                ),
+                Text(
+                  expItem.title,
+                  textAlign: isLeft ? TextAlign.left : TextAlign.right,
+                ),
+                Text(expItem.smallDesc),
+              ],
             ),
           ),
         ),
       ),
     );
   }
-}
-
-class CircleIndicator extends StatelessWidget {
-  final bool completed;
-
-  const CircleIndicator({Key key, this.completed}) : super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: completed ? Colors.green : Colors.deepOrange,
-          border: Border.all()),
-      child: Center(
-          child: FaIcon(
-        _getIconData(completed),
-        size: 18,
-      )),
-    );
-  }
-}
-
-IconData _getIconData(bool completed) {
-  return completed ? FontAwesomeIcons.check : FontAwesomeIcons.cog;
 }
