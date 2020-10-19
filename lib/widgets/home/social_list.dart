@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio/style/styles.dart';
 
 import '../../utils/url_lists.dart';
 import 'IconButtonLinked.dart';
@@ -17,9 +18,8 @@ class SocialList extends StatelessWidget {
           border: Border(
               bottom: BorderSide(
             width: 3,
-            color: Colors.green,
+            color: Styles.orange,
           )),
-          // borderRadius: BorderRadius.circular(8),
         ),
         width: 300,
         // color: Colors.blue,

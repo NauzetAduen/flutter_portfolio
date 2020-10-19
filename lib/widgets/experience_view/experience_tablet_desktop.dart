@@ -8,7 +8,7 @@ import '../navigation_bar/navigation_bar.dart';
 import 'experience_item.dart';
 
 final double indicatorSize = 25.0;
-final LineStyle lineStyle = LineStyle(color: Colors.lightGreen, thickness: 4);
+final LineStyle lineStyle = LineStyle(color: Styles.blue, thickness: 4);
 final EdgeInsets indicatorPadding = EdgeInsets.symmetric(vertical: 12);
 
 class ExperienceTabletDesktop extends StatelessWidget {
@@ -48,9 +48,11 @@ class FirstTimeLine extends StatelessWidget {
         TimelineTile(
           afterLineStyle: lineStyle,
           indicatorStyle: IndicatorStyle(
+            indicatorXY: 0.2,
             padding: indicatorPadding,
             width: indicatorSize,
             height: indicatorSize,
+            color: Styles.orange,
           ),
           lineXY: 0.1,
           alignment: TimelineAlign.manual,
@@ -77,9 +79,11 @@ class LastTimeLine extends StatelessWidget {
         TimelineTile(
           beforeLineStyle: lineStyle,
           indicatorStyle: IndicatorStyle(
+            indicatorXY: 0.8,
             padding: indicatorPadding,
             width: indicatorSize,
             height: indicatorSize,
+            color: Styles.orange,
           ),
           lineXY: 0.1,
           alignment: TimelineAlign.manual,
@@ -111,6 +115,7 @@ class MiddleTimeLine extends StatelessWidget {
             padding: indicatorPadding,
             width: indicatorSize,
             height: indicatorSize,
+            color: Styles.orange,
             // indicator: CircleIndicator(
             //   completed: item.completed,
             // ),
@@ -138,7 +143,7 @@ class CustomDivider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TimelineDivider(
-      color: Colors.lightGreen,
+      color: Styles.blue,
       begin: 0.1,
       end: 0.9,
       thickness: 4,
@@ -172,32 +177,42 @@ class CustomTile extends StatelessWidget {
                 ),
               );
             }),
-        child: Container(
-          padding: EdgeInsets.symmetric(vertical: 10),
-          child: Align(
-            alignment: isLeft ? Alignment.centerLeft : Alignment.centerRight,
-            child: Column(
-              crossAxisAlignment:
-                  isLeft ? CrossAxisAlignment.start : CrossAxisAlignment.end,
-              children: [
-                Text(
-                  "${expItem.date} - ${expItem.title}",
-                  style: Styles.expItemTimeLineDesktDate,
-                  textAlign: isLeft ? TextAlign.left : TextAlign.right,
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 10),
-                  child: Text(
-                    expItem.smallDesc,
-                    style: Styles.expItemTimeLineDeskTitle,
-                    textAlign: isLeft ? TextAlign.left : TextAlign.right,
-                  ),
-                ),
-              ],
-            ),
+        child: Align(
+          alignment: isLeft ? Alignment.centerLeft : Alignment.centerRight,
+          child: Column(
+            crossAxisAlignment:
+                isLeft ? CrossAxisAlignment.start : CrossAxisAlignment.end,
+            children: [
+              Text(
+                "${expItem.date} ",
+                style: Styles.expItemTimeLineDesktDate,
+                textAlign: isLeft ? TextAlign.left : TextAlign.right,
+              ),
+              Text(
+                expItem.title.toUpperCase(),
+                style: Styles.expItemTimeLineDeskTitle,
+                textAlign: isLeft ? TextAlign.left : TextAlign.right,
+              ),
+              FixedBox(),
+              Text(
+                expItem.smallDesc,
+                style: Styles.expItemTimeLineDeskSmallDesk,
+                textAlign: isLeft ? TextAlign.left : TextAlign.right,
+              ),
+              FixedBox(),
+            ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class FixedBox extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 10,
     );
   }
 }

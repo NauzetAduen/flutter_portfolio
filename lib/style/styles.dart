@@ -29,7 +29,7 @@ class Styles {
     fontWeight: FontWeight.bold,
     fontFamily: 'ArchitectsDaughter',
     fontSize: 36,
-    color: Colors.green,
+    color: blue,
   );
   static final TextStyle welcomeTextMobile = TextStyle(
       fontWeight: FontWeight.bold,
@@ -135,14 +135,23 @@ class Styles {
   static final TextStyle expItemTimeLineDesktDate = TextStyle(
     fontFamily: 'ArchitectsDaughter',
     height: 2,
-    fontSize: 36,
+    fontSize: 30,
+    color: orange,
     // letterSpacing: 4,
     fontWeight: FontWeight.bold,
   );
   static final TextStyle expItemTimeLineDeskTitle = TextStyle(
     fontFamily: 'Nunito',
     fontSize: 26,
+    // letterSpacing: 2,
+    fontWeight: FontWeight.bold,
+  );
+  static final TextStyle expItemTimeLineDeskSmallDesk = TextStyle(
+    fontFamily: 'Nunito',
+    fontSize: 26,
   );
 
-  Color green = Color(0xfffffffff);
+  //COLORS
+  static final Color orange = Colors.deepOrange;
+  static final Color blue = Colors.lightBlue;
 }
