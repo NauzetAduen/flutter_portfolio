@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'exp_item_mobile.dart';
-import 'exp_item_tablet_desktop.dart';
-
 class ExperienceItem {
   final String date;
   final String title;
@@ -25,16 +22,4 @@ class ExperienceItem {
     this.image,
     this.completed,
   });
-
-  ExperienceItemTabletDesktop toDesktop() {
-    return ExperienceItemTabletDesktop(
-      item: this,
-    );
-  }
-
-  ExperienceItemMobile toMobile() {
-    return ExperienceItemMobile(
-      item: this,
-    );
-  }
 }

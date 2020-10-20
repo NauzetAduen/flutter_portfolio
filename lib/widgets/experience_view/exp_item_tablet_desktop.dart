@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 import 'RowDescImage.dart';
 import 'experience_item.dart';
 
-class ExperienceItemTabletDesktop extends StatelessWidget {
+class ExpItemView extends StatelessWidget {
   final ExperienceItem item;
 
-  const ExperienceItemTabletDesktop({this.item});
+  const ExpItemView({this.item});
 
   @override
   Widget build(BuildContext context) {

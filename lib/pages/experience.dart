@@ -11,10 +11,11 @@ class Experience extends StatelessWidget {
   Widget build(BuildContext context) {
     return CenteredWidget(
       child: CustomScaffold(
-        body: ScreenTypeLayout(
-          mobile: ExperienceMobile(),
-          tablet: ExperienceTabletDesktop(),
-        ),
+        body: ExperienceTabletDesktop(),
+        // body: ScreenTypeLayout(
+        // mobile: ExperienceMobile(),
+        // tablet: ExperienceTabletDesktop(),
+        // ),
       ),
     );
   }

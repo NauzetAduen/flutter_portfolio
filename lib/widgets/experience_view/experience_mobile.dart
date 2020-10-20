@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../style/styles.dart';
 import '../../utils/experience_item_list.dart';
+import 'exp_item_tablet_desktop.dart';
 import 'experience_item.dart';
 
 class ExperienceMobile extends StatelessWidget {
@@ -25,7 +26,9 @@ class ExperienceMobile extends StatelessWidget {
                     transitionDuration: Duration(milliseconds: 666),
                     pageBuilder: (BuildContext context, _, __) {
                       return AlertDialog(
-                        content: expItem.toMobile(),
+                        content: ExpItemView(
+                          item: expItem,
+                        ),
                         title: Text(
                           expItem.title,
                           style: Styles.dialogTitle,

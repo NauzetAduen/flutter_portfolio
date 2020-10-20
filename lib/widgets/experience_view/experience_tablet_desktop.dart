@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
 import '../../style/styles.dart';
 import '../../utils/experience_item_list.dart';
 import '../navigation_bar/navigation_bar.dart';
+import 'exp_item_tablet_desktop.dart';
 import 'experience_item.dart';
 
 final double indicatorSize = 25.0;
@@ -158,6 +160,22 @@ class CustomTile extends StatelessWidget {
   const CustomTile({Key key, this.expItem, this.isLeft}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    return GestureDetectorDesktop(expItem: expItem, isLeft: isLeft);
+  }
+}
+
+class GestureDetectorDesktop extends StatelessWidget {
+  const GestureDetectorDesktop({
+    Key key,
+    @required this.expItem,
+    @required this.isLeft,
+  }) : super(key: key);
+
+  final ExperienceItem expItem;
+  final bool isLeft;
+
+  @override
+  Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(12.0),
       child: GestureDetector(
@@ -169,7 +187,8 @@ class CustomTile extends StatelessWidget {
             transitionDuration: Duration(milliseconds: 666),
             pageBuilder: (BuildContext context, _, __) {
               return AlertDialog(
-                content: expItem.toDesktop(),
+                // content: isMobile ? expItem.toMobile() : expItem.toDesktop(),
+                content: ExpItemView(item: expItem),
                 title: Text(
                   "${expItem.title}, ${expItem.date}",
                   style: Styles.dialogTitle,
