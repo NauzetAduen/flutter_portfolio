@@ -188,7 +188,7 @@ class GestureDetectorDesktop extends StatelessWidget {
             pageBuilder: (BuildContext context, _, __) {
               return AlertDialog(
                 // content: isMobile ? expItem.toMobile() : expItem.toDesktop(),
-                content: ExpItemView(item: expItem),
+                content: ExpItemDialog(item: expItem),
                 title: Text(
                   "${expItem.title}, ${expItem.date}",
                   style: Styles.dialogTitle,
