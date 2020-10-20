@@ -5,6 +5,8 @@ import '../../utils/experience_item_list.dart';
 import 'exp_item_tablet_desktop.dart';
 import 'experience_item.dart';
 
+//TODO
+//REMOVE THIS CLASS COMPLETELY
 class ExperienceMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,7 @@ class ExperienceMobile extends StatelessWidget {
                     transitionDuration: Duration(milliseconds: 666),
                     pageBuilder: (BuildContext context, _, __) {
                       return AlertDialog(
-                        content: ExpItemView(
+                        content: ExpItemDialog(
                           item: expItem,
                         ),
                         title: Text(

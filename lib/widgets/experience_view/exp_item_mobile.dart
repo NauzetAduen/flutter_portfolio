@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import '../../style/styles.dart';
 import 'experience_item.dart';
 
+//TODO
+//REMOVE THIS CLASS
 class ExperienceItemMobile extends StatelessWidget {
   final ExperienceItem item;
   const ExperienceItemMobile({this.item});
