@@ -9,12 +9,15 @@ class NavBarItemList {
   static List<Widget> list = [
     NavBarItem(
       text: "home",
+      isSelected: false,
     ),
     NavBarItem(
       text: "experience",
+      isSelected: false,
     ),
     NavBarItem(
       text: "about",
+      isSelected: false,
     ),
   ];
 }

@@ -15,9 +15,6 @@ class NavBarItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(isSelected);
-    bool isSel = isSelected;
-    if (isSel == null) isSel = false;
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: GestureDetector(
@@ -26,7 +23,7 @@ class NavBarItem extends StatelessWidget {
           return Navigator.pushReplacementNamed(context, _getRoute());
         },
         child: Text('$text',
-            style: isSel
+            style: isSelected
                 ? Styles.navBarElementBold
                 : Styles.navBarElementUnSelected),
       ),
