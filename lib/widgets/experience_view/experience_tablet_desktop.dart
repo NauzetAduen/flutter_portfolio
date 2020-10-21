@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio/utils/router.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:timeline_tile/timeline_tile.dart';
+import 'package:provider/provider.dart';
 
 import '../../style/styles.dart';
 import '../../utils/experience_item_list.dart';
@@ -17,7 +19,6 @@ class ExperienceTabletDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      // mainAxisSize: MainAxisSize.max,
       children: <Widget>[
         NavigationBar(),
         Expanded(
@@ -118,9 +119,6 @@ class MiddleTimeLine extends StatelessWidget {
             width: indicatorSize,
             height: indicatorSize,
             color: Styles.orange,
-            // indicator: CircleIndicator(
-            //   completed: item.completed,
-            // ),
           ),
           endChild: index.isEven
               ? CustomTile(

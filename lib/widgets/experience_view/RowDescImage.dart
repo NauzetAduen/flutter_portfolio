@@ -19,7 +19,6 @@ class RowDescImage extends StatelessWidget {
         Expanded(
           child: Text(
             desc,
-            // textAlign: TextAlign.justify,
             style: Styles.experienceDesc,
           ),
         ),

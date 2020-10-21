@@ -11,7 +11,7 @@ class NavigationBarTabletDesktop extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         NavBarLogo(),
-        Wrap(children: NavBarItemList.list),
+        CustomNavBar(),
       ],
     );
   }

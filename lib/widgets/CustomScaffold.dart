@@ -29,7 +29,6 @@ class CustomScaffold extends StatelessWidget {
                 width: 150,
                 child: Drawer(
                   child: Column(
-                    // children: NavBarItemList.list,
                     children: <Widget>[
                       DrawerHeader(
                         child: CustomCircleAvatar(),

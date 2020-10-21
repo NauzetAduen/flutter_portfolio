@@ -22,7 +22,6 @@ class SocialList extends StatelessWidget {
           )),
         ),
         width: 300,
-        // color: Colors.blue,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           mainAxisSize: MainAxisSize.min,

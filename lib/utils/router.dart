@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../pages/about.dart';
 import '../pages/error_page.dart';
@@ -16,7 +17,6 @@ class Router {
         return pageRouteBuilder(About());
       default:
         return pageRouteBuilder(ErrorPage());
-      // return MaterialPageRoute(builder: (_) => ErrorPage());
     }
   }
 }
@@ -35,4 +35,14 @@ PageRouteBuilder pageRouteBuilder(Widget destination) {
           child: child,
         );
       });
+}
+
+class RouteName extends ChangeNotifier {
+  String name;
+  RouteName(this.name);
+
+  void updateName(String newName) {
+    name = newName;
+    notifyListeners();
+  }
 }
