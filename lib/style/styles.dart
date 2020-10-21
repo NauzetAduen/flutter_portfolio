@@ -7,6 +7,13 @@ class Styles {
       fontSize: 18,
       color: Colors.black);
   static final TextStyle navBarElementBold = TextStyle(
+    fontWeight: FontWeight.bold,
+    fontFamily: 'Nunito',
+    fontSize: 18,
+    color: orange,
+    decoration: TextDecoration.underline,
+  );
+  static final TextStyle navBarElementUnSelected = TextStyle(
       fontWeight: FontWeight.bold,
       fontFamily: 'Nunito',
       fontSize: 18,
@@ -137,13 +144,11 @@ class Styles {
     height: 2,
     fontSize: 30,
     color: orange,
-    // letterSpacing: 4,
     fontWeight: FontWeight.bold,
   );
   static final TextStyle expItemTimeLineDeskTitle = TextStyle(
     fontFamily: 'Nunito',
     fontSize: 26,
-    // letterSpacing: 2,
     fontWeight: FontWeight.bold,
   );
   static final TextStyle expItemTimeLineDeskSmallDesk = TextStyle(
