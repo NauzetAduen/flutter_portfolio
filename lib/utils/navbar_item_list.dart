@@ -30,7 +30,6 @@ class CustomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     RouteName routeName = context.watch<RouteName>();
     int selectedIndex = setSelectedIndex(routeName.name);
-    print(routeName.name);
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
