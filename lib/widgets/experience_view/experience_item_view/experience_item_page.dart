@@ -10,7 +10,6 @@ class ExperienceItemPage extends StatelessWidget {
   const ExperienceItemPage({this.expItem});
   @override
   Widget build(BuildContext context) {
-    print(Navigator.canPop(context));
     return CenteredWidget(
       child: CustomScaffold(
         body: Column(
@@ -19,8 +18,15 @@ class ExperienceItemPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 IconButton(
+                  color: Colors.lightBlue,
+                  iconSize: 28,
+                  splashColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
                   onPressed: () => Navigator.pop(context),
-                  icon: Icon(Icons.arrow_back_ios),
+                  icon: Icon(
+                    Icons.arrow_back_ios,
+                  ),
                 ),
                 Hero(
                   tag: "${expItem.date}",
