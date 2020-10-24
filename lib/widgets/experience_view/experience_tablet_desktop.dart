@@ -10,6 +10,7 @@ import '../../utils/experience_item_list.dart';
 import '../navigation_bar/navigation_bar.dart';
 import 'exp_item_tablet_desktop.dart';
 import 'experience_item.dart';
+import 'experience_item_view/experience_item_page.dart';
 
 final double indicatorSize = 25.0;
 final LineStyle lineStyle = LineStyle(color: Styles.blue, thickness: 4);
@@ -177,33 +178,43 @@ class GestureDetectorDesktop extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(12.0),
       child: GestureDetector(
-        onTap: () => showGeneralDialog(
-            barrierDismissible: true,
-            barrierColor: Colors.blueGrey.withOpacity(0.4),
-            barrierLabel: "",
-            context: context,
-            transitionDuration: Duration(milliseconds: 666),
-            pageBuilder: (BuildContext context, _, __) {
-              return AlertDialog(
-                // content: isMobile ? expItem.toMobile() : expItem.toDesktop(),
-                content: ExpItemDialog(item: expItem),
-                title: Text(
-                  "${expItem.title}, ${expItem.date}",
-                  style: Styles.dialogTitle,
-                  textAlign: TextAlign.center,
-                ),
-              );
-            }),
+        onTap: () {
+          // return showGeneralDialog(
+          //   barrierDismissible: true,
+          //   barrierColor: Colors.blueGrey.withOpacity(0.4),
+          //   barrierLabel: "",
+          //   context: context,
+          //   transitionDuration: Duration(milliseconds: 666),
+          //   pageBuilder: (BuildContext context, _, __) {
+          //     return AlertDialog(
+          //       // content: isMobile ? expItem.toMobile() : expItem.toDesktop(),
+          //       content: ExpItemDialog(item: expItem),
+          //       title: Text(
+          //         "${expItem.title}, ${expItem.date}",
+          //         style: Styles.dialogTitle,
+          //         textAlign: TextAlign.center,
+          //       ),
+          //     );
+          //   });
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return ExperienceItemPage(
+              expItem: expItem,
+            );
+          }));
+        },
         child: Align(
           alignment: isLeft ? Alignment.centerLeft : Alignment.centerRight,
           child: Column(
             crossAxisAlignment:
                 isLeft ? CrossAxisAlignment.start : CrossAxisAlignment.end,
             children: [
-              Text(
-                "${expItem.date} ",
-                style: Styles.expItemTimeLineDesktDate,
-                textAlign: isLeft ? TextAlign.left : TextAlign.right,
+              Hero(
+                tag: "${expItem.date}-title",
+                child: Text(
+                  "${expItem.date} ",
+                  style: Styles.expItemTimeLineDesktDate,
+                  textAlign: isLeft ? TextAlign.left : TextAlign.right,
+                ),
               ),
               Text(
                 expItem.title.toUpperCase(),
