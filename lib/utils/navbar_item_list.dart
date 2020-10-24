@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/widgets/navigation_bar/navbar_logo.dart';
+import 'package:provider/provider.dart';
 
 import '../widgets/navigation_bar/navbar_item.dart';
-import 'package:provider/provider.dart';
 import 'router.dart';
 
 class NavBarItemList {
