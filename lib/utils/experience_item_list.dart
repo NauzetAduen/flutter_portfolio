@@ -1,6 +1,17 @@
 import 'package:flutter/material.dart';
-import '../style/styles.dart';
+
 import '../widgets/experience_view/experience_item.dart';
+
+final TextStyle chipWhite = TextStyle(
+  color: Colors.white,
+  fontFamily: 'Nunito',
+  fontSize: 14,
+);
+final TextStyle chipBlack = TextStyle(
+  color: Colors.black,
+  fontFamily: 'Nunito',
+  fontSize: 14,
+);
 
 class ExperienceItemList {
   static List<ExperienceItem> list = [
@@ -21,20 +32,20 @@ class ExperienceItemList {
           backgroundColor: Colors.lime,
           label: Text(
             "Web Dev",
-            style: Styles.chipBlack,
+            style: chipBlack,
           ),
         ),
         Chip(
           backgroundColor: Colors.deepPurple,
           label: Text(
             "JavaScript",
-            style: Styles.chipWhite,
+            style: chipWhite,
           ),
         ),
         Chip(
           label: Text(
             "Joomla",
-            style: Styles.chipWhite,
+            style: chipWhite,
           ),
           backgroundColor: Color(0xff1b63a2),
         ),
@@ -42,13 +53,13 @@ class ExperienceItemList {
           backgroundColor: Color(0xff8892BF),
           label: Text(
             "PHP",
-            style: Styles.chipWhite,
+            style: chipWhite,
           ),
         ),
         Chip(
           label: Text(
             "WordPress",
-            style: Styles.chipWhite,
+            style: chipWhite,
           ),
           backgroundColor: Color(0xff0073aa),
         ),
@@ -56,14 +67,14 @@ class ExperienceItemList {
           backgroundColor: Color(0xffe97b00),
           label: Text(
             "MySQL",
-            style: Styles.chipWhite,
+            style: chipWhite,
           ),
         ),
         Chip(
           backgroundColor: Colors.red,
           label: Text(
             "Google Maps",
-            style: Styles.chipWhite,
+            style: chipWhite,
           ),
         ),
       ],
@@ -85,20 +96,20 @@ class ExperienceItemList {
           backgroundColor: Color(0xff99cc00),
           label: Text(
             "Android",
-            style: Styles.chipBlack,
+            style: chipBlack,
           ),
         ),
         Chip(
           label: Text(
             "Mobile Dev",
-            style: Styles.chipWhite,
+            style: chipWhite,
           ),
           backgroundColor: Colors.indigo,
         ),
         Chip(
             label: Text(
               "Java",
-              style: Styles.chipWhite,
+              style: chipWhite,
             ),
             backgroundColor: Colors.redAccent)
       ],
@@ -119,27 +130,27 @@ class ExperienceItemList {
           backgroundColor: Colors.yellow,
           label: Text(
             "API REST",
-            style: Styles.chipBlack,
+            style: chipBlack,
           ),
         ),
         Chip(
           backgroundColor: Colors.green,
           label: Text(
             "Testing",
-            style: Styles.chipWhite,
+            style: chipWhite,
           ),
         ),
         Chip(
           label: Text(
             "Mobile Dev",
-            style: Styles.chipWhite,
+            style: chipWhite,
           ),
           backgroundColor: Colors.indigo,
         ),
         Chip(
           label: Text(
             "Java",
-            style: Styles.chipWhite,
+            style: chipWhite,
           ),
           backgroundColor: Colors.redAccent,
         ),
@@ -161,28 +172,28 @@ class ExperienceItemList {
           backgroundColor: Color(0xff1389FD),
           label: Text(
             "Flutter",
-            style: Styles.chipWhite,
+            style: chipWhite,
           ),
         ),
         Chip(
           backgroundColor: Colors.indigo,
           label: Text(
             "Mobile Dev",
-            style: Styles.chipWhite,
+            style: chipWhite,
           ),
         ),
         Chip(
           backgroundColor: Color(0xff1C2834),
           label: Text(
             "Dart",
-            style: Styles.chipWhite,
+            style: chipWhite,
           ),
         ),
         Chip(
           backgroundColor: Colors.blueGrey,
           label: Text(
             "SQLite",
-            style: Styles.chipWhite,
+            style: chipWhite,
           ),
         ),
       ],
@@ -206,35 +217,35 @@ class ExperienceItemList {
           backgroundColor: Colors.red,
           label: Text(
             "Google Maps",
-            style: Styles.chipWhite,
+            style: chipWhite,
           ),
         ),
         Chip(
           backgroundColor: Colors.indigo,
           label: Text(
             "Mobile Dev",
-            style: Styles.chipWhite,
+            style: chipWhite,
           ),
         ),
         Chip(
           backgroundColor: Color(0xff1389FD),
           label: Text(
             "Flutter",
-            style: Styles.chipWhite,
+            style: chipWhite,
           ),
         ),
         Chip(
           backgroundColor: Color(0xff1C2834),
           label: Text(
             "Dart",
-            style: Styles.chipWhite,
+            style: chipWhite,
           ),
         ),
         Chip(
           backgroundColor: Color(0xffffcb2b),
           label: Text(
             "Firebase",
-            style: Styles.chipBlack,
+            style: chipBlack,
           ),
         ),
       ],
@@ -255,21 +266,21 @@ class ExperienceItemList {
           backgroundColor: Colors.indigo,
           label: Text(
             "Mobile Dev",
-            style: Styles.chipWhite,
+            style: chipWhite,
           ),
         ),
         Chip(
           backgroundColor: Color(0xff1389FD),
           label: Text(
             "Flutter",
-            style: Styles.chipWhite,
+            style: chipWhite,
           ),
         ),
         Chip(
           backgroundColor: Color(0xffffcb2b),
           label: Text(
             "Firebase",
-            style: Styles.chipBlack,
+            style: chipBlack,
           ),
         ),
       ],
@@ -290,14 +301,14 @@ class ExperienceItemList {
           backgroundColor: Color(0xff1389FD),
           label: Text(
             "Flutter Web",
-            style: Styles.chipWhite,
+            style: chipWhite,
           ),
         ),
         Chip(
           backgroundColor: Colors.lime,
           label: Text(
             "Web Dev",
-            style: Styles.chipBlack,
+            style: chipBlack,
           ),
         )
       ],
@@ -317,28 +328,28 @@ class ExperienceItemList {
           backgroundColor: Color(0xff1389FD),
           label: Text(
             "Flutter",
-            style: Styles.chipWhite,
+            style: chipWhite,
           ),
         ),
         Chip(
           backgroundColor: Colors.indigo,
           label: Text(
             "Mobile Dev",
-            style: Styles.chipWhite,
+            style: chipWhite,
           ),
         ),
         Chip(
           backgroundColor: Color(0xff1C2834),
           label: Text(
             "Dart",
-            style: Styles.chipWhite,
+            style: chipWhite,
           ),
         ),
         Chip(
           backgroundColor: Color(0xffe3b31c),
           label: Text(
             "Hive",
-            style: Styles.chipWhite,
+            style: chipWhite,
           ),
         ),
       ],
@@ -360,14 +371,14 @@ class ExperienceItemList {
           backgroundColor: Color(0xff1389FD),
           label: Text(
             "Flutter Web",
-            style: Styles.chipWhite,
+            style: chipWhite,
           ),
         ),
         Chip(
           backgroundColor: Colors.lime,
           label: Text(
             "Web Dev",
-            style: Styles.chipBlack,
+            style: chipBlack,
           ),
         )
       ],

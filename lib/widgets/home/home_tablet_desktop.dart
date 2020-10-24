@@ -1,7 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 
-import '../../style/styles.dart';
 import '../CustomCircleAvatar.dart';
 import '../navigation_bar/navigation_bar.dart';
 import 'social_list.dart';
@@ -29,7 +28,7 @@ class HomeTabletDesktop extends StatelessWidget {
                         child: Center(
                           child: Text(
                             "Hi, I'm Nauzet, a",
-                            style: Styles.welcomeText,
+                            style: Theme.of(context).textTheme.headline3,
                             textAlign: TextAlign.center,
                           ),
                         ),
@@ -49,7 +48,7 @@ class HomeTabletDesktop extends StatelessWidget {
                             "drug addict",
                             "super genius"
                           ],
-                          textStyle: Styles.rotatedDesktopText,
+                          textStyle: Theme.of(context).textTheme.headline4,
                           textAlign: TextAlign.center,
                         ),
                       ),

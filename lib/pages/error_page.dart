@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../style/styles.dart';
 import '../widgets/CustomScaffold.dart';
 import '../widgets/centered_widget/centered_widget.dart';
 import '../widgets/navigation_bar/navigation_bar.dart';
@@ -17,7 +16,7 @@ class ErrorPage extends StatelessWidget {
               child: Center(
             child: Text(
               "Uh Oh!\nError 404",
-              style: Styles.errorMessage,
+              style: Theme.of(context).textTheme.button,
               textAlign: TextAlign.center,
             ),
           ))

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../style/styles.dart';
-
 class RowDescImage extends StatelessWidget {
   const RowDescImage({
     Key key,
@@ -19,7 +17,7 @@ class RowDescImage extends StatelessWidget {
         Expanded(
           child: Text(
             desc,
-            style: Styles.experienceDesc,
+            style: Theme.of(context).textTheme.headline5,
           ),
         ),
         Padding(

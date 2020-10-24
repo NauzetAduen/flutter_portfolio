@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/utils/router.dart';
 import 'package:provider/provider.dart';
 
-import '../../style/styles.dart';
+import '../../utils/router.dart';
 
 class NavBarItem extends StatelessWidget {
   final String text;
@@ -24,8 +23,8 @@ class NavBarItem extends StatelessWidget {
         },
         child: Text('$text',
             style: isSelected
-                ? Styles.navBarElementBold
-                : Styles.navBarElementUnSelected),
+                ? Theme.of(context).textTheme.headline2
+                : Theme.of(context).textTheme.headline1),
       ),
     );
   }

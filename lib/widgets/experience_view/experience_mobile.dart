@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../style/styles.dart';
 import '../../utils/experience_item_list.dart';
 import 'exp_item_tablet_desktop.dart';
 import 'experience_item.dart';
@@ -33,7 +32,7 @@ class ExperienceMobile extends StatelessWidget {
                         ),
                         title: Text(
                           expItem.title,
-                          style: Styles.dialogTitle,
+                          // style: Styles.dialogTitle,
                           textAlign: TextAlign.center,
                         ),
                       );
@@ -47,7 +46,6 @@ class ExperienceMobile extends StatelessWidget {
                     padding: const EdgeInsets.all(25.0),
                     child: Text(
                       expItem.title,
-                      style: Styles.experienceListitemMobile,
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),

@@ -1,19 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/utils/router.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 import 'package:timeline_tile/timeline_tile.dart';
-import 'package:provider/provider.dart';
 
-import '../../style/styles.dart';
 import '../../utils/experience_item_list.dart';
 import '../navigation_bar/navigation_bar.dart';
-import 'exp_item_tablet_desktop.dart';
 import 'experience_item.dart';
 import 'experience_item_view/experience_item_page.dart';
 
 final double indicatorSize = 25.0;
-final LineStyle lineStyle = LineStyle(color: Styles.blue, thickness: 4);
+final LineStyle lineStyle = LineStyle(color: Colors.lightBlue, thickness: 4);
 final EdgeInsets indicatorPadding = EdgeInsets.symmetric(vertical: 12);
 
 class ExperienceTabletDesktop extends StatelessWidget {
@@ -56,7 +51,7 @@ class FirstTimeLine extends StatelessWidget {
             padding: indicatorPadding,
             width: indicatorSize,
             height: indicatorSize,
-            color: Styles.orange,
+            color: Colors.deepOrange,
           ),
           lineXY: 0.1,
           alignment: TimelineAlign.manual,
@@ -87,7 +82,7 @@ class LastTimeLine extends StatelessWidget {
             padding: indicatorPadding,
             width: indicatorSize,
             height: indicatorSize,
-            color: Styles.orange,
+            color: Colors.deepOrange,
           ),
           lineXY: 0.1,
           alignment: TimelineAlign.manual,
@@ -119,7 +114,7 @@ class MiddleTimeLine extends StatelessWidget {
             padding: indicatorPadding,
             width: indicatorSize,
             height: indicatorSize,
-            color: Styles.orange,
+            color: Colors.deepOrange,
           ),
           endChild: index.isEven
               ? CustomTile(
@@ -144,7 +139,7 @@ class CustomDivider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TimelineDivider(
-      color: Styles.blue,
+      color: Colors.lightBlue,
       begin: 0.1,
       end: 0.9,
       thickness: 4,
@@ -210,21 +205,27 @@ class GestureDetectorDesktop extends StatelessWidget {
             children: [
               Hero(
                 tag: "${expItem.date}-title",
-                child: Text(
-                  "${expItem.date} ",
-                  style: Styles.expItemTimeLineDesktDate,
-                  textAlign: isLeft ? TextAlign.left : TextAlign.right,
+                child: Material(
+                  type: MaterialType.transparency,
+                  child: Text(
+                    "${expItem.date} ",
+                    style: Theme.of(context).textTheme.headline6,
+                    textAlign: isLeft ? TextAlign.left : TextAlign.right,
+                  ),
                 ),
               ),
-              Text(
-                expItem.title.toUpperCase(),
-                style: Styles.expItemTimeLineDeskTitle,
-                textAlign: isLeft ? TextAlign.left : TextAlign.right,
+              Hero(
+                tag: "${expItem.title}",
+                child: Text(
+                  expItem.title.toUpperCase(),
+                  style: Theme.of(context).textTheme.subtitle2,
+                  textAlign: isLeft ? TextAlign.left : TextAlign.right,
+                ),
               ),
               FixedBox(),
               Text(
                 expItem.smallDesc,
-                style: Styles.expItemTimeLineDeskSmallDesk,
+                style: Theme.of(context).textTheme.headline5,
                 textAlign: isLeft ? TextAlign.left : TextAlign.right,
               ),
               FixedBox(),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../style/styles.dart';
 import 'social_list.dart';
 
 class HomeMobile extends StatelessWidget {
@@ -12,7 +11,7 @@ class HomeMobile extends StatelessWidget {
         children: <Widget>[
           Text(
             "Hello, welcome to my portfolio.\nI'm Nauzet, a mobile and Flutter developer.",
-            style: Styles.welcomeTextMobile,
+            style: Theme.of(context).textTheme.headline3.copyWith(fontSize: 20),
             textAlign: TextAlign.center,
           ),
           SizedBox(

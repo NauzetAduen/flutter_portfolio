@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
-import '../../style/styles.dart';
-
 class AboutItem extends StatelessWidget {
   final String title;
   final List<String> info;
@@ -19,7 +17,6 @@ class AboutItem extends StatelessWidget {
             alignment: Alignment.topCenter,
             child: Text(
               title,
-              style: Styles.aboutTitle,
             ),
           ),
           ListView.builder(
@@ -40,14 +37,12 @@ class AboutItem extends StatelessWidget {
                           ),
                           Text(
                             info[index],
-                            style: Styles.aboutInfo,
                             textAlign: TextAlign.justify,
                           ),
                         ],
                       )
                     : Text(
                         info[index],
-                        style: Styles.aboutInfoMobile,
                         textAlign: TextAlign.justify,
                       );
               });
