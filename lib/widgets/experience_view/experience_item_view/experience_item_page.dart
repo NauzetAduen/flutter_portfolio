@@ -23,13 +23,17 @@ class ExperienceItemPage extends StatelessWidget {
                   icon: Icon(Icons.arrow_back_ios),
                 ),
                 Hero(
+                  tag: "${expItem.date}",
+                  child: Text(
+                    "${expItem.date} ",
+                    style: Theme.of(context).textTheme.headline6,
+                  ),
+                ),
+                Hero(
                   tag: "${expItem.title}",
-                  child: Material(
-                    type: MaterialType.transparency,
-                    child: Text(
-                      expItem.title.toUpperCase(),
-                      style: Theme.of(context).textTheme.subtitle2,
-                    ),
+                  child: Text(
+                    expItem.title.toUpperCase(),
+                    style: Theme.of(context).textTheme.subtitle2,
                   ),
                 ),
               ],

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio/widgets/experience_view/experience_item.dart';
+import 'package:flutter_portfolio/widgets/experience_view/experience_item_view/experience_item_page.dart';
 
 import '../pages/about.dart';
 import '../pages/error_page.dart';
@@ -14,6 +16,11 @@ class Router {
         return pageRouteBuilder(Experience());
       case '/about':
         return pageRouteBuilder(About());
+      case '/expitem':
+        final ExperienceItem item = settings.arguments;
+        return pageRouteBuilder(ExperienceItemPage(
+          expItem: item,
+        ));
       default:
         return pageRouteBuilder(ErrorPage());
     }

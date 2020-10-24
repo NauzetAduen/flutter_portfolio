@@ -191,11 +191,12 @@ class GestureDetectorDesktop extends StatelessWidget {
           //       ),
           //     );
           //   });
-          Navigator.push(context, MaterialPageRoute(builder: (context) {
-            return ExperienceItemPage(
-              expItem: expItem,
-            );
-          }));
+          // Navigator.push(context, MaterialPageRoute(builder: (context) {
+          //   return ExperienceItemPage(
+          //     expItem: expItem,
+          //   );
+          // }));
+          Navigator.pushNamed(context, '/expitem', arguments: expItem);
         },
         child: Align(
           alignment: isLeft ? Alignment.centerLeft : Alignment.centerRight,
@@ -204,14 +205,11 @@ class GestureDetectorDesktop extends StatelessWidget {
                 isLeft ? CrossAxisAlignment.start : CrossAxisAlignment.end,
             children: [
               Hero(
-                tag: "${expItem.date}-title",
-                child: Material(
-                  type: MaterialType.transparency,
-                  child: Text(
-                    "${expItem.date} ",
-                    style: Theme.of(context).textTheme.headline6,
-                    textAlign: isLeft ? TextAlign.left : TextAlign.right,
-                  ),
+                tag: "${expItem.date}",
+                child: Text(
+                  "${expItem.date}",
+                  style: Theme.of(context).textTheme.headline6,
+                  textAlign: isLeft ? TextAlign.left : TextAlign.right,
                 ),
               ),
               Hero(
