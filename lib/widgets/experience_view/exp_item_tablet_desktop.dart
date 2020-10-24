@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'RowDescImage.dart';
 import 'experience_item.dart';
 
+//TODO
+//REMOVE
 class ExpItemDialog extends StatelessWidget {
   final ExperienceItem item;
 
