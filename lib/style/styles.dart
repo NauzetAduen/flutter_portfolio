@@ -12,6 +12,7 @@ class Styles {
     fontSize: 18,
     color: orange,
     decoration: TextDecoration.underline,
+    decorationStyle: TextDecorationStyle.double,
   );
   static final TextStyle navBarElementUnSelected = TextStyle(
       fontWeight: FontWeight.bold,
@@ -145,6 +146,7 @@ class Styles {
     fontSize: 30,
     color: orange,
     fontWeight: FontWeight.bold,
+    decoration: TextDecoration.none,
   );
   static final TextStyle expItemTimeLineDeskTitle = TextStyle(
     fontFamily: 'Nunito',
