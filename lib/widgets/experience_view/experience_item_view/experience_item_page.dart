@@ -1,3 +1,5 @@
+import 'dart:js' as js;
+
 import 'package:flutter/material.dart';
 
 import '../../CustomScaffold.dart';
@@ -13,40 +15,108 @@ class ExperienceItemPage extends StatelessWidget {
     return CenteredWidget(
       child: CustomScaffold(
         body: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                IconButton(
-                  color: Colors.lightBlue,
-                  iconSize: 28,
-                  splashColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  hoverColor: Colors.transparent,
-                  onPressed: () => Navigator.pop(context),
-                  icon: Icon(
-                    Icons.arrow_back_ios,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              child: Row(
+                // mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  CustomButtom(
+                    icon: Icon(
+                      Icons.arrow_back_ios,
+                      size: 28,
+                    ),
+                    onPresed: () =>
+                        Navigator.popUntil(context, (route) => route.isFirst),
                   ),
-                ),
-                Hero(
-                  tag: "${expItem.date}",
-                  child: Text(
-                    "${expItem.date} ",
-                    style: Theme.of(context).textTheme.headline6,
+                  Hero(
+                    tag: "${expItem.date}",
+                    child: Text(
+                      "${expItem.date} ",
+                      style: Theme.of(context).textTheme.headline6,
+                    ),
                   ),
-                ),
-                Hero(
-                  tag: "${expItem.title}",
-                  child: Text(
-                    expItem.title.toUpperCase(),
-                    style: Theme.of(context).textTheme.subtitle2,
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 36),
+              child: Hero(
+                tag: "${expItem.title}",
+                child: Text(
+                  expItem.title.toUpperCase(),
+                  style: Theme.of(context).textTheme.subtitle2,
+                ),
+              ),
+            ),
+            Flexible(
+              flex: 1,
+              // fit: FlexFit.loose,
+              child: SingleChildScrollView(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      flex: 2,
+                      child: Text(
+                        expItem.desc,
+                        style: Theme.of(context).textTheme.headline5,
+                      ),
+                    ),
+                    Expanded(
+                      flex: 1,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 10),
+                        child: Container(
+                          width: 300,
+                          // height: 300,
+                          child: Image(
+                            image: AssetImage(
+                                "assets/images/previews/${expItem.image}"),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 10),
+              child: CustomButtom(
+                  icon: Icon(
+                    Icons.link,
+                    size: 20,
+                  ),
+                  onPresed: () =>
+                      js.context.callMethod("open", ["${expItem.url}"])),
+            )
           ],
         ),
       ),
+    );
+  }
+}
+
+class CustomButtom extends StatelessWidget {
+  final Widget icon;
+  final Function onPresed;
+
+  const CustomButtom({this.icon, this.onPresed});
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      icon: icon,
+      onPressed: onPresed,
+      color: Colors.lightBlue,
+      iconSize: 28,
+      splashColor: Colors.transparent,
+      highlightColor: Colors.transparent,
+      hoverColor: Colors.transparent,
     );
   }
 }
