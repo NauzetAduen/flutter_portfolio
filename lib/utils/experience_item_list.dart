@@ -78,7 +78,7 @@ class ExperienceItemList {
           ),
         ),
       ],
-      image: "16jornadassue.png",
+      image: "ulpgc-internship.png",
       completed: true,
     ),
     ExperienceItem(
@@ -90,7 +90,7 @@ class ExperienceItemList {
           "First native Android app, where you have a list of your debts.\nLearned a bunch of concepts: LiveData, ViewModel, Room, etc...\nJava was the programming language used.",
       url: "https://github.com/NauzetAduen/DebtControl",
       linkMessage: "",
-      image: "android.png",
+      image: "debtcontrol.png",
       chips: [
         Chip(
           backgroundColor: Color(0xff99cc00),
@@ -122,7 +122,8 @@ class ExperienceItemList {
       smallDesc: "Intership at Inerza, test coverage of existing app.",
       desc:
           "My university have a program where you have to do an internship in a company for 300 hours. Inerza.com choose me to help them improve and increase the test coverage in a mobile app, made with the codename one framework.\nMy main role was testing the app’s CORE and the API REST behind the app.\nImproved a lot in certain fields like Git, Testing, RESTful web services and Mobile development in general.\nWe did use a lot of software like Jenkins, SonarQube, Tomcat, DBeaver, ARC, …",
-      url: "https://play.google.com/store/apps/details?id=com.inerza.miplaza",
+      url:
+          "https://www.inerza.com/estudiantes-de-informatica-de-la-ulpgc-complementan-su-formacion-en-inerza/",
       linkMessage: "PlayStore - miPlaza",
       image: "miplaza.png",
       chips: [
@@ -365,7 +366,7 @@ class ExperienceItemList {
           "Re-design of my portfolio. Adding a timeline in the experience view, adding small animations and improving scrolling.\nWork In Progress.",
       url: "https://github.com/NauzetAduen/flutter_portfolio",
       linkMessage: "Portfolio - Github",
-      image: "flutterweb.png",
+      image: "redesign.png",
       chips: [
         Chip(
           backgroundColor: Color(0xff1389FD),
