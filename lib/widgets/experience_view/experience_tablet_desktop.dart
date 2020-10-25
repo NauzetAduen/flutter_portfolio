@@ -5,7 +5,6 @@ import 'package:timeline_tile/timeline_tile.dart';
 import '../../utils/experience_item_list.dart';
 import '../navigation_bar/navigation_bar.dart';
 import 'experience_item.dart';
-import 'experience_item_view/experience_item_page.dart';
 
 final double indicatorSize = 25.0;
 final LineStyle lineStyle = LineStyle(color: Colors.lightBlue, thickness: 4);
