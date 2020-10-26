@@ -21,7 +21,7 @@ class ExperienceItemList {
       title: "Collaboration scholarship",
       smallDesc:
           "College scholarship at ULPGC, Web development in Wordpress and PHP.",
-      desc: "I was an intern for my univeristy for a whole year, where I had a wide range of responsabilities, from making phone calls to answering emails, write official documents, etc...\n" +
+      desc: "I was an intern for my university for a whole year, where I had a wide range of responsabilities, from making phone calls to answering emails, write official documents, etc...\n" +
           "From a tech standpoint I did a few things:\nWebs maintenance with Joomla and vanilla PHP, mostly adding articles to our university pages.\n" +
           "MySQL Databases maintenance, backups, and that sort of things.\n" +
           "Website development for an university event with Wordpress, now closed. The hardest part was a page where I developed a GoogleMap in JavaScript where the invited chancellors could pick their hotel and then it would draw a route depeding of your choosen transport system.\n",
@@ -87,7 +87,7 @@ class ExperienceItemList {
       title: "DebtControl",
       smallDesc: "First native Android app, a simple Debts manager.",
       desc:
-          "First native Android app, where you have a list of your debts.\nLearned a bunch of concepts: LiveData, ViewModel, Room, etc...\nJava was the programming language used.",
+          "This is where my mobile developer adventure started. I created my first native Android app, where you have a list of your debts.\nBased on the Developing Android Apps course in Udacity.\nLearned a bunch of concepts like LiveData, ViewModel, Room database, etc...\nI used Java and not Kotlin for this project.",
       url: "https://github.com/NauzetAduen/DebtControl",
       linkMessage: "",
       image: "debtcontrol.png",
@@ -121,7 +121,7 @@ class ExperienceItemList {
       title: "External university internship",
       smallDesc: "Intership at Inerza, test coverage of existing app.",
       desc:
-          "My university have a program where you have to do an internship in a company for 300 hours. Inerza.com choose me to help them improve and increase the test coverage in a mobile app, made with the codename one framework.\nMy main role was testing the app’s CORE and the API REST behind the app.\nImproved a lot in certain fields like Git, Testing, RESTful web services and Mobile development in general.\nWe did use a lot of software like Jenkins, SonarQube, Tomcat, DBeaver, ARC, …",
+          "My university have a program where you have to do an internship in a company for 300 hours. Inerza choose me to help them improve and increase the test coverage in a mobile app, made with the codename one framework.\nMy main role was testing the app’s CORE and the API REST behind the app.\nImproved a lot in certain fields like Git, Testing, RESTful web services and Mobile development in general.\nWe did use a lot of software like Jenkins, SonarQube, Tomcat, DBeaver, ARC, …",
       url:
           "https://www.inerza.com/estudiantes-de-informatica-de-la-ulpgc-complementan-su-formacion-en-inerza/",
       linkMessage: "PlayStore - miPlaza",
@@ -163,7 +163,7 @@ class ExperienceItemList {
       date: "JAN, 2019",
       title: "Simple Debt Manager",
       smallDesc: "First Flutter app, a simple debt manager.",
-      desc: "Small project to learn flutter where you can manage your debts. Flutter version of my first Android App 'DebtControl'.\n" +
+      desc: "Small project to learn the Flutter framework where you can manage your debts. Flutter version of my first Android App 'DebtControl'.\n" +
           "In this project you can create debts and store them in a small sqlite database.\nDebts will be listed colored by state. Fully paid, not paid or partialy paid.\nYou also can check a summary of your debts with graphs.\nMore screenshots in the readme.md in the repository.",
       url: "https://github.com/NauzetAduen/simple-debt-manager",
       linkMessage: "",
@@ -292,7 +292,7 @@ class ExperienceItemList {
       date: "NOV, 2019",
       title: "Flutter portfolio",
       smallDesc: "Personal portfolio made with Flutter web.",
-      desc: "I created a simple web to learn what Flutter web was about. If we combine that with the constant idea of having a portfolio, this is what we got.\n" +
+      desc: "I created a simple portfolio to learn what Flutter web was about. If we combine that with the constant idea of having a portfolio, this is what we got.\n" +
           "A simple 'minimalistic' portfolio. Somewhere in the near future I will redesign it and improve it, maybe adding a blog.",
       url: "https://github.com/NauzetAduen/flutter_portfolio",
       linkMessage: "Portfolio - Github",
@@ -321,7 +321,7 @@ class ExperienceItemList {
       title: "Diabetiary",
       smallDesc: "Flutter app to simplify diabetes care.",
       desc:
-          "Diabetiary, an app for diabetic patients. This app will simplify the user interface in order to help the user to understand how the illness is working, in order to fix it or keep it right.\nWork In Progress.",
+          "Diabetiary, an app for diabetic patients. This app will simplify the user interface in order to help the user to understand how the illness is working, in order to fix it or keep it right.\nIt's based on a tipical diabetic journal that you show to your doctor.\nWork In Progress.",
       url: "https://bitbucket.org/NauzetAduen/diabetiary",
       linkMessage: "Diabetiary repository",
       chips: [
@@ -363,7 +363,7 @@ class ExperienceItemList {
       title: "Portfolio re-design",
       smallDesc: "Redesigned portfolio with timelines and animations.",
       desc:
-          "Re-design of my portfolio. Adding a timeline in the experience view, adding small animations and improving scrolling.\nWork In Progress.",
+          "Re-design of my portfolio. Adding a crossed timeline in the experience view, a linear timeline in the about view, small hero and text animations and basic colours for titles and subtitles.\nAdded new images for each project which simulates mobile apps layout.\nWork In Progress.",
       url: "https://github.com/NauzetAduen/flutter_portfolio",
       linkMessage: "Portfolio - Github",
       image: "redesign.png",
