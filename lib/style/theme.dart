@@ -61,8 +61,9 @@ final TextTheme texttheme = TextTheme(
       //nau title
       fontWeight: FontWeight.bold,
       fontFamily: 'Nunito',
-      fontSize: 56,
-      color: Colors.black,
+      fontSize: 28,
+      color: Colors.white,
+      // letterSpacing: 3,
     ),
     subtitle2: TextStyle(
       //expItemTimeLineDeskTitle
