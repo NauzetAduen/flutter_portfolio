@@ -60,16 +60,19 @@ class AboutTimeLine extends StatelessWidget {
           color: Colors.deepOrange,
         ),
         startChild: Padding(
-          padding: const EdgeInsets.only(right: 35),
-          child: Text(
-            aboutItem.title,
-            style: Theme.of(context).textTheme.headline6,
-            overflow: TextOverflow.ellipsis,
-            textAlign: TextAlign.right,
+          padding: const EdgeInsets.only(right: 25),
+          child: ResponsiveBuilder(
+            builder: (context, info) => Text(
+              aboutItem.title,
+              textAlign: TextAlign.right,
+              style: info.deviceScreenType == DeviceScreenType.mobile
+                  ? Theme.of(context).textTheme.headline6.copyWith(fontSize: 18)
+                  : Theme.of(context).textTheme.headline6,
+            ),
           ),
         ),
         endChild: Padding(
-          padding: const EdgeInsets.only(left: 35),
+          padding: const EdgeInsets.only(left: 25),
           child: ResponsiveBuilder(
             builder: (context, info) => Text(aboutItem.info,
                 style: info.deviceScreenType == DeviceScreenType.mobile
