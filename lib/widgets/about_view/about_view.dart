@@ -44,7 +44,7 @@ class AboutTimeLine extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200,
+      height: 250,
       child: TimelineTile(
         isFirst: isFirst,
         isLast: isLast,
@@ -83,7 +83,7 @@ class AboutTimeLine extends StatelessWidget {
                     : Theme.of(context)
                         .textTheme
                         .headline5
-                        .copyWith(fontSize: 22)),
+                        .copyWith(fontSize: 20)),
           ),
         ),
       ),
