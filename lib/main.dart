@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/utils/router.dart' as router;
 import 'package:provider/provider.dart';
+import 'package:flutter_portfolio/style/theme.dart' as theme;
 
 void main() => runApp(MyApp());
 
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
         title: 'Nauzet, Portfolio',
         onGenerateRoute: router.Router.generateRoute,
         initialRoute: "/",
+        theme: theme.themeData,
       ),
     );
   }
