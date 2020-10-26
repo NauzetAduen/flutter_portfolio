@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 
 import '../widgets/CustomScaffold.dart';
-import '../widgets/about_view/about_mobile.dart';
-import '../widgets/about_view/about_tablet_desktop.dart';
+import '../widgets/about_view/about_view.dart';
 import '../widgets/centered_widget/centered_widget.dart';
 
 class About extends StatelessWidget {
@@ -11,10 +9,7 @@ class About extends StatelessWidget {
   Widget build(BuildContext context) {
     return CenteredWidget(
       child: CustomScaffold(
-        body: ScreenTypeLayout(
-          mobile: AboutMobile(),
-          tablet: AboutTabletDesktop(),
-        ),
+        body: AboutTabletDesktop(),
       ),
     );
   }
