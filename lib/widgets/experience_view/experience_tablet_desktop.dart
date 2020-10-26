@@ -72,26 +72,22 @@ class LastTimeLine extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        TimelineTile(
-          beforeLineStyle: lineStyle,
-          indicatorStyle: IndicatorStyle(
-            indicatorXY: 0.8,
-            padding: indicatorPadding,
-            width: indicatorSize,
-            height: indicatorSize,
-            color: Colors.deepOrange,
-          ),
-          lineXY: 0.1,
-          alignment: TimelineAlign.manual,
-          isLast: true,
-          endChild: CustomTile(
-            expItem: item,
-            isLeft: true,
-          ),
-        ),
-      ],
+    return TimelineTile(
+      beforeLineStyle: lineStyle,
+      indicatorStyle: IndicatorStyle(
+        indicatorXY: 0.8,
+        padding: indicatorPadding,
+        width: indicatorSize,
+        height: indicatorSize,
+        color: Colors.deepOrange,
+      ),
+      lineXY: 0.1,
+      alignment: TimelineAlign.manual,
+      isLast: true,
+      endChild: CustomTile(
+        expItem: item,
+        isLeft: true,
+      ),
     );
   }
 }
@@ -172,31 +168,8 @@ class GestureDetectorDesktop extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(12.0),
       child: GestureDetector(
-        onTap: () {
-          // return showGeneralDialog(
-          //   barrierDismissible: true,
-          //   barrierColor: Colors.blueGrey.withOpacity(0.4),
-          //   barrierLabel: "",
-          //   context: context,
-          //   transitionDuration: Duration(milliseconds: 666),
-          //   pageBuilder: (BuildContext context, _, __) {
-          //     return AlertDialog(
-          //       // content: isMobile ? expItem.toMobile() : expItem.toDesktop(),
-          //       content: ExpItemDialog(item: expItem),
-          //       title: Text(
-          //         "${expItem.title}, ${expItem.date}",
-          //         style: Styles.dialogTitle,
-          //         textAlign: TextAlign.center,
-          //       ),
-          //     );
-          //   });
-          // Navigator.push(context, MaterialPageRoute(builder: (context) {
-          //   return ExperienceItemPage(
-          //     expItem: expItem,
-          //   );
-          // }));
-          Navigator.pushNamed(context, '/expitem', arguments: expItem);
-        },
+        onTap: () =>
+            Navigator.pushNamed(context, '/expitem', arguments: expItem),
         child: Align(
           alignment: isLeft ? Alignment.centerLeft : Alignment.centerRight,
           child: Column(
