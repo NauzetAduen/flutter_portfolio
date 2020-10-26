@@ -1,6 +1,7 @@
 import 'dart:js' as js;
 
 import 'package:flutter/material.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 import '../../CustomScaffold.dart';
 import '../../centered_widget/centered_widget.dart';
@@ -61,9 +62,17 @@ class ExperienceItemPage extends StatelessWidget {
                   children: [
                     Expanded(
                       flex: 2,
-                      child: Text(
-                        expItem.desc,
-                        style: Theme.of(context).textTheme.headline5,
+                      child: ResponsiveBuilder(
+                        builder: (_, info) {
+                          return Text(expItem.desc,
+                              style: info.deviceScreenType ==
+                                      DeviceScreenType.mobile
+                                  ? Theme.of(context)
+                                      .textTheme
+                                      .headline5
+                                      .copyWith(fontSize: 18)
+                                  : Theme.of(context).textTheme.headline5);
+                        },
                       ),
                     ),
                     Expanded(
