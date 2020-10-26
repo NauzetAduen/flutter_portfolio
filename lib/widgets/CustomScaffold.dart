@@ -33,9 +33,24 @@ class CustomScaffold extends StatelessWidget {
                       DrawerHeader(
                         child: CustomCircleAvatar(),
                       ),
-                      ListView(
+                      ListView.separated(
                         shrinkWrap: true,
-                        children: NavBarItemList.list,
+                        // children: NavBarItemList.list,
+                        itemBuilder: (context, index) {
+                          return NavBarItemList.list[index];
+                        },
+                        itemCount: NavBarItemList.list.length,
+                        separatorBuilder: (context, separatorIndex) {
+                          if (separatorIndex !=
+                              NavBarItemList.list.length - 1) {
+                            return Divider(
+                              color: Colors.lightBlue,
+                              thickness: 1,
+                            );
+                          } else {
+                            return Container();
+                          }
+                        },
                       )
                     ],
                   ),
