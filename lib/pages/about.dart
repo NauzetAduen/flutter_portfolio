@@ -9,7 +9,7 @@ class About extends StatelessWidget {
   Widget build(BuildContext context) {
     return CenteredWidget(
       child: CustomScaffold(
-        body: AboutTabletDesktop(),
+        body: AboutView(),
       ),
     );
   }

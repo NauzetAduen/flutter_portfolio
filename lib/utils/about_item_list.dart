@@ -1,46 +1,31 @@
-import 'package:flutter/material.dart';
-
-import '../widgets/about_view/about_item.dart';
+import '../widgets/about_view/about_view.dart';
 
 class AboutItemList {
-  static List<Widget> list = [
+  static List<AboutItem> list = [
     AboutItem(
-      title: "Education 2013-2019",
-      info: [
-        "Computer Engineer at University of Las Palmas de Gran Canaria, Spain",
-        "Software Engineer intensification "
-      ],
+      title: "Education",
+      info:
+          "Computer Engineer at University of Las Palmas de Gran Canaria, Spain\nSoftware Engineer intensification",
     ),
     AboutItem(
-      title: "Technical skills",
-      info: [
-        "Crossplatform development experience with Flutter",
-        "Basic Android native development",
-        "Testing, Git, differents backends (nosql, api rest)",
-      ],
+      title: "Tech",
+      info:
+          "Crossplatform development experience with Flutter\nBasic Android native development\nTesting, Git, differents backends (nosql, api rest)",
     ),
     AboutItem(
-      title: "Personal skills",
-      info: [
-        "Communicative, passionate, reliable",
-        "Able to work on my own (Remote)",
-        "Eage to learn new things"
-      ],
+      title: "Soft",
+      info:
+          "Communicative, passionate, reliable\nAble to work on my own (Remote)\nEager to learn new things",
     ),
     AboutItem(
       title: "Interests",
-      info: [
-        "Flutter and mobile development",
-        "Clean Architecture, TDD",
-        "Improve programming skills"
-      ],
+      info:
+          "Flutter and mobile development\nClean Architecture, TDD\nImprove programming skills",
     ),
     AboutItem(
       title: "Objetives",
-      info: [
-        "Junior position in Flutter or mobile development",
-        "Remote if possible"
-      ],
+      info:
+          "Junior position in Flutter or mobile development\nRemote if possible",
     ),
   ];
 }
