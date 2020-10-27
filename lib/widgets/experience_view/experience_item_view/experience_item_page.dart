@@ -57,41 +57,35 @@ class ExperienceItemPage extends StatelessWidget {
               flex: 1,
               // fit: FlexFit.loose,
               child: SingleChildScrollView(
-                child: Row(
+                  child: ResponsiveBuilder(builder: (_, info) {
+                bool isMobile =
+                    info.deviceScreenType == DeviceScreenType.mobile;
+                return Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Expanded(
-                      flex: 2,
-                      child: ResponsiveBuilder(
-                        builder: (_, info) {
-                          return Text(expItem.desc,
-                              style: info.deviceScreenType ==
-                                      DeviceScreenType.mobile
-                                  ? Theme.of(context)
-                                      .textTheme
-                                      .headline5
-                                      .copyWith(fontSize: 18)
-                                  : Theme.of(context).textTheme.headline5);
-                        },
-                      ),
+                      flex: isMobile ? 1 : 3,
+                      child: Text(expItem.desc,
+                          style: isMobile
+                              ? Theme.of(context)
+                                  .textTheme
+                                  .headline5
+                                  .copyWith(fontSize: 18)
+                              : Theme.of(context).textTheme.headline5),
                     ),
                     Expanded(
                       flex: 1,
                       child: Padding(
                         padding: const EdgeInsets.only(left: 10),
-                        child: Container(
-                          width: 300,
-                          // height: 300,
-                          child: Image(
-                            image: AssetImage(
-                                "assets/images/previews/${expItem.image}"),
-                          ),
+                        child: Image(
+                          image: AssetImage(
+                              "assets/images/previews/${expItem.image}"),
                         ),
                       ),
                     ),
                   ],
-                ),
-              ),
+                );
+              })),
             ),
             Padding(
               padding: const EdgeInsets.only(bottom: 10),
