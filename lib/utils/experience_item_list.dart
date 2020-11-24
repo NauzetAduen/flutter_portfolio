@@ -385,5 +385,46 @@ class ExperienceItemList {
       ],
       completed: false,
     ),
+    ExperienceItem(
+      date: "NOV, 2020",
+      title: "Years in Flutter",
+      smallDesc: "Flutter app to learn cubits and blocs.",
+      desc:
+          "Small 'app' for learning purposes. It's based on an old project that I did in Java Swing years ago.\nThe main goal was to learn Cubits and improve my Bloc comprehension.\This app allows you to set a color for each day depending on how good it was.\nLearn more in the readme in the repository.",
+      url: "https://github.com/NauzetAduen/years_in_flutter",
+      linkMessage: "Years in Flutter repository",
+      chips: [
+        Chip(
+          backgroundColor: Color(0xff1389FD),
+          label: Text(
+            "Flutter",
+            style: chipWhite,
+          ),
+        ),
+        Chip(
+          backgroundColor: Colors.indigo,
+          label: Text(
+            "Mobile Dev",
+            style: chipWhite,
+          ),
+        ),
+        Chip(
+          backgroundColor: Color(0xff1C2834),
+          label: Text(
+            "Dart",
+            style: chipWhite,
+          ),
+        ),
+        Chip(
+          backgroundColor: Color(0xffe3b31c),
+          label: Text(
+            "Hive",
+            style: chipWhite,
+          ),
+        ),
+      ],
+      image: "yearsinflutter.png",
+      completed: false,
+    )
   ].reversed.toList();
 }
