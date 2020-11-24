@@ -88,6 +88,16 @@ class ExperienceItemPage extends StatelessWidget {
               })),
             ),
             Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: Wrap(
+                alignment: WrapAlignment.center,
+                spacing: 5,
+                runSpacing: 5,
+                direction: Axis.horizontal,
+                children: expItem.chips,
+              ),
+            ),
+            Padding(
               padding: const EdgeInsets.only(bottom: 10),
               child: CustomButtom(
                   icon: Icon(
