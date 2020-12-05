@@ -88,12 +88,12 @@ class LastTimeLine extends StatelessWidget {
         height: indicatorSize,
         color: Colors.deepOrange,
       ),
-      lineXY: 0.9,
+      lineXY: 0.1,
       alignment: TimelineAlign.manual,
       isLast: true,
-      startChild: CustomTile(
+      endChild: CustomTile(
         expItem: item,
-        isLeft: false,
+        isLeft: true,
       ),
     );
   }
