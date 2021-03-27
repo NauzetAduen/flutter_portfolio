@@ -7,17 +7,13 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
-  
+  cupertino_icons: ^0.1.2
   flutter:
     sdk: flutter
     
-
-  cupertino_icons: ^0.1.2
-  responsive_builder:
-  animated_text_kit: ^2.4.0
-  timeline_tile: ^1.0.0
-  provider:
-  smooth_scroll_web: ^0.0.4
+  lint: ^1.5.3
+  
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -26,18 +22,18 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-  assets:
-    - assets/images/
-    - assets/images/logos/
-    - assets/images/previews/
-  fonts:
-    - family: Nunito
-      fonts:
-        - asset: assets/fonts/Nunito-Regular.ttf
-          weight: 400
-        - asset: assets/fonts/Nunito-Bold.ttf
-          weight: 700
-    - family: ArchitectsDaughter
-      fonts:
-        - asset: assets/fonts/ArchitectsDaughter-Regular.ttf
-          weight: 400
+  # assets:
+  #   - assets/images/
+  #   - assets/images/logos/
+  #   - assets/images/previews/
+  # fonts:
+  #   - family: Nunito
+  #     fonts:
+  #       - asset: assets/fonts/Nunito-Regular.ttf
+  #         weight: 400
+  #       - asset: assets/fonts/Nunito-Bold.ttf
+  #         weight: 700
+  #   - family: ArchitectsDaughter
+  #     fonts:
+  #       - asset: assets/fonts/ArchitectsDaughter-Regular.ttf
+  #         weight: 400
