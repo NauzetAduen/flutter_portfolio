@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:smooth_scroll_web/smooth_scroll_web.dart';
 
 import '../utils/navbar_item_list.dart';
 import 'CustomCircleAvatar.dart';
@@ -11,6 +12,7 @@ class CustomScaffold extends StatelessWidget {
   const CustomScaffold({Key key, this.body}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    ScrollController controller = ScrollController();
     return ResponsiveBuilder(builder: (context, sizingInfo) {
       bool isMobile = sizingInfo.deviceScreenType == DeviceScreenType.mobile;
       return Scaffold(
@@ -33,24 +35,29 @@ class CustomScaffold extends StatelessWidget {
                       DrawerHeader(
                         child: CustomCircleAvatar(),
                       ),
-                      ListView.separated(
-                        shrinkWrap: true,
-                        // children: NavBarItemList.list,
-                        itemBuilder: (context, index) {
-                          return NavBarItemList.list[index];
-                        },
-                        itemCount: NavBarItemList.list.length,
-                        separatorBuilder: (context, separatorIndex) {
-                          if (separatorIndex !=
-                              NavBarItemList.list.length - 1) {
-                            return Divider(
-                              color: Colors.lightBlue,
-                              thickness: 1,
-                            );
-                          } else {
-                            return Container();
-                          }
-                        },
+                      SmoothScrollWeb(
+                        controller: controller,
+                        child: ListView.separated(
+                          controller: controller,
+                          physics: NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          // children: NavBarItemList.list,
+                          itemBuilder: (context, index) {
+                            return NavBarItemList.list[index];
+                          },
+                          itemCount: NavBarItemList.list.length,
+                          separatorBuilder: (context, separatorIndex) {
+                            if (separatorIndex !=
+                                NavBarItemList.list.length - 1) {
+                              return Divider(
+                                color: Colors.lightBlue,
+                                thickness: 1,
+                              );
+                            } else {
+                              return Container();
+                            }
+                          },
+                        ),
                       )
                     ],
                   ),

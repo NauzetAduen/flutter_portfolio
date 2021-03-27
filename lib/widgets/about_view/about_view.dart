@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:smooth_scroll_web/smooth_scroll_web.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
 import '../../utils/about_item_list.dart';
@@ -12,21 +13,27 @@ final EdgeInsets indicatorPadding = EdgeInsets.symmetric(vertical: 12);
 class AboutView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    ScrollController controller = ScrollController();
     return Column(
       children: <Widget>[
         NavigationBar(),
         Expanded(
-          child: ListView.builder(
-            shrinkWrap: true,
-            itemCount: AboutItemList.list.length,
-            itemBuilder: (context, index) {
-              var item = AboutItemList.list[index];
-              if (index == 0)
-                return AboutTimeLine(item, isFirst: true, isLast: false);
-              if (index == AboutItemList.list.length - 1)
-                return AboutTimeLine(item, isFirst: false, isLast: true);
-              return AboutTimeLine(item, isFirst: false, isLast: false);
-            },
+          child: SmoothScrollWeb(
+            controller: controller,
+            child: ListView.builder(
+              controller: controller,
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: AboutItemList.list.length,
+              itemBuilder: (context, index) {
+                var item = AboutItemList.list[index];
+                if (index == 0)
+                  return AboutTimeLine(item, isFirst: true, isLast: false);
+                if (index == AboutItemList.list.length - 1)
+                  return AboutTimeLine(item, isFirst: false, isLast: true);
+                return AboutTimeLine(item, isFirst: false, isLast: false);
+              },
+            ),
           ),
         ),
       ],

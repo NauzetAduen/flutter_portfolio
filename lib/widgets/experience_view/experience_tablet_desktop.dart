@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:smooth_scroll_web/smooth_scroll_web.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
 import '../../utils/experience_item_list.dart';
@@ -13,22 +14,28 @@ final EdgeInsets indicatorPadding = EdgeInsets.symmetric(vertical: 12);
 class ExperienceTabletDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    ScrollController controller = ScrollController();
     return Column(
       children: <Widget>[
         NavigationBar(),
         Expanded(
-          child: ListView.builder(
-            shrinkWrap: true,
-            itemBuilder: (context, index) {
-              ExperienceItem item = ExperienceItemList.list[index];
-              if (index == 0)
-                return FirstTimeLine(item);
-              else if (index == ExperienceItemList.list.length - 1)
-                return LastTimeLine(item);
-              else
-                return MiddleTimeLine(item, index);
-            },
-            itemCount: ExperienceItemList.list.length,
+          child: SmoothScrollWeb(
+            controller: controller,
+            child: ListView.builder(
+              controller: controller,
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemBuilder: (context, index) {
+                ExperienceItem item = ExperienceItemList.list[index];
+                if (index == 0)
+                  return FirstTimeLine(item);
+                else if (index == ExperienceItemList.list.length - 1)
+                  return LastTimeLine(item);
+                else
+                  return MiddleTimeLine(item, index);
+              },
+              itemCount: ExperienceItemList.list.length,
+            ),
           ),
         ),
       ],
