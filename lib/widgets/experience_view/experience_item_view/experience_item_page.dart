@@ -65,13 +65,16 @@ class ExperienceItemPage extends StatelessWidget {
                   children: [
                     Expanded(
                       flex: isMobile ? 1 : 3,
-                      child: Text(expItem.desc,
-                          style: isMobile
-                              ? Theme.of(context)
-                                  .textTheme
-                                  .headline5
-                                  .copyWith(fontSize: 18)
-                              : Theme.of(context).textTheme.headline5),
+                      child: Text(
+                        expItem.desc,
+                        style: isMobile
+                            ? Theme.of(context)
+                                .textTheme
+                                .headline5
+                                .copyWith(fontSize: 18)
+                            : Theme.of(context).textTheme.headline5,
+                        textAlign: TextAlign.justify,
+                      ),
                     ),
                     Expanded(
                       flex: 1,

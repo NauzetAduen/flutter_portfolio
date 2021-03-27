@@ -385,5 +385,66 @@ class ExperienceItemList {
       ],
       completed: false,
     ),
+    ExperienceItem(
+      // date: "10/2020 – Present",
+      date: "MAR, 2021",
+      title: "Coding Challenge",
+      smallDesc: "Coding challenge for a job offer.",
+      desc:
+          """This was an interesting challenge where I had to to create an application that allows users to: search for places in a location given by the user using the Foursquare API, view their search results and view the individual details of each search result.
+I use Clean Architecture by Uncle Bob adapted by ResoCoder, and I use package by feature as a code organisation.
+I used the 'TDD metodology' to test each layer of the app but I didn't implement any UI test.
+This app have a typeahead search functionality for search venues close to your location. After that shows a list of venues, which you can also see in a Google Map. You can check a detailed view of each venue with more information.
+You also have the ability to like a venue, using the shared_preferences package for it, so its stored in your phone.
+""",
+      url: "https://github.com/NauzetAduen/coding-challenge",
+      linkMessage: "Challenge - github",
+      image: "challenge.png",
+      chips: [
+        Chip(
+          backgroundColor: Color(0xff1389FD),
+          label: Text(
+            "Flutter",
+            style: chipWhite,
+          ),
+        ),
+        Chip(
+          backgroundColor: Colors.indigo,
+          label: Text(
+            "Mobile Dev",
+            style: chipWhite,
+          ),
+        ),
+        Chip(
+          backgroundColor: Color(0xff1C2834),
+          label: Text(
+            "Dart",
+            style: chipWhite,
+          ),
+        ),
+        Chip(
+          backgroundColor: Colors.red,
+          label: Text(
+            "Google Maps",
+            style: chipWhite,
+          ),
+        ),
+        Chip(
+          backgroundColor: Colors.yellow,
+          label: Text(
+            "API REST",
+            style: chipBlack,
+          ),
+        ),
+        Chip(
+          backgroundColor: Colors.green,
+          label: Text(
+            "Testing",
+            style: chipWhite,
+          ),
+        ),
+      ],
+      completed: false,
+    ),
   ].reversed.toList();
 }

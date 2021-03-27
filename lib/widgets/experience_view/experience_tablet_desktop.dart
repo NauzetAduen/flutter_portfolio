@@ -79,7 +79,7 @@ class LastTimeLine extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TimelineTile(
-      // afterLineStyle: lineStyle,
+      afterLineStyle: lineStyle,
       beforeLineStyle: lineStyle,
       indicatorStyle: IndicatorStyle(
         indicatorXY: 0.8,
@@ -88,12 +88,12 @@ class LastTimeLine extends StatelessWidget {
         height: indicatorSize,
         color: Colors.deepOrange,
       ),
-      lineXY: 0.1,
+      lineXY: 0.9,
       alignment: TimelineAlign.manual,
       isLast: true,
-      endChild: CustomTile(
+      startChild: CustomTile(
         expItem: item,
-        isLeft: true,
+        isLeft: false,
       ),
     );
   }
