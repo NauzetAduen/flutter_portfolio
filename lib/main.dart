@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio/pages/landing_page.dart';
+import 'package:flutter_portfolio/style/app_theme.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(Portfolio());
 
-class MyApp extends StatelessWidget {
+class Portfolio extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Nauzet, Portfolio',
-      initialRoute: "/",
-      home: Text("Hi"),
-    );
-  }
+  Widget build(BuildContext context) => MaterialApp(
+        title: 'Nauzet, Portfolio',
+        theme: themeData,
+        // initialRoute: "/",
+        home: LandingPage(),
+      );
 }
