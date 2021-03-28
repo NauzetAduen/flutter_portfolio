@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const animationDuration = Duration(milliseconds: 2500);
+const animationDuration = Duration(milliseconds: 3000);
 
 class LandingPage extends StatefulWidget {
   @override
@@ -29,9 +29,8 @@ class _LandingPageState extends State<LandingPage>
       begin: Offset(startPoint, 0.0),
       end: const Offset(0.0, 0.0),
     ).animate(CurvedAnimation(
-      parent: _controller,
-      curve: Curves.easeOutQuint,
-    ));
+        parent: _controller,
+        curve: const Interval(0.5, 1, curve: Curves.easeOutQuint)));
   }
 
   @override
