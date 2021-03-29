@@ -7,7 +7,8 @@ void main() => runApp(Portfolio());
 class Portfolio extends StatelessWidget {
   @override
   Widget build(BuildContext context) => MaterialApp(
-        title: 'Nauzet, Portfolio',
+        debugShowCheckedModeBanner: false,
+        title: 'nau',
         theme: themeData,
         // initialRoute: "/",
         home: LandingPage(),
