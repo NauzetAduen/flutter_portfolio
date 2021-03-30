@@ -75,10 +75,7 @@ class _LandingPageState extends State<LandingPage>
                         style: Theme.of(context).textTheme.headline2),
                     TextSpan(
                         text: 'dev',
-                        style: Theme.of(context)
-                            .textTheme
-                            .headline2
-                            .copyWith(color: Colors.white)),
+                        style: Theme.of(context).textTheme.headline3),
                     TextSpan(
                         text: 'eloper',
                         style: Theme.of(context).textTheme.headline2),
@@ -96,23 +93,29 @@ class _LandingPageState extends State<LandingPage>
                 position: _barAnimation,
                 child: Row(
                   children: [
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.of(context).pushNamed("/me");
-                      },
-                      child: const Text(
-                        "me",
-                        style: TextStyle(color: Colors.white),
+                    HomeWillPopScope(
+                      context,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).pushNamed("/me");
+                        },
+                        child: const Text(
+                          "me",
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ),
                     ),
                     const SizedBox(width: 30),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.of(context).pushNamed("/work");
-                      },
-                      child: const Text(
-                        "work",
-                        style: TextStyle(color: Colors.white),
+                    HomeWillPopScope(
+                      context,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).pushNamed("/work");
+                        },
+                        child: const Text(
+                          "work",
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ),
                     ),
                   ],
@@ -142,4 +145,14 @@ class _LandingPageState extends State<LandingPage>
       ),
     );
   }
+}
+
+class HomeWillPopScope extends WillPopScope {
+  final BuildContext context;
+  final Widget widget;
+
+  HomeWillPopScope(this.context, this.widget)
+      : super(
+            onWillPop: () => Navigator.of(context).pushReplacementNamed("/"),
+            child: widget);
 }
