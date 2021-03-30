@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/pages/landing_page.dart';
-import 'package:flutter_portfolio/pages/me_page.dart';
+import 'package:flutter_portfolio/pages/personal_page.dart';
 import 'package:flutter_portfolio/pages/work_page.dart';
 
 class CustomRouter {

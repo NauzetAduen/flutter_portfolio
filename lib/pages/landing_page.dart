@@ -97,10 +97,10 @@ class _LandingPageState extends State<LandingPage>
                       context,
                       GestureDetector(
                         onTap: () {
-                          Navigator.of(context).pushNamed("/me");
+                          Navigator.of(context).pushNamed("/personal");
                         },
                         child: const Text(
-                          "me",
+                          "personal",
                           style: TextStyle(color: Colors.white),
                         ),
                       ),
