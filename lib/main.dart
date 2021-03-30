@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/pages/landing_page.dart';
-import 'package:flutter_portfolio/style/app_theme.dart';
 import 'package:url_strategy/url_strategy.dart';
+
+import 'style/app_theme.dart';
+import 'utils/custom_router.dart';
 
 void main() {
   setPathUrlStrategy();
@@ -14,7 +15,7 @@ class Portfolio extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'nau',
         theme: themeData,
-        // initialRoute: "/",
-        home: LandingPage(),
+        initialRoute: "/",
+        onGenerateRoute: CustomRouter.generateRoute,
       );
 }
