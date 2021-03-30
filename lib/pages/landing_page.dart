@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 const animationDuration = Duration(milliseconds: 3000);
 
 class LandingPage extends StatefulWidget {
+  static const String routeName = "/";
   @override
   _LandingPageState createState() => _LandingPageState();
 }
@@ -66,21 +67,57 @@ class _LandingPageState extends State<LandingPage>
                   child: Text("nau",
                       style: Theme.of(context).textTheme.headline1)),
               SlideTransition(
-                  position: _subtitleAnimation,
-                  child: Text("flutter developer",
-                      style: Theme.of(context).textTheme.headline2))
+                position: _subtitleAnimation,
+                child: RichText(
+                  text: TextSpan(children: <TextSpan>[
+                    TextSpan(
+                        text: 'flutter',
+                        style: Theme.of(context).textTheme.headline2),
+                    TextSpan(
+                        text: 'dev',
+                        style: Theme.of(context)
+                            .textTheme
+                            .headline2
+                            .copyWith(color: Colors.white)),
+                    TextSpan(
+                        text: 'eloper',
+                        style: Theme.of(context).textTheme.headline2),
+                  ]),
+                ),
+                // child: Text("flutter developer",
+                //     style: Theme.of(context).textTheme.headline2),
+              )
             ],
           )),
           Positioned(
-            top: 30,
-            right: 30,
-            child: SlideTransition(
+              top: 30,
+              right: 30,
+              child: SlideTransition(
                 position: _barAnimation,
-                child: const Text(
-                  "me work",
-                  style: TextStyle(color: Colors.white),
-                )),
-          ),
+                child: Row(
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).pushNamed("/me");
+                      },
+                      child: const Text(
+                        "me",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                    const SizedBox(width: 30),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).pushNamed("/work");
+                      },
+                      child: const Text(
+                        "work",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ],
+                ),
+              )),
           SlideTransition(
             position: _linkColumnAnimation,
             child: Align(
@@ -89,10 +126,13 @@ class _LandingPageState extends State<LandingPage>
                 padding: const EdgeInsets.only(left: 30),
                 child: Container(
                   color: Colors.white,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    mainAxisSize: MainAxisSize.min,
-                    children: const [Text("A"), Text("B")],
+                  child: Hero(
+                    tag: 'links',
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: const [Text("A"), Text("B")],
+                    ),
                   ),
                 ),
               ),
