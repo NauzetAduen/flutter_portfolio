@@ -1,15 +1,25 @@
 import 'package:flutter/material.dart';
+import '../model/personal.dart';
+import '../repository/personal_repository.dart';
 
-class MePage extends StatefulWidget {
+class PersonalPage extends StatefulWidget {
   static const String routeName = "/personal";
 
+  const PersonalPage();
   @override
-  _MePageState createState() => _MePageState();
+  _PersonalPageState createState() => _PersonalPageState();
 }
 
-class _MePageState extends State<MePage> {
+class _PersonalPageState extends State<PersonalPage> {
+  Personal personal;
+  @override
+  void initState() {
+    super.initState();
+    personal = PersonalRepository.getPersonal();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: Center(child: Text("Personal")));
+    return Scaffold(body: Center(child: Text(personal.name)));
   }
 }
