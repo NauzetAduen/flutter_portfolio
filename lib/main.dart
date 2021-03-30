@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/pages/landing_page.dart';
 import 'package:flutter_portfolio/style/app_theme.dart';
+import 'package:url_strategy/url_strategy.dart';
 
-void main() => runApp(Portfolio());
+void main() {
+  setPathUrlStrategy();
+  runApp(Portfolio());
+}
 
 class Portfolio extends StatelessWidget {
   @override
