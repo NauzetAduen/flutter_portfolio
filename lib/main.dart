@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_strategy/url_strategy.dart';
 
-import 'style/app_theme.dart';
+import 'theme/app_theme.dart';
 import 'utils/custom_router.dart';
 
 void main() {
