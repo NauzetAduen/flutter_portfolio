@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio/utils/animation.dart';
+import 'package:flutter_portfolio/widgets/navigation_bar.dart';
 
 const animationDuration = Duration(milliseconds: 3000);
 
@@ -31,27 +33,27 @@ class _LandingPageState extends State<LandingPage>
     //   }
     // });
 
-    _titleAnimation = _getTweenAnimation(beginX: -10);
-    _subtitleAnimation = _getTweenAnimation(beginX: 10);
-    // _barAnimation = _getTweenAnimation(beginX: beginX, beginY: beginY, endX: endX, endY: endY, begin: begin, end: end)
-    _barAnimation = _getTweenAnimation(beginY: 200);
-    _linkColumnAnimation = _getTweenAnimation(beginY: -200);
+    _titleAnimation = getTweenAnimation(beginX: -10, controller: _controller);
+    _subtitleAnimation = getTweenAnimation(beginX: 10, controller: _controller);
+    _barAnimation = getTweenAnimation(beginY: 200, controller: _controller);
+    _linkColumnAnimation =
+        getTweenAnimation(beginY: -200, controller: _controller);
   }
 
-  Animation<Offset> _getTweenAnimation(
-      {double beginX = 0.0,
-      double beginY = 0.0,
-      double endX = 0.0,
-      double endY = 0.0,
-      double begin = 0,
-      double end = 1}) {
-    return Tween<Offset>(
-      begin: Offset(beginX, beginY),
-      end: Offset(endX, endY),
-    ).animate(CurvedAnimation(
-        parent: _controller,
-        curve: Interval(begin, end, curve: Curves.easeOutQuint)));
-  }
+  // Animation<Offset> _getTweenAnimation(
+  //     {double beginX = 0.0,
+  //     double beginY = 0.0,
+  //     double endX = 0.0,
+  //     double endY = 0.0,
+  //     double begin = 0,
+  //     double end = 1}) {
+  //   return Tween<Offset>(
+  //     begin: Offset(beginX, beginY),
+  //     end: Offset(endX, endY),
+  //   ).animate(CurvedAnimation(
+  //       parent: _controller,
+  //       curve: Interval(begin, end, curve: Curves.easeOutQuint)));
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -91,35 +93,7 @@ class _LandingPageState extends State<LandingPage>
               right: 30,
               child: SlideTransition(
                 position: _barAnimation,
-                child: Row(
-                  children: [
-                    HomeWillPopScope(
-                      context,
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).pushNamed("/personal");
-                        },
-                        child: const Text(
-                          "personal",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 30),
-                    HomeWillPopScope(
-                      context,
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).pushNamed("/work");
-                        },
-                        child: const Text(
-                          "work",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                child: NavigationBar(),
               )),
           SlideTransition(
             position: _linkColumnAnimation,
@@ -145,14 +119,4 @@ class _LandingPageState extends State<LandingPage>
       ),
     );
   }
-}
-
-class HomeWillPopScope extends WillPopScope {
-  final BuildContext context;
-  final Widget widget;
-
-  HomeWillPopScope(this.context, this.widget)
-      : super(
-            onWillPop: () => Navigator.of(context).pushReplacementNamed("/"),
-            child: widget);
 }
