@@ -13,9 +13,15 @@ const TextTheme textTheme = TextTheme(
       height: 0.5),
   headline2: TextStyle(
       fontFamily: ptSans,
-      fontSize: 40,
+      fontSize: 42,
       letterSpacing: -2,
       color: lightGray,
+      height: 0.6),
+  headline3: TextStyle(
+      fontFamily: ptSans,
+      fontSize: 42,
+      letterSpacing: -2,
+      color: Colors.white,
       height: 0.6),
 );
 ThemeData themeData = ThemeData(
