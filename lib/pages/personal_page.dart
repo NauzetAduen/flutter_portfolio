@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/utils/animation.dart';
-import 'package:flutter_portfolio/widgets/home_willpop_scope.dart';
-import 'package:flutter_portfolio/widgets/navigation_bar.dart';
+
 import '../model/personal.dart';
 import '../repository/personal_repository.dart';
+import '../widgets/navigation_bar.dart';
 
 class PersonalPage extends StatefulWidget {
   static const String routeName = "/personal";
