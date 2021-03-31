@@ -1,5 +1,8 @@
+import 'package:universal_html/html.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/utils/animation.dart';
+
+import 'animated_hover.dart';
 
 class NavBarItem extends StatefulWidget {
   final String title;
@@ -15,18 +18,21 @@ class _NavBarItemState extends State<NavBarItem>
   AnimationController controller;
   Animation<Offset> animation;
   bool _hovering = false;
+  String url = window.location.href;
 
   @override
   void initState() {
     super.initState();
 
     controller = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 200));
-    animation = getTweenAnimation(endY: -0.5, controller: controller);
+        vsync: this, duration: const Duration(milliseconds: 100));
+    animation = getTweenAnimation(endY: -0.3, controller: controller);
   }
 
   @override
-  Widget build(BuildContext context) => GestureDetector(
+  Widget build(BuildContext context) {
+    if (!url.endsWith(widget.title)) {
+      return GestureDetector(
         onTap: () => Navigator.pushNamed(context, "/${widget.title}"),
         child: MouseRegion(
           onEnter: (_) {
@@ -41,13 +47,25 @@ class _NavBarItemState extends State<NavBarItem>
               _hovering = false;
             });
           },
-          child: SlideTransition(
-            position: animation,
-            child: Text(widget.title,
-                style: _hovering
-                    ? const TextStyle(color: Colors.white, fontSize: 30)
-                    : const TextStyle(color: Colors.red, fontSize: 30)),
+          child: AnimatedHover(
+            animation: animation,
+            widget: widget,
+            hovering: _hovering,
+            title: widget.title,
           ),
         ),
       );
+    } else {
+      return Text(
+        widget.title,
+        style: Theme.of(context).textTheme.headline5,
+      );
+      // return AnimatedHover(
+      //   animation: animation,
+      //   widget: widget,
+      //   hovering: _hovering,
+      //   title: widget.title,
+      // );
+    }
+  }
 }
