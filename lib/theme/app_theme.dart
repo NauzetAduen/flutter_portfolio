@@ -19,12 +19,31 @@ const TextTheme textTheme = TextTheme(
       letterSpacing: -2,
       color: lightGray,
       height: 0.6),
-  //dev landingpage
+  //dev landingpage //nav item on hover
   headline3: TextStyle(
       fontFamily: ptSans,
       fontSize: 42,
       letterSpacing: -2,
       color: Colors.white,
+      fontWeight: FontWeight.bold,
+      height: 0.6),
+  // navbar
+  headline4: TextStyle(
+      fontFamily: ptSans,
+      fontSize: 42,
+      letterSpacing: -2,
+      color: lightGray,
+      fontWeight: FontWeight.bold,
+      height: 0.6),
+  //UNSELECTABLE
+  headline5: TextStyle(
+      decoration: TextDecoration.lineThrough,
+      decorationStyle: TextDecorationStyle.wavy,
+      decorationColor: Colors.white,
+      fontFamily: ptSans,
+      fontSize: 42,
+      letterSpacing: -2,
+      color: lightGray,
       fontWeight: FontWeight.bold,
       height: 0.6),
 );
