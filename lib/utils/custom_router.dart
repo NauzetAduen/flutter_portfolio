@@ -9,31 +9,42 @@ class CustomRouter {
 
     switch (routeName) {
       case LandingPage.routeName:
-        return CustomMaterialPageRoute(
-          routeName,
-          LandingPage(),
+        return AnimatedPageROuteBuilder(
+          routeName: routeName,
+          destination: LandingPage(),
         );
       case PersonalPage.routeName:
-        return CustomMaterialPageRoute(routeName, const PersonalPage());
+        return AnimatedPageROuteBuilder(
+            routeName: routeName, destination: const PersonalPage());
 
       case WorkPage.routeName:
-        return CustomMaterialPageRoute(routeName, WorkPage());
+        return AnimatedPageROuteBuilder(
+            routeName: routeName, destination: WorkPage());
 
       default:
-        return CustomMaterialPageRoute(
-          LandingPage.routeName,
-          LandingPage(),
+        return AnimatedPageROuteBuilder(
+          routeName: LandingPage.routeName,
+          destination: LandingPage(),
         );
     }
   }
 }
 
-class CustomMaterialPageRoute extends MaterialPageRoute {
-  final String routeName;
+class AnimatedPageROuteBuilder extends PageRouteBuilder {
   final Widget destination;
+  final String routeName;
 
-  CustomMaterialPageRoute(this.routeName, this.destination)
+  AnimatedPageROuteBuilder({@required this.destination, this.routeName})
       : super(
-            builder: (_) => destination,
-            settings: RouteSettings(name: routeName));
+            settings: RouteSettings(name: routeName),
+            pageBuilder: (context, animation, another) => destination,
+            transitionDuration: const Duration(milliseconds: 400),
+            transitionsBuilder: (context, animation, another, child) {
+              animation =
+                  CurvedAnimation(parent: animation, curve: Curves.decelerate);
+              return FadeTransition(
+                opacity: animation,
+                child: child,
+              );
+            });
 }
