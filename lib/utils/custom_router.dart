@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/model/personal.dart';
-import 'package:flutter_portfolio/pages/landing_page.dart';
-import 'package:flutter_portfolio/pages/personal_page.dart';
-import 'package:flutter_portfolio/pages/work_page.dart';
+import '../pages/landing_page.dart';
+import '../pages/personal_page.dart';
+import '../pages/work_page.dart';
 
 class CustomRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -15,7 +14,7 @@ class CustomRouter {
           LandingPage(),
         );
       case PersonalPage.routeName:
-        return CustomMaterialPageRoute(routeName, PersonalPage());
+        return CustomMaterialPageRoute(routeName, const PersonalPage());
 
       case WorkPage.routeName:
         return CustomMaterialPageRoute(routeName, WorkPage());
