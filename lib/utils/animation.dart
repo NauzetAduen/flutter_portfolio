@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+const animationDuration = Duration(seconds: 3);
 Animation<Offset> getTweenAnimation(
     {double beginX = 0.0,
     double beginY = 0.0,
