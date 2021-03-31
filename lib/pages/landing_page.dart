@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/utils/animation.dart';
 import 'package:flutter_portfolio/widgets/navigation_bar.dart';
 
-const animationDuration = Duration(milliseconds: 3000);
-
 class LandingPage extends StatefulWidget {
   static const String routeName = "/";
   @override
@@ -11,7 +9,7 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage>
-    with TickerProviderStateMixin {
+    with SingleTickerProviderStateMixin {
   AnimationController _controller;
 
   Animation<Offset> _titleAnimation;
@@ -39,21 +37,6 @@ class _LandingPageState extends State<LandingPage>
     _linkColumnAnimation =
         getTweenAnimation(beginY: -200, controller: _controller);
   }
-
-  // Animation<Offset> _getTweenAnimation(
-  //     {double beginX = 0.0,
-  //     double beginY = 0.0,
-  //     double endX = 0.0,
-  //     double endY = 0.0,
-  //     double begin = 0,
-  //     double end = 1}) {
-  //   return Tween<Offset>(
-  //     begin: Offset(beginX, beginY),
-  //     end: Offset(endX, endY),
-  //   ).animate(CurvedAnimation(
-  //       parent: _controller,
-  //       curve: Interval(begin, end, curve: Curves.easeOutQuint)));
-  // }
 
   @override
   Widget build(BuildContext context) {
