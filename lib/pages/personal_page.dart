@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio/utils/animation.dart';
+import 'package:flutter_portfolio/widgets/home_willpop_scope.dart';
+import 'package:flutter_portfolio/widgets/navigation_bar.dart';
 import '../model/personal.dart';
 import '../repository/personal_repository.dart';
 
@@ -20,6 +23,20 @@ class _PersonalPageState extends State<PersonalPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Text(personal.name)));
+    return Scaffold(
+      body: Stack(
+        children: [
+          Positioned(
+            top: 30,
+            right: 30,
+            child: NavigationBar(),
+          ),
+          const Center(
+            child: Text(PersonalPage.routeName),
+          ),
+        ],
+      ),
+      // ),
+    );
   }
 }
