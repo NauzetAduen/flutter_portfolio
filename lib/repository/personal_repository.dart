@@ -2,15 +2,13 @@ import 'package:flutter_portfolio/model/personal.dart';
 
 class PersonalRepository {
   static Personal getPersonal() => Personal(
-        name: "Nauzet Aduen",
-        location: "Las Palmas de Gran Canaria, Canary Islands, Spain",
-        job: "Flutter developer",
+        welcome: "Hi, I'm Nauzet, I enjoy building things.",
         personalPoints: getPersonalPoints(),
       );
 
   static List<PersonalPoint> getPersonalPoints() => [
         PersonalPoint(title: "Education", points: [
-          "Computer Engineer at University of Las Palmas de Gran Canaria, Spain",
+          "Computer Engineer at ULPGC",
           "Software Engineer intensification",
         ]),
         PersonalPoint(title: "Tech", points: getStack()),
@@ -19,21 +17,22 @@ class PersonalRepository {
       ];
 
   static List<String> getStack() => [
-        "crossPlatform development with Flutter",
-        "android native development",
-        "full Stack development with Firebase, Api REST, Hive, etc",
-        "TTD and Clean Architecture experience",
-        "UI/UX design basic experience",
-        "experience with agile methodologies, SCRUM"
+        "CrossPlatform Dev with Flutter",
+        "Android native development",
+        "BackEnd development with\nFirebase, Api REST",
+        "Postgress,MySQL, Firebase, Hive",
+        "TTD and Clean Architecture",
+        "UI/UX design",
+        "Agile methodologies, SCRUM"
       ];
   static List<String> getSoft() => [
-        "able to work remotely",
-        "eager to learn new things",
-        "teamwork",
-        "critical thinking",
-        "stupidly optimistic",
+        "Able to work remotely",
+        "Eager to learn new things",
+        "Teamwork",
+        "Critical thinking",
+        "Stupidly optimistic",
       ];
 
   static List<String> getInterests() =>
-      ["multidisciplinary teams", "medical apps development"];
+      ["Multidisciplinary teams", "Medical apps development"];
 }

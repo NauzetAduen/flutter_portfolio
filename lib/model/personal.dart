@@ -1,13 +1,10 @@
 class Personal {
-  final String name;
-  final String location;
-  final String job;
+  final String welcome;
+
   final List<PersonalPoint> personalPoints;
 
   Personal({
-    this.name,
-    this.location,
-    this.job,
+    this.welcome,
     this.personalPoints,
   });
 }
