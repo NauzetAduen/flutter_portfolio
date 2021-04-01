@@ -53,6 +53,13 @@ class _PersonalPageState extends State<PersonalPage>
   }
 
   @override
+  void dispose() {
+    animationController.dispose();
+    scrollController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     width = MediaQuery.of(context).size.width;
     height = MediaQuery.of(context).size.height;

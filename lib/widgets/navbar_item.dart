@@ -30,6 +30,12 @@ class _NavBarItemState extends State<NavBarItem>
   }
 
   @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     if (!url.endsWith(widget.title)) {
       return GestureDetector(
