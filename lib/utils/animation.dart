@@ -8,11 +8,11 @@ Animation<Offset> getTweenAnimation(
     double endY = 0.0,
     double begin = 0,
     double end = 1,
+    Curve cubic = Curves.easeOutQuint,
     AnimationController controller}) {
   return Tween<Offset>(
     begin: Offset(beginX, beginY),
     end: Offset(endX, endY),
   ).animate(CurvedAnimation(
-      parent: controller,
-      curve: Interval(begin, end, curve: Curves.easeOutQuint)));
+      parent: controller, curve: Interval(begin, end, curve: cubic)));
 }
