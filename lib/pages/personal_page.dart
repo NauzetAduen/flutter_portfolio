@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/utils/animation.dart';
-import 'package:flutter_portfolio/widgets/rounded_point.dart';
+import 'package:flutter_portfolio/widgets/point_column.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../model/personal.dart';
@@ -105,7 +105,7 @@ class _PersonalPageState extends State<PersonalPage>
                     height: height / 2,
                     width: width / 2,
                     child: Center(
-                        child: RoundedPoint(
+                        child: PointColumn(
                             width: width,
                             personalPoint: personal.personalPoints[index]))),
               );
@@ -122,6 +122,7 @@ class _PersonalPageState extends State<PersonalPage>
             child: SlideTransition(
               position: arrowAnimation,
               child: IconButton(
+                hoverColor: Colors.transparent,
                 splashColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 icon: FaIcon(
