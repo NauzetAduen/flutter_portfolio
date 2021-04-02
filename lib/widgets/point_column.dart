@@ -13,8 +13,8 @@ class PointColumn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-        child: Column(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
         Text(personalPoint.title,
@@ -27,11 +27,11 @@ class PointColumn extends StatelessWidget {
         ),
         for (var points in personalPoint.points)
           Text(points,
-              textAlign: TextAlign.center,
+              textAlign: TextAlign.left,
               style: width < 600
                   ? Theme.of(context).textTheme.bodyText1.copyWith(fontSize: 14)
                   : Theme.of(context).textTheme.bodyText1)
       ],
-    ));
+    );
   }
 }
