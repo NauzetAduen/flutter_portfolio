@@ -66,7 +66,7 @@ const TextTheme textTheme = TextTheme(
     bodyText2: TextStyle(
       fontFamily: ptSerif,
       fontSize: 22,
-      color: primaryColor,
+      color: accentColor,
       letterSpacing: 3,
       fontWeight: FontWeight.bold,
     ));
