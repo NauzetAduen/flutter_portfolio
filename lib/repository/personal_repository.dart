@@ -19,16 +19,16 @@ class PersonalRepository {
   static List<String> getStack() => [
         "CrossPlatform Dev with Flutter",
         "Android native development",
-        "BackEnd development with\nFirebase, Api REST",
+        "Dev with Firebase, Api REST",
         "Postgress,MySQL, Firebase, Hive",
         "TTD and Clean Architecture",
-        "UI/UX design",
+        "UI/UX design experience",
         "Agile methodologies, SCRUM"
       ];
   static List<String> getSoft() => [
         "Able to work remotely",
         "Eager to learn new things",
-        "Teamwork",
+        "Teamwork as principle",
         "Critical thinking",
         "Stupidly optimistic",
       ];
