@@ -91,7 +91,7 @@ class _LandingPageState extends State<LandingPage>
               child: Padding(
                 padding: const EdgeInsets.only(left: 30),
                 child: Container(
-                  color: Colors.white,
+                  color: Theme.of(context).accentColor,
                   child: Hero(
                     tag: 'links',
                     child: Column(
