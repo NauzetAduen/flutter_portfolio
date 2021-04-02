@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/utils/animation.dart';
+import 'package:flutter_portfolio/widgets/rounded_point.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../model/personal.dart';
@@ -63,10 +64,6 @@ class _PersonalPageState extends State<PersonalPage>
   Widget build(BuildContext context) {
     width = MediaQuery.of(context).size.width;
     height = MediaQuery.of(context).size.height;
-    // if(){}
-    // WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-    //   if (scrollController.hasClients) print(scrollController.position);
-    // });
     return Scaffold(
       body: Stack(
         alignment: Alignment.center,
@@ -77,7 +74,8 @@ class _PersonalPageState extends State<PersonalPage>
               width: 300,
               decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  border: Border.all(color: Colors.white, width: 4)),
+                  border: Border.all(
+                      color: Theme.of(context).primaryColor, width: 4)),
               child: Center(
                 child: RichText(
                   textAlign: TextAlign.center,
@@ -87,10 +85,7 @@ class _PersonalPageState extends State<PersonalPage>
                         style: Theme.of(context).textTheme.headline6),
                     TextSpan(
                         text: pattern,
-                        style: Theme.of(context)
-                            .textTheme
-                            .headline6
-                            .copyWith(fontWeight: FontWeight.bold)),
+                        style: Theme.of(context).textTheme.headline3),
                     TextSpan(
                         text: welcomeMessage.last,
                         style: Theme.of(context).textTheme.headline6),
@@ -100,6 +95,7 @@ class _PersonalPageState extends State<PersonalPage>
             ),
           ),
           ListView.builder(
+            physics: const NeverScrollableScrollPhysics(),
             controller: scrollController,
             itemBuilder: (context, index) {
               return Align(
@@ -132,11 +128,13 @@ class _PersonalPageState extends State<PersonalPage>
                   isNotAtEnd
                       ? FontAwesomeIcons.chevronDown
                       : FontAwesomeIcons.chevronUp,
-                  color: Colors.white,
+                  color: Theme.of(context).accentColor,
                   size: 30,
                 ),
-                onPressed: () => scrollController.jumpTo(
-                    isNotAtEnd ? scrollController.position.maxScrollExtent : 0),
+                onPressed: () => scrollController.animateTo(
+                    isNotAtEnd ? scrollController.position.maxScrollExtent : 0,
+                    duration: const Duration(milliseconds: 500),
+                    curve: Curves.easeInOutQuint),
               ),
             ),
           ),
@@ -146,48 +144,15 @@ class _PersonalPageState extends State<PersonalPage>
   }
 }
 
-class RoundedPoint extends StatelessWidget {
-  const RoundedPoint({
-    Key key,
-    @required this.personalPoint,
-    @required this.width,
-  }) : super(key: key);
-
-  final PersonalPoint personalPoint;
-  final double width;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        width: 400,
-        decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            border: Border.all(color: Colors.white, width: 4)),
-        child: Center(
-            child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(personalPoint.title,
-                textAlign: TextAlign.center,
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyText1
-                    .copyWith(fontWeight: FontWeight.bold)),
-            Container(
-              height: 2,
-              width: 200,
-              color: Colors.white,
-            ),
-            for (var points in personalPoint.points)
-              Text(points,
-                  textAlign: TextAlign.center,
-                  style: width < 600
-                      ? Theme.of(context)
-                          .textTheme
-                          .bodyText1
-                          .copyWith(fontSize: 14)
-                      : Theme.of(context).textTheme.bodyText1)
-          ],
-        )));
-  }
-}
+// class RoundedImage extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//         width: 400,
+//         decoration: BoxDecoration(
+//             shape: BoxShape.circle,
+//             border:
+//                 Border.all(color: Theme.of(context).primaryColor, width: 4)),
+//         child: Center(child: Text("ABS")));
+//   }
+// }
