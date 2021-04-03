@@ -1,7 +1,7 @@
-import 'package:universal_html/html.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/utils/animation.dart';
+import 'package:universal_html/html.dart';
 
+import '../utils/animation.dart';
 import 'animated_hover.dart';
 
 class NavBarItem extends StatefulWidget {

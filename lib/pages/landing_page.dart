@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/utils/animation.dart';
-import 'package:flutter_portfolio/widgets/links_column.dart';
-import 'package:flutter_portfolio/widgets/navigation_bar.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:url_launcher/url_launcher.dart';
+
+import '../utils/animation.dart';
+import '../widgets/links_column.dart';
+import '../widgets/navigation_bar.dart';
 
 class LandingPage extends StatefulWidget {
   static const String routeName = "/";

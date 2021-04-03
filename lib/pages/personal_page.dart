@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/utils/animation.dart';
-import 'package:flutter_portfolio/widgets/links_column.dart';
-import 'package:flutter_portfolio/widgets/point_column.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../model/personal.dart';
 import '../repository/personal_repository.dart';
+import '../utils/animation.dart';
+import '../widgets/links_column.dart';
 import '../widgets/navigation_bar.dart';
+import '../widgets/point_column.dart';
 
 class PersonalPage extends StatefulWidget {
   static const String routeName = "/personal";

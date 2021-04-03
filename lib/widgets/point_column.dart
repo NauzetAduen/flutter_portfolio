@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/model/personal.dart';
+
+import '../model/personal.dart';
 
 class PointColumn extends StatelessWidget {
   const PointColumn({

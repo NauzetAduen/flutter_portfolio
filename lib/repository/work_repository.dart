@@ -1,4 +1,4 @@
-import 'package:flutter_portfolio/model/work.dart';
+import '../model/work.dart';
 
 class WorkRepository {
   static List<Work> getWorks() {

@@ -1,4 +1,4 @@
-import 'package:flutter_portfolio/model/personal.dart';
+import '../model/personal.dart';
 
 class PersonalRepository {
   static Personal getPersonal() => Personal(
