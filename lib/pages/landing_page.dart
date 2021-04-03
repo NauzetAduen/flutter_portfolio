@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/utils/animation.dart';
+import 'package:flutter_portfolio/widgets/links_column.dart';
 import 'package:flutter_portfolio/widgets/navigation_bar.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class LandingPage extends StatefulWidget {
   static const String routeName = "/";
@@ -22,14 +25,6 @@ class _LandingPageState extends State<LandingPage>
 
     _controller = AnimationController(vsync: this, duration: animationDuration)
       ..forward();
-
-    // _controller.addStatusListener((status) {
-    //   if (status == AnimationStatus.completed) {
-    //     Future.delayed(const Duration(seconds: 2), () {
-    //       _controller.reverse();
-    //     });
-    //   }
-    // });
 
     _titleAnimation = getTweenAnimation(beginX: -10, controller: _controller);
     _subtitleAnimation = getTweenAnimation(beginX: 10, controller: _controller);
@@ -72,8 +67,6 @@ class _LandingPageState extends State<LandingPage>
                         style: Theme.of(context).textTheme.headline2),
                   ]),
                 ),
-                // child: Text("flutter developer",
-                //     style: Theme.of(context).textTheme.headline2),
               )
             ],
           )),
@@ -84,26 +77,7 @@ class _LandingPageState extends State<LandingPage>
                 position: _barAnimation,
                 child: NavigationBar(),
               )),
-          SlideTransition(
-            position: _linkColumnAnimation,
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 30),
-                child: Container(
-                  color: Theme.of(context).accentColor,
-                  child: Hero(
-                    tag: 'links',
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: const [Text("A"), Text("B")],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          )
+          SlideTransition(position: _linkColumnAnimation, child: LinksColumn())
         ],
       ),
     );

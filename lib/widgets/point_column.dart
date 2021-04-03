@@ -23,7 +23,7 @@ class PointColumn extends StatelessWidget {
         Container(
           height: 2,
           width: 200,
-          color: Theme.of(context).accentColor,
+          color: Theme.of(context).focusColor,
         ),
         for (var points in personalPoint.points)
           Text(points,

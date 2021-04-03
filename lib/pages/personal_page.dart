@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/utils/animation.dart';
+import 'package:flutter_portfolio/widgets/links_column.dart';
 import 'package:flutter_portfolio/widgets/point_column.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -139,6 +140,7 @@ class _PersonalPageState extends State<PersonalPage>
               ),
             ),
           ),
+          LinksColumn(),
         ],
       ),
     );
