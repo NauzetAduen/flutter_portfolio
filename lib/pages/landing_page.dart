@@ -39,46 +39,45 @@ class _LandingPageState extends State<LandingPage>
   }
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          Center(
-              child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              SlideTransition(
-                  position: _titleAnimation,
-                  child: Text("nau",
-                      style: Theme.of(context).textTheme.headline1)),
-              SlideTransition(
-                position: _subtitleAnimation,
-                child: RichText(
-                  text: TextSpan(children: <TextSpan>[
-                    TextSpan(
-                        text: 'flutter',
-                        style: Theme.of(context).textTheme.headline2),
-                    TextSpan(
-                        text: 'dev',
-                        style: Theme.of(context).textTheme.headline3),
-                    TextSpan(
-                        text: 'eloper',
-                        style: Theme.of(context).textTheme.headline2),
-                  ]),
-                ),
-              )
-            ],
-          )),
-          Positioned(
-              top: 30,
-              right: 30,
-              child: SlideTransition(
-                position: _barAnimation,
-                child: NavigationBar(),
-              )),
-          SlideTransition(position: _linkColumnAnimation, child: LinksColumn())
-        ],
-      ),
-    );
-  }
+  Widget build(BuildContext context) => Scaffold(
+        body: Stack(
+          children: [
+            Center(
+                child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                SlideTransition(
+                    position: _titleAnimation,
+                    child: Text("nau",
+                        style: Theme.of(context).textTheme.headline1)),
+                SlideTransition(
+                  position: _subtitleAnimation,
+                  child: RichText(
+                    text: TextSpan(children: <TextSpan>[
+                      TextSpan(
+                          text: 'flutter',
+                          style: Theme.of(context).textTheme.headline2),
+                      TextSpan(
+                          text: 'dev',
+                          style: Theme.of(context).textTheme.headline3),
+                      TextSpan(
+                          text: 'eloper',
+                          style: Theme.of(context).textTheme.headline2),
+                    ]),
+                  ),
+                )
+              ],
+            )),
+            Positioned(
+                top: 30,
+                right: 30,
+                child: SlideTransition(
+                  position: _barAnimation,
+                  child: NavigationBar(),
+                )),
+            SlideTransition(
+                position: _linkColumnAnimation, child: LinksColumn())
+          ],
+        ),
+      );
 }

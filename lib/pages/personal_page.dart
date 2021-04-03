@@ -146,16 +146,3 @@ class _PersonalPageState extends State<PersonalPage>
     );
   }
 }
-
-// class RoundedImage extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//         width: 400,
-//         decoration: BoxDecoration(
-//             shape: BoxShape.circle,
-//             border:
-//                 Border.all(color: Theme.of(context).primaryColor, width: 4)),
-//         child: Center(child: Text("ABS")));
-//   }
-// }

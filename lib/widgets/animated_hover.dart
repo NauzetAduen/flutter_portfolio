@@ -15,13 +15,11 @@ class AnimatedHover extends StatelessWidget {
   final String title;
 
   @override
-  Widget build(BuildContext context) {
-    return SlideTransition(
-      position: animation,
-      child: Text(title,
-          style: hovering
-              ? Theme.of(context).textTheme.headline3
-              : Theme.of(context).textTheme.headline4),
-    );
-  }
+  Widget build(BuildContext context) => SlideTransition(
+        position: animation,
+        child: Text(title,
+            style: hovering
+                ? Theme.of(context).textTheme.headline3
+                : Theme.of(context).textTheme.headline4),
+      );
 }
