@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio/repository/url_repository.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -6,15 +7,12 @@ const double iconSize = 18;
 
 class LinksColumn extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.centerLeft,
-      child: Padding(
-        padding: const EdgeInsets.only(left: 30),
-        child: Container(
-          color: Theme.of(context).focusColor,
-          child: Hero(
-            tag: 'links',
+  Widget build(BuildContext context) => Align(
+        alignment: Alignment.centerLeft,
+        child: Padding(
+          padding: const EdgeInsets.only(left: 30),
+          child: Container(
+            color: Theme.of(context).focusColor,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
@@ -26,7 +24,7 @@ class LinksColumn extends StatelessWidget {
                       size: iconSize,
                     ),
                     onPressed: () async {
-                      await launch("https://github.com/NauzetAduen");
+                      await launch(UrlRepository().getUrl('github'));
                     }),
                 IconButton(
                     icon: FaIcon(
@@ -35,8 +33,7 @@ class LinksColumn extends StatelessWidget {
                       size: iconSize,
                     ),
                     onPressed: () async {
-                      await launch(
-                          "https://www.linkedin.com/in/nauzet-aduen-hern%C3%A1ndez-hern%C3%A1ndez-036b4118b/");
+                      await launch(UrlRepository().getUrl('linkedin'));
                     }),
                 IconButton(
                     icon: FaIcon(
@@ -45,8 +42,7 @@ class LinksColumn extends StatelessWidget {
                       size: iconSize,
                     ),
                     onPressed: () async {
-                      await launch(
-                          "https://stackoverflow.com/users/6155494/nauzet");
+                      await launch(UrlRepository().getUrl('stackoverflow'));
                     }),
                 IconButton(
                     icon: FaIcon(
@@ -55,13 +51,11 @@ class LinksColumn extends StatelessWidget {
                       size: iconSize,
                     ),
                     onPressed: () async {
-                      await launch("mailto:nauzet.aduen@gmail.com");
+                      await launch("mailto:${UrlRepository().getUrl('mail')}");
                     }),
               ],
             ),
           ),
         ),
-      ),
-    );
-  }
+      );
 }
