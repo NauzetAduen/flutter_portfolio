@@ -38,7 +38,7 @@ class AnimatedPageROuteBuilder extends PageRouteBuilder {
       : super(
             settings: RouteSettings(name: routeName),
             pageBuilder: (context, animation, another) => destination,
-            transitionDuration: const Duration(milliseconds: 400),
+            transitionDuration: const Duration(milliseconds: 1000),
             transitionsBuilder: (context, animation, another, child) {
               animation =
                   CurvedAnimation(parent: animation, curve: Curves.decelerate);
