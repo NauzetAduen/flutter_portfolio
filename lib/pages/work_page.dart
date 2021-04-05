@@ -3,6 +3,10 @@ import 'package:flutter_portfolio/model/work.dart';
 import 'package:flutter_portfolio/repository/work_repository.dart';
 import 'package:flutter_portfolio/widgets/links_column.dart';
 import 'package:flutter_portfolio/widgets/navigation_bar.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:step_progress_indicator/step_progress_indicator.dart';
+
+const double padding = 60;
 
 class WorkPage extends StatefulWidget {
   static const String routeName = "/work";
@@ -15,10 +19,27 @@ class _WorkPageState extends State<WorkPage> {
   List<Work> works;
   double width;
   double height;
+  ScrollController scrollController;
+  bool isNotAtEnd = true;
+  int currentStep = 1;
   @override
   void initState() {
     super.initState();
     works = WorkRepository.getWorks();
+    scrollController = ScrollController();
+    scrollController.addListener(() {
+      if (scrollController.offset >=
+          scrollController.position.maxScrollExtent) {
+        setState(() {
+          isNotAtEnd = false;
+        });
+      }
+      if (scrollController.offset == 0) {
+        setState(() {
+          isNotAtEnd = true;
+        });
+      }
+    });
   }
 
   @override
@@ -33,11 +54,12 @@ class _WorkPageState extends State<WorkPage> {
             // width: width,
             height: height * 0.8,
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 60),
+              padding: const EdgeInsets.symmetric(horizontal: padding),
               child: ListView.builder(
+                controller: scrollController,
                 itemBuilder: (context, index) {
                   return SizedBox(
-                      width: width - 120,
+                      width: width - padding * 2,
                       // height: height * 0.8,
                       child: Center(
                           child: SingleChildScrollView(
@@ -54,9 +76,12 @@ class _WorkPageState extends State<WorkPage> {
                                     style:
                                         Theme.of(context).textTheme.subtitle1),
                               ),
-                              Text(
-                                works[index].date.toUpperCase(),
-                                style: Theme.of(context).textTheme.subtitle2,
+                              Padding(
+                                padding: const EdgeInsets.only(left: 30),
+                                child: Text(
+                                  works[index].date.toUpperCase(),
+                                  style: Theme.of(context).textTheme.subtitle2,
+                                ),
                               ),
                               Row(
                                 children: [
@@ -150,6 +175,35 @@ class _WorkPageState extends State<WorkPage> {
             child: NavigationBar(),
           ),
           LinksColumn(),
+          Positioned(
+            bottom: 10,
+            child: StepProgressIndicator(
+              totalSteps: works.length,
+              selectedColor: Theme.of(context).accentColor,
+              currentStep: currentStep,
+            ),
+          ),
+          IconButton(
+              focusColor: Colors.transparent,
+              hoverColor: Colors.transparent,
+              splashColor: Colors.transparent,
+              highlightColor: Colors.transparent,
+              icon: FaIcon(isNotAtEnd
+                  ? FontAwesomeIcons.chevronRight
+                  : FontAwesomeIcons.chevronLeft),
+              color: Theme.of(context).accentColor,
+              onPressed: () {
+                setState(() {
+                  currentStep =
+                      currentStep == works.length ? 0 : currentStep + 1;
+                });
+                return scrollController.animateTo(
+                    isNotAtEnd
+                        ? scrollController.position.pixels + width - padding * 2
+                        : 0,
+                    duration: const Duration(milliseconds: 600),
+                    curve: Curves.easeInOutQuint);
+              }),
         ],
       ),
       // ),
