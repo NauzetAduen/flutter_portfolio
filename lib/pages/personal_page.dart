@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio/widgets/central_message.dart';
+import 'package:flutter_portfolio/widgets/max_width_container.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../model/personal.dart';
@@ -66,83 +68,68 @@ class _PersonalPageState extends State<PersonalPage>
     width = MediaQuery.of(context).size.width;
     height = MediaQuery.of(context).size.height;
     return Scaffold(
-      body: Stack(
-        alignment: Alignment.center,
-        children: [
-          Center(
-            child: Container(
-              height: 300,
-              width: 300,
-              decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(
-                      color: Theme.of(context).primaryColor, width: 4)),
-              child: Center(
-                child: RichText(
-                  textAlign: TextAlign.center,
-                  text: TextSpan(children: <TextSpan>[
-                    TextSpan(
-                        text: welcomeMessage.first,
-                        style: Theme.of(context).textTheme.headline6),
-                    TextSpan(
-                        text: pattern,
-                        style: Theme.of(context).textTheme.headline3),
-                    TextSpan(
-                        text: welcomeMessage.last,
-                        style: Theme.of(context).textTheme.headline6),
-                  ]),
-                ),
-              ),
-            ),
-          ),
-          ListView.builder(
-            itemExtent: height / 2,
-            physics: const NeverScrollableScrollPhysics(),
-            controller: scrollController,
-            itemBuilder: (context, index) {
-              return Align(
-                alignment:
-                    index.isEven ? Alignment.centerLeft : Alignment.centerRight,
-                child: SizedBox(
-                    height: height / 2,
-                    width: width / 2,
-                    child: Center(
+      body: MaxWidthContainer(
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            CentralMessage(welcomeMessage: welcomeMessage, pattern: pattern),
+            ListView.builder(
+              itemExtent: height / 2,
+              physics: const NeverScrollableScrollPhysics(),
+              controller: scrollController,
+              itemBuilder: (context, index) {
+                return Align(
+                  alignment: index.isEven
+                      ? Alignment.centerLeft
+                      : Alignment.centerRight,
+                  child: SizedBox(
+                      // color: Colors.green,
+                      height: height / 2,
+                      width: width / 2,
+                      child: Align(
+                        alignment: index.isEven
+                            ? Alignment.centerLeft
+                            : Alignment.centerRight,
                         child: PointColumn(
-                            width: width,
-                            personalPoint: personal.personalPoints[index]))),
-              );
-            },
-            itemCount: personal.personalPoints.length,
-          ),
-          Positioned(
-            top: 30,
-            right: 30,
-            child: NavigationBar(),
-          ),
-          Positioned(
-            bottom: 10,
-            child: SlideTransition(
-              position: arrowAnimation,
-              child: IconButton(
-                hoverColor: Colors.transparent,
-                splashColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                icon: FaIcon(
-                  isNotAtEnd
-                      ? FontAwesomeIcons.chevronDown
-                      : FontAwesomeIcons.chevronUp,
-                  color: Theme.of(context).accentColor,
-                  size: 30,
+                            isEven: index.isEven,
+                            personalPoint: personal.personalPoints[index]),
+                      )),
+                );
+              },
+              itemCount: personal.personalPoints.length,
+            ),
+            Positioned(
+              top: 30,
+              right: 30,
+              child: NavigationBar(),
+            ),
+            Positioned(
+              bottom: 10,
+              child: SlideTransition(
+                position: arrowAnimation,
+                child: IconButton(
+                  hoverColor: Colors.transparent,
+                  splashColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  icon: FaIcon(
+                    isNotAtEnd
+                        ? FontAwesomeIcons.chevronDown
+                        : FontAwesomeIcons.chevronUp,
+                    color: Theme.of(context).accentColor,
+                    size: 30,
+                  ),
+                  onPressed: () => scrollController.animateTo(
+                      isNotAtEnd
+                          ? scrollController.position.maxScrollExtent
+                          : 0,
+                      duration: const Duration(milliseconds: 500),
+                      curve: Curves.easeInOutQuint),
                 ),
-                onPressed: () => scrollController.animateTo(
-                    isNotAtEnd ? scrollController.position.maxScrollExtent : 0,
-                    duration: const Duration(milliseconds: 500),
-                    curve: Curves.easeInOutQuint),
               ),
             ),
-          ),
-          LinksColumn(),
-        ],
+            LinksColumn(),
+          ],
+        ),
       ),
     );
   }
