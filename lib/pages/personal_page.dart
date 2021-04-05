@@ -96,6 +96,7 @@ class _PersonalPageState extends State<PersonalPage>
             ),
           ),
           ListView.builder(
+            itemExtent: height / 2,
             physics: const NeverScrollableScrollPhysics(),
             controller: scrollController,
             itemBuilder: (context, index) {

@@ -56,6 +56,7 @@ class _WorkPageState extends State<WorkPage> {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: padding),
               child: ListView.builder(
+                itemExtent: width - padding * 2,
                 controller: scrollController,
                 itemBuilder: (context, index) {
                   return SizedBox(
@@ -195,7 +196,7 @@ class _WorkPageState extends State<WorkPage> {
               onPressed: () {
                 setState(() {
                   currentStep =
-                      currentStep == works.length ? 0 : currentStep + 1;
+                      currentStep == works.length ? 1 : currentStep + 1;
                 });
                 return scrollController.animateTo(
                     isNotAtEnd
