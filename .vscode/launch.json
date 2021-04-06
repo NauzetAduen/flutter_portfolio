@@ -10,10 +10,18 @@
             "type": "dart"
         },
         {
-            "name": "flutter_portfolio_web",
+            "name": "flutter_portfolio_web_debug",
             "request": "launch",
             "type": "dart",
             "deviceId": "Chrome",
+            "flutterMode": "debug"
+        },
+        {
+            "name": "flutter_portfolio_web_profile",
+            "request": "launch",
+            "type": "dart",
+            "deviceId": "Chrome",
+            "flutterMode": "profile"
         }
     ]
 }

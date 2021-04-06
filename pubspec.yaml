@@ -7,17 +7,20 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
-  
+  cupertino_icons: ^0.1.2
   flutter:
     sdk: flutter
+  font_awesome_flutter: ^9.0.0
     
-
-  cupertino_icons: ^0.1.2
-  responsive_builder:
-  animated_text_kit: ^2.4.0
-  timeline_tile: ^1.0.0
-  provider:
-  smooth_scroll_web: ^0.0.4
+  lint: ^1.5.3
+  step_progress_indicator: ^0.2.5+8
+  universal_html: ^2.0.7
+  url_launcher: ^6.0.3
+  url_strategy: ^0.2.0
+  
+  
+  
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -28,16 +31,22 @@ flutter:
 
   assets:
     - assets/images/
-    - assets/images/logos/
-    - assets/images/previews/
+  #   - assets/images/logos/
+  #   - assets/images/previews/
   fonts:
-    - family: Nunito
+    - family: PTsans
       fonts:
-        - asset: assets/fonts/Nunito-Regular.ttf
+        - asset: assets/fonts/Ptsans-Regular.ttf
           weight: 400
-        - asset: assets/fonts/Nunito-Bold.ttf
+        - asset: assets/fonts/Ptsans-Bold.ttf
           weight: 700
-    - family: ArchitectsDaughter
+        - asset: assets/fonts/Ptsans-Italic.ttf
+          style: italic
+    - family: PTserif
       fonts:
-        - asset: assets/fonts/ArchitectsDaughter-Regular.ttf
+        - asset: assets/fonts/PTserif-Regular.ttf
           weight: 400
+        - asset: assets/fonts/PTserif-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/PTserif-Italic.ttf
+          style: italic     
