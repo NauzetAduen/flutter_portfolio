@@ -13,6 +13,8 @@ const double padding = 60;
 class WorkPage extends StatefulWidget {
   static const String routeName = "/work";
 
+  const WorkPage();
+
   @override
   _WorkPageState createState() => _WorkPageState();
 }

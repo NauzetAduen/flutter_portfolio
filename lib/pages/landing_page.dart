@@ -7,6 +7,8 @@ import '../widgets/navigation_bar.dart';
 
 class LandingPage extends StatefulWidget {
   static const String routeName = "/";
+
+  const LandingPage();
   @override
   _LandingPageState createState() => _LandingPageState();
 }
