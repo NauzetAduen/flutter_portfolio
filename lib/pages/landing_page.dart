@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/widgets/max_width_container.dart';
 
 import '../utils/animation.dart';
 import '../widgets/links_column.dart';
+import '../widgets/max_width_container.dart';
 import '../widgets/navigation_bar.dart';
 
 class LandingPage extends StatefulWidget {

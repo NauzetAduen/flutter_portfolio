@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/model/work.dart';
-import 'package:flutter_portfolio/repository/work_repository.dart';
-import 'package:flutter_portfolio/utils/constrains.dart';
-import 'package:flutter_portfolio/widgets/links_column.dart';
-import 'package:flutter_portfolio/widgets/max_width_container.dart';
-import 'package:flutter_portfolio/widgets/navigation_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
+
+import '../model/work.dart';
+import '../repository/work_repository.dart';
+import '../utils/constrains.dart';
+import '../widgets/links_column.dart';
+import '../widgets/max_width_container.dart';
+import '../widgets/navigation_bar.dart';
 
 const double padding = 60;
 

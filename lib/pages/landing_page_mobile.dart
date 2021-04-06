@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/widgets/links_row.dart';
-import 'package:flutter_portfolio/widgets/mobile_app_bar.dart';
+import '../widgets/links_row.dart';
+import '../widgets/mobile_app_bar.dart';
 
 class LandingPageMobile extends StatelessWidget {
   const LandingPageMobile();

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/model/personal.dart';
-import 'package:flutter_portfolio/repository/personal_repository.dart';
-import 'package:flutter_portfolio/widgets/central_message.dart';
-import 'package:flutter_portfolio/widgets/links_row.dart';
-import 'package:flutter_portfolio/widgets/mobile_app_bar.dart';
+
+import '../model/personal.dart';
+import '../repository/personal_repository.dart';
+import '../widgets/central_message.dart';
+import '../widgets/links_row.dart';
+import '../widgets/mobile_app_bar.dart';
 
 class PersonalPageMobile extends StatefulWidget {
   const PersonalPageMobile();

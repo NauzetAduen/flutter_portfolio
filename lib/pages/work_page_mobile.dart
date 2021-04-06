@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/model/work.dart';
-import 'package:flutter_portfolio/repository/work_repository.dart';
-import 'package:flutter_portfolio/widgets/links_row.dart';
-import 'package:flutter_portfolio/widgets/mobile_app_bar.dart';
+
+import '../model/work.dart';
+import '../repository/work_repository.dart';
+import '../widgets/links_row.dart';
+import '../widgets/mobile_app_bar.dart';
 
 class WorkPageMobile extends StatefulWidget {
   const WorkPageMobile();
