@@ -31,7 +31,10 @@ flutter:
 
   assets:
     - assets/images/
-  #   - assets/images/logos/
+    - assets/images/code_challenge.png
+    - assets/images/diabetiary.png
+    - assets/images/flutter_portfolio.png
+    - assets/images/hiking_app.png
   #   - assets/images/previews/
   fonts:
     - family: PTsans

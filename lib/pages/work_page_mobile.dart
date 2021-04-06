@@ -49,7 +49,7 @@ class _WorkPageMobileState extends State<WorkPageMobile> {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(12.0),
                           child: Image.asset(
-                            'images/${work.imageURL}',
+                            'assets/images/${work.imageURL}',
                           ),
                         ),
                       ),

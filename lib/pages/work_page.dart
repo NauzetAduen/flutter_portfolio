@@ -170,7 +170,7 @@ class _WorkPageState extends State<WorkPage> {
                                               borderRadius:
                                                   BorderRadius.circular(12.0),
                                               child: Image.asset(
-                                                'images/${works[index].imageURL}',
+                                                'assets/images/${works[index].imageURL}',
                                               ),
                                             ),
                                           ),
