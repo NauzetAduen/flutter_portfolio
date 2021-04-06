@@ -1,23 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/utils/router.dart' as router;
-import 'package:provider/provider.dart';
-import 'package:flutter_portfolio/style/theme.dart' as theme;
+import 'package:url_strategy/url_strategy.dart';
+// import 'package:flutter/rendering.dart';
 
-void main() => runApp(MyApp());
+import 'theme/app_theme.dart';
+import 'utils/custom_router.dart';
 
-class MyApp extends StatelessWidget {
+void main() {
+  setPathUrlStrategy();
+  runApp(Portfolio());
+}
+
+class Portfolio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    router.RouteName routeName = router.RouteName("home");
-    return ChangeNotifierProvider.value(
-      value: routeName,
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Nauzet, Portfolio',
-        onGenerateRoute: router.Router.generateRoute,
-        initialRoute: "/",
-        theme: theme.themeData,
-      ),
+    // debugPaintSizeEnabled = true;
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'nau',
+      theme: themeData,
+      initialRoute: "/",
+      onGenerateRoute: CustomRouter.generateRoute,
     );
   }
 }
