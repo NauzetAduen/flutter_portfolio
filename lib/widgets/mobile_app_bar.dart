@@ -6,6 +6,7 @@ class MobileAppBar extends PreferredSize {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
       elevation: 0,
       backgroundColor: Colors.transparent,
       actions: [
@@ -40,15 +41,9 @@ class MobileAppBar extends PreferredSize {
   }
 
   void onClick(BuildContext context, String pattern) {
-    print("HELLO $pattern");
     final String url = window.location.href;
     if (!url.endsWith(pattern)) {
       Navigator.pushNamed(context, pattern);
     }
-    // url.endsWith("/work")
-    //     ? null
-    //     : () {
-    //         Navigator.pushNamed(context, "/work");
-    //       };
   }
 }
