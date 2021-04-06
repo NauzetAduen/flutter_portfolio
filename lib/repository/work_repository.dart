@@ -81,7 +81,7 @@ I Learned Flutter framework, the Dart Programming Language and the cloud firesto
           "Google Maps",
           "Firebase",
         ],
-        url: "",
+        url: "https://github.com/NauzetAduen/hiking_app_public",
         imageURL: "hiking_app.png",
       ),
     ];

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio/widgets/url_link.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
@@ -109,34 +110,46 @@ class _WorkPageState extends State<WorkPage> {
                                                     .bodyText1,
                                                 textAlign: TextAlign.justify,
                                               ),
-                                              Wrap(
-                                                alignment: WrapAlignment.center,
-                                                // mainAxisAlignment:
-                                                //     MainAxisAlignment.center,
+                                              Row(
                                                 children: [
-                                                  for (var chip
-                                                      in works[index].chips)
-                                                    Chip(
-                                                      shape: StadiumBorder(
-                                                          side: BorderSide(
-                                                              color: Theme.of(
-                                                                      context)
-                                                                  .scaffoldBackgroundColor)),
+                                                  Expanded(
+                                                    child: Wrap(
+                                                      alignment:
+                                                          WrapAlignment.center,
+                                                      // mainAxisAlignment:
+                                                      //     MainAxisAlignment.center,
+                                                      children: [
+                                                        for (var chip
+                                                            in works[index]
+                                                                .chips)
+                                                          Chip(
+                                                            shape: StadiumBorder(
+                                                                side: BorderSide(
+                                                                    color: Theme.of(
+                                                                            context)
+                                                                        .scaffoldBackgroundColor)),
 
-                                                      // padding:
-                                                      //     EdgeInsets.symmetric(horizontal: ),
-                                                      label: Text(
-                                                        chip,
-                                                        style: TextStyle(
-                                                            fontSize: 12,
-                                                            color: Theme.of(
-                                                                    context)
-                                                                .primaryColor),
-                                                      ),
-                                                      backgroundColor:
-                                                          Theme.of(context)
-                                                              .focusColor,
+                                                            // padding:
+                                                            //     EdgeInsets.symmetric(horizontal: ),
+                                                            label: Text(
+                                                              chip,
+                                                              style: TextStyle(
+                                                                  fontSize: 12,
+                                                                  color: Theme.of(
+                                                                          context)
+                                                                      .primaryColor),
+                                                            ),
+                                                            backgroundColor:
+                                                                Theme.of(
+                                                                        context)
+                                                                    .focusColor,
+                                                          ),
+                                                      ],
                                                     ),
+                                                  ),
+                                                  UrlLink(
+                                                    url: works[index].url,
+                                                  ),
                                                 ],
                                               ),
                                             ],

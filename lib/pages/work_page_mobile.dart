@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio/widgets/url_link.dart';
 
 import '../model/work.dart';
 import '../repository/work_repository.dart';
@@ -53,6 +54,7 @@ class _WorkPageMobileState extends State<WorkPageMobile> {
                         ),
                       ),
                     ),
+                    UrlLink(url: work.url),
                     Padding(
                       padding: const EdgeInsets.symmetric(
                           horizontal: 16, vertical: 8),
