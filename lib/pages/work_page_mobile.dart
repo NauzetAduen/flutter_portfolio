@@ -30,45 +30,46 @@ class _WorkPageMobileState extends State<WorkPageMobile> {
         ),
         body: Center(
             child: SingleChildScrollView(
-                child: Column(
-          children: [
-            for (var work in works)
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 30),
+                physics: const BouncingScrollPhysics(),
                 child: Column(
                   children: [
-                    Text(work.title,
-                        style: Theme.of(context).textTheme.subtitle1),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 16, vertical: 8),
-                      child: Material(
-                        color: Colors.transparent,
-                        elevation: 20,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(12.0),
-                          child: Image.asset(
-                            'assets/images/${work.imageURL}',
-                          ),
+                    for (var work in works)
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 16, vertical: 30),
+                        child: Column(
+                          children: [
+                            Text(work.title,
+                                style: Theme.of(context).textTheme.subtitle1),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 16, vertical: 8),
+                              child: Material(
+                                color: Colors.transparent,
+                                elevation: 20,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(12.0),
+                                  child: Image.asset(
+                                    'assets/images/${work.imageURL}',
+                                  ),
+                                ),
+                              ),
+                            ),
+                            UrlLink(url: work.url),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 16, vertical: 8),
+                              child: Text(
+                                work.description,
+                                style: Theme.of(context).textTheme.bodyText1,
+                                textAlign: TextAlign.justify,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                    ),
-                    UrlLink(url: work.url),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 16, vertical: 8),
-                      child: Text(
-                        work.description,
-                        style: Theme.of(context).textTheme.bodyText1,
-                        textAlign: TextAlign.justify,
-                      ),
-                    ),
+                    LinksRow()
                   ],
-                ),
-              ),
-            LinksRow()
-          ],
-        ))));
+                ))));
   }
 }

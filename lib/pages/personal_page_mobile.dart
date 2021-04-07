@@ -34,6 +34,7 @@ class _PersonalPageMobileState extends State<PersonalPageMobile> {
       ),
       body: Center(
           child: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
