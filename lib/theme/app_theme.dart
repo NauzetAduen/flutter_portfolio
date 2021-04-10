@@ -8,7 +8,7 @@ const Color primaryColor = Color(0xffedeeff);
 const Color accentColor = Color(0xffA2D729);
 // const Color white = Color(0xffedeeff);
 const String ptSans = "PTsans";
-const String ptSerif = "PTserif";
+const String arbutus = "arbutusSlab";
 //TODO check new fonts
 //Abril Display
 //GT Alpina
@@ -19,7 +19,7 @@ const TextTheme textTheme = TextTheme(
   //nau landingpage
   headline1: TextStyle(
       fontWeight: FontWeight.bold,
-      fontFamily: ptSerif,
+      fontFamily: arbutus,
       fontSize: 144,
       color: primaryColor,
       height: 0.5),
@@ -71,7 +71,7 @@ const TextTheme textTheme = TextTheme(
   ),
   //titles in bubles
   bodyText2: TextStyle(
-    fontFamily: ptSerif,
+    fontFamily: arbutus,
     fontSize: 22,
     color: accentColor,
     letterSpacing: 3,
