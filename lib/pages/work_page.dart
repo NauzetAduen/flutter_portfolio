@@ -76,7 +76,8 @@ class _WorkPageState extends State<WorkPage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.only(bottom: 15),
+                                  padding: const EdgeInsets.only(
+                                      bottom: 15, left: 30),
                                   child: Text(works[index].title,
                                       style: Theme.of(context)
                                           .textTheme
@@ -147,9 +148,6 @@ class _WorkPageState extends State<WorkPage> {
                                                       ],
                                                     ),
                                                   ),
-                                                  UrlLink(
-                                                    url: works[index].url,
-                                                  ),
                                                 ],
                                               ),
                                             ],
@@ -178,6 +176,11 @@ class _WorkPageState extends State<WorkPage> {
                                       ),
                                     ),
                                   ],
+                                ),
+                                Align(
+                                  child: UrlLink(
+                                    url: works[index].url,
+                                  ),
                                 ),
                               ],
                             ),

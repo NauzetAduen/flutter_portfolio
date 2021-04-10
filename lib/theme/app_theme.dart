@@ -90,6 +90,11 @@ const TextTheme textTheme = TextTheme(
     letterSpacing: 4,
     color: accentColor,
   ),
+  caption: TextStyle(
+    fontFamily: ptSans,
+    fontSize: 16,
+    color: backGroundGreyColor,
+  ),
 );
 
 ThemeData themeData = ThemeData(

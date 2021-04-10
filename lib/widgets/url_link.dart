@@ -9,12 +9,35 @@ class UrlLink extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (url.isEmpty) return Container();
-    return IconButton(
-        iconSize: 16,
-        icon: FaIcon(
-          FontAwesomeIcons.externalLinkAlt,
-          color: Theme.of(context).accentColor,
-        ),
-        onPressed: () => launch(url));
+    return Padding(
+      padding: const EdgeInsets.only(top: 20),
+      child: ElevatedButton.icon(
+          style: ElevatedButton.styleFrom(
+            primary: Theme.of(context).accentColor,
+            elevation: 10,
+          ),
+          onPressed: () => launch(url),
+          icon: FaIcon(
+            FontAwesomeIcons.externalLinkAlt,
+            color: Theme.of(context).scaffoldBackgroundColor,
+            size: 16,
+          ),
+          label: Text(
+            "Visit",
+            style: Theme.of(context).textTheme.caption,
+          )),
+    );
+    // return IconButton(
+    //     iconSize: 16,
+    //     icon: Row(
+    //       children: [
+    //         Expanded(child: Text("Visit")),
+    //         FaIcon(
+    //           FontAwesomeIcons.externalLinkAlt,
+    //           color: Theme.of(context).accentColor,
+    //         ),
+    //       ],
+    //     ),
+    //     onPressed: () => launch(url));
   }
 }
