@@ -45,7 +45,7 @@ class LinksRow extends StatelessWidget {
                   }),
               IconButton(
                   icon: FaIcon(
-                    FontAwesomeIcons.solidPaperPlane,
+                    FontAwesomeIcons.envelope,
                     color: Theme.of(context).accentColor,
                     size: iconSize,
                   ),
