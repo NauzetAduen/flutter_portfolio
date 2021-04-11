@@ -26,7 +26,11 @@ class CentralMessage extends StatelessWidget {
                 text: welcomeMessage.first,
                 style: Theme.of(context).textTheme.headline6),
             TextSpan(
-                text: pattern, style: Theme.of(context).textTheme.headline3),
+                text: pattern,
+                style: Theme.of(context)
+                    .textTheme
+                    .headline3
+                    .copyWith(fontSize: 36)),
             TextSpan(
                 text: welcomeMessage.last,
                 style: Theme.of(context).textTheme.headline6),

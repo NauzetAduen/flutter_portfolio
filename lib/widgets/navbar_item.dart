@@ -66,12 +66,6 @@ class _NavBarItemState extends State<NavBarItem>
         widget.title,
         style: Theme.of(context).textTheme.headline5,
       );
-      // return AnimatedHover(
-      //   animation: animation,
-      //   widget: widget,
-      //   hovering: _hovering,
-      //   title: widget.title,
-      // );
     }
   }
 }

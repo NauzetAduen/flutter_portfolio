@@ -4,8 +4,8 @@ const Color backGroundGreyColor = Color(0xff38383C);
 // const Color lightGray = Color(0xffA5A5A5);
 const Color lightGray = Color(0xff67676b);
 const Color primaryColor = Color(0xffedeeff);
-// const Color accentColor = Color(0xffcfa616);
-const Color accentColor = Color(0xffA2D729);
+const Color accentColor = Color(0xffcfa616);
+// const Color accentColor = Color(0xffA2D729);
 // const Color white = Color(0xffedeeff);
 const String ptSans = "PTsans";
 const String arbutus = "arbutusSlab";
@@ -33,7 +33,7 @@ const TextTheme textTheme = TextTheme(
   //dev landingpage //nav item on hover
   headline3: TextStyle(
       fontFamily: ptSans,
-      fontSize: 42,
+      fontSize: 28,
       letterSpacing: -2,
       color: accentColor,
       fontWeight: FontWeight.bold,
@@ -41,20 +41,20 @@ const TextTheme textTheme = TextTheme(
   // navbar
   headline4: TextStyle(
       fontFamily: ptSans,
-      fontSize: 42,
+      fontSize: 28,
       letterSpacing: -2,
       color: lightGray,
       fontWeight: FontWeight.bold,
       height: 0.6),
   //UNSELECTABLE
   headline5: TextStyle(
-      decoration: TextDecoration.lineThrough,
-      decorationStyle: TextDecorationStyle.wavy,
+      decoration: TextDecoration.underline,
+      decorationStyle: TextDecorationStyle.dashed,
       decorationColor: primaryColor,
       fontFamily: ptSans,
-      fontSize: 42,
+      fontSize: 28,
       letterSpacing: -2,
-      color: lightGray,
+      color: primaryColor,
       fontWeight: FontWeight.bold,
       height: 0.6),
   //WELCOME message
