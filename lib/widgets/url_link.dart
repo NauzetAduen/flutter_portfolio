@@ -27,17 +27,5 @@ class UrlLink extends StatelessWidget {
             style: Theme.of(context).textTheme.caption,
           )),
     );
-    // return IconButton(
-    //     iconSize: 16,
-    //     icon: Row(
-    //       children: [
-    //         Expanded(child: Text("Visit")),
-    //         FaIcon(
-    //           FontAwesomeIcons.externalLinkAlt,
-    //           color: Theme.of(context).accentColor,
-    //         ),
-    //       ],
-    //     ),
-    //     onPressed: () => launch(url));
   }
 }
