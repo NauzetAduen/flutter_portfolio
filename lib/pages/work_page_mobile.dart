@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/widgets/url_link.dart';
+import 'package:smooth_scroll_web/smooth_scroll_web.dart';
 
 import '../model/work.dart';
 import '../repository/work_repository.dart';
@@ -15,10 +16,12 @@ class WorkPageMobile extends StatefulWidget {
 
 class _WorkPageMobileState extends State<WorkPageMobile> {
   List<Work> works;
+  ScrollController scrollController;
   @override
   void initState() {
     super.initState();
     works = WorkRepository.getWorks();
+    scrollController = ScrollController();
   }
 
   @override
@@ -29,47 +32,52 @@ class _WorkPageMobileState extends State<WorkPageMobile> {
           child: MobileAppBar(),
         ),
         body: Center(
-            child: SingleChildScrollView(
-                physics: const BouncingScrollPhysics(),
-                child: Column(
-                  children: [
-                    for (var work in works)
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 16, vertical: 30),
-                        child: Column(
-                          children: [
-                            Text(work.title,
-                                style: Theme.of(context).textTheme.subtitle1),
-                            Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 16, vertical: 8),
-                              child: Material(
-                                color: Colors.transparent,
-                                elevation: 20,
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(12.0),
-                                  child: Image.asset(
-                                    'assets/images/${work.imageURL}',
+            child: SmoothScrollWeb(
+                controller: scrollController,
+                child: SingleChildScrollView(
+                    controller: scrollController,
+                    physics: const BouncingScrollPhysics(),
+                    child: Column(
+                      children: [
+                        for (var work in works)
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 16, vertical: 30),
+                            child: Column(
+                              children: [
+                                Text(work.title,
+                                    style:
+                                        Theme.of(context).textTheme.subtitle1),
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 16, vertical: 8),
+                                  child: Material(
+                                    color: Colors.transparent,
+                                    elevation: 20,
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(12.0),
+                                      child: Image.asset(
+                                        'assets/images/${work.imageURL}',
+                                      ),
+                                    ),
                                   ),
                                 ),
-                              ),
+                                UrlLink(url: work.url),
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 16, vertical: 8),
+                                  child: Text(
+                                    work.description,
+                                    style:
+                                        Theme.of(context).textTheme.bodyText1,
+                                    textAlign: TextAlign.justify,
+                                  ),
+                                ),
+                              ],
                             ),
-                            UrlLink(url: work.url),
-                            Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 16, vertical: 8),
-                              child: Text(
-                                work.description,
-                                style: Theme.of(context).textTheme.bodyText1,
-                                textAlign: TextAlign.justify,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    LinksRow()
-                  ],
-                ))));
+                          ),
+                        LinksRow()
+                      ],
+                    )))));
   }
 }

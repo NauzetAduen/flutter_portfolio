@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:smooth_scroll_web/smooth_scroll_web.dart';
 
 import '../model/personal.dart';
 import '../repository/personal_repository.dart';
@@ -73,30 +74,33 @@ class _PersonalPageState extends State<PersonalPage>
           alignment: Alignment.center,
           children: [
             CentralMessage(welcomeMessage: welcomeMessage, pattern: pattern),
-            ListView.builder(
-              itemExtent: height / 2,
-              physics: const NeverScrollableScrollPhysics(),
+            SmoothScrollWeb(
               controller: scrollController,
-              itemBuilder: (context, index) {
-                return Align(
-                  alignment: index.isEven
-                      ? Alignment.centerLeft
-                      : Alignment.centerRight,
-                  child: SizedBox(
-                      // color: Colors.green,
-                      height: height / 2,
-                      width: width / 2,
-                      child: Align(
-                        alignment: index.isEven
-                            ? Alignment.centerLeft
-                            : Alignment.centerRight,
-                        child: PointColumn(
-                            isEven: index.isEven,
-                            personalPoint: personal.personalPoints[index]),
-                      )),
-                );
-              },
-              itemCount: personal.personalPoints.length,
+              child: ListView.builder(
+                itemExtent: height / 2,
+                physics: const NeverScrollableScrollPhysics(),
+                controller: scrollController,
+                itemBuilder: (context, index) {
+                  return Align(
+                    alignment: index.isEven
+                        ? Alignment.centerLeft
+                        : Alignment.centerRight,
+                    child: SizedBox(
+                        // color: Colors.green,
+                        height: height / 2,
+                        width: width / 2,
+                        child: Align(
+                          alignment: index.isEven
+                              ? Alignment.centerLeft
+                              : Alignment.centerRight,
+                          child: PointColumn(
+                              isEven: index.isEven,
+                              personalPoint: personal.personalPoints[index]),
+                        )),
+                  );
+                },
+                itemCount: personal.personalPoints.length,
+              ),
             ),
             Positioned(
               top: 30,

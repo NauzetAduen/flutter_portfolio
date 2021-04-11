@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/widgets/url_link.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
+import 'package:smooth_scroll_web/smooth_scroll_web.dart';
 
 import '../model/work.dart';
 import '../repository/work_repository.dart';
@@ -57,139 +58,143 @@ class _WorkPageState extends State<WorkPage> {
         child: Stack(
           alignment: Alignment.center,
           children: [
-            SizedBox(
-              height: height * 0.8,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: padding),
-                child: ListView.builder(
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemExtent: kMaxWidth - padding * 2,
-                  controller: scrollController,
-                  itemBuilder: (context, index) {
-                    return SizedBox(
-                        width: width - padding * 2,
-                        child: Center(
-                          child: SingleChildScrollView(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              // mainAxisSize: MainAxisSize.max,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                      bottom: 15, left: 30),
-                                  child: Text(works[index].title,
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .subtitle1),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 30),
-                                  child: Text(
-                                    works[index].date.toUpperCase(),
-                                    style:
-                                        Theme.of(context).textTheme.subtitle2,
+            SmoothScrollWeb(
+              controller: scrollController,
+              child: SizedBox(
+                height: height * 0.8,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: padding),
+                  child: ListView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemExtent: kMaxWidth - padding * 2,
+                    controller: scrollController,
+                    itemBuilder: (context, index) {
+                      return SizedBox(
+                          width: width - padding * 2,
+                          child: Center(
+                            child: SingleChildScrollView(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                // mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        bottom: 15, left: 30),
+                                    child: Text(works[index].title,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .subtitle1),
                                   ),
-                                ),
-                                Row(
-                                  children: [
-                                    Expanded(
-                                      flex: 3,
-                                      child: Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 32),
-                                        child: Center(
-                                          child: Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            // mainAxisSize: MainAxisSize.min,
-                                            children: [
-                                              Text(
-                                                works[index].description,
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .bodyText1,
-                                                textAlign: TextAlign.justify,
-                                              ),
-                                              Row(
-                                                children: [
-                                                  Expanded(
-                                                    child: Wrap(
-                                                      alignment:
-                                                          WrapAlignment.center,
-                                                      // mainAxisAlignment:
-                                                      //     MainAxisAlignment.center,
-                                                      children: [
-                                                        for (var chip
-                                                            in works[index]
-                                                                .chips)
-                                                          Chip(
-                                                            shape: StadiumBorder(
-                                                                side: BorderSide(
-                                                                    color: Theme.of(
-                                                                            context)
-                                                                        .scaffoldBackgroundColor)),
-
-                                                            // padding:
-                                                            //     EdgeInsets.symmetric(horizontal: ),
-                                                            label: Text(
-                                                              chip,
-                                                              style: TextStyle(
-                                                                  fontSize: 12,
-                                                                  color: Theme.of(
-                                                                          context)
-                                                                      .primaryColor),
-                                                            ),
-                                                            backgroundColor:
-                                                                Theme.of(
-                                                                        context)
-                                                                    .focusColor,
-                                                          ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 30),
+                                    child: Text(
+                                      works[index].date.toUpperCase(),
+                                      style:
+                                          Theme.of(context).textTheme.subtitle2,
                                     ),
-                                    Expanded(
-                                      flex: 5,
-                                      child: Center(
+                                  ),
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                        flex: 3,
                                         child: Padding(
                                           padding: const EdgeInsets.symmetric(
                                               horizontal: 32),
-                                          child: Material(
-                                            color: Colors.transparent,
-                                            elevation: 20,
-                                            child: ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(12.0),
-                                              child: Image.asset(
-                                                'assets/images/${works[index].imageURL}',
+                                          child: Center(
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              // mainAxisSize: MainAxisSize.min,
+                                              children: [
+                                                Text(
+                                                  works[index].description,
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .bodyText1,
+                                                  textAlign: TextAlign.justify,
+                                                ),
+                                                Row(
+                                                  children: [
+                                                    Expanded(
+                                                      child: Wrap(
+                                                        alignment: WrapAlignment
+                                                            .center,
+                                                        // mainAxisAlignment:
+                                                        //     MainAxisAlignment.center,
+                                                        children: [
+                                                          for (var chip
+                                                              in works[index]
+                                                                  .chips)
+                                                            Chip(
+                                                              shape: StadiumBorder(
+                                                                  side: BorderSide(
+                                                                      color: Theme.of(
+                                                                              context)
+                                                                          .scaffoldBackgroundColor)),
+
+                                                              // padding:
+                                                              //     EdgeInsets.symmetric(horizontal: ),
+                                                              label: Text(
+                                                                chip,
+                                                                style: TextStyle(
+                                                                    fontSize:
+                                                                        12,
+                                                                    color: Theme.of(
+                                                                            context)
+                                                                        .primaryColor),
+                                                              ),
+                                                              backgroundColor:
+                                                                  Theme.of(
+                                                                          context)
+                                                                      .focusColor,
+                                                            ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Expanded(
+                                        flex: 5,
+                                        child: Center(
+                                          child: Padding(
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 32),
+                                            child: Material(
+                                              color: Colors.transparent,
+                                              elevation: 20,
+                                              child: ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(12.0),
+                                                child: Image.asset(
+                                                  'assets/images/${works[index].imageURL}',
+                                                ),
                                               ),
                                             ),
                                           ),
                                         ),
                                       ),
-                                    ),
-                                  ],
-                                ),
-                                Align(
-                                  child: UrlLink(
-                                    url: works[index].url,
+                                    ],
                                   ),
-                                ),
-                              ],
+                                  Align(
+                                    child: UrlLink(
+                                      url: works[index].url,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
-                        ));
-                  },
-                  itemCount: works.length,
-                  // physics: const NeverScrollableScrollPhysics(),
-                  scrollDirection: Axis.horizontal,
+                          ));
+                    },
+                    itemCount: works.length,
+                    // physics: const NeverScrollableScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
+                  ),
                 ),
               ),
             ),
