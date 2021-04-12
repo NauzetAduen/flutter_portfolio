@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:smooth_scroll_web/smooth_scroll_web.dart';
 
 import '../model/personal.dart';
 import '../repository/personal_repository.dart';
@@ -36,37 +35,33 @@ class _PersonalPageMobileState extends State<PersonalPageMobile> {
         child: MobileAppBar(),
       ),
       body: Center(
-          child: SmoothScrollWeb(
+          child: SingleChildScrollView(
         controller: scrollController,
-        child: SingleChildScrollView(
-          controller: scrollController,
-          physics: const BouncingScrollPhysics(),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              CentralMessage(welcomeMessage: welcomeMessage, pattern: pattern),
-              const SizedBox(height: 20),
-              for (var personalPoint in personal.personalPoints)
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 20),
-                  child: Column(
-                    children: [
-                      Text(personalPoint.title,
-                          style: Theme.of(context).textTheme.bodyText2),
-                      Container(
-                        height: 2,
-                        width: 100,
-                        color: Theme.of(context).focusColor,
-                      ),
-                      for (var points in personalPoint.points)
-                        Text(points,
-                            style: Theme.of(context).textTheme.bodyText1)
-                    ],
-                  ),
+        physics: const BouncingScrollPhysics(),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            CentralMessage(welcomeMessage: welcomeMessage, pattern: pattern),
+            const SizedBox(height: 20),
+            for (var personalPoint in personal.personalPoints)
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 20),
+                child: Column(
+                  children: [
+                    Text(personalPoint.title,
+                        style: Theme.of(context).textTheme.bodyText2),
+                    Container(
+                      height: 2,
+                      width: 100,
+                      color: Theme.of(context).focusColor,
+                    ),
+                    for (var points in personalPoint.points)
+                      Text(points, style: Theme.of(context).textTheme.bodyText1)
+                  ],
                 ),
-              LinksRow()
-            ],
-          ),
+              ),
+            LinksRow()
+          ],
         ),
       )),
     );
