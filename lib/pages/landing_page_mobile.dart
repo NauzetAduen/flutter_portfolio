@@ -24,7 +24,10 @@ class LandingPageMobile extends StatelessWidget {
                         style: Theme.of(context).textTheme.headline2),
                     TextSpan(
                         text: 'dev',
-                        style: Theme.of(context).textTheme.headline3),
+                        style: Theme.of(context)
+                            .textTheme
+                            .headline3
+                            .copyWith(fontSize: 42)),
                     TextSpan(
                         text: 'eloper',
                         style: Theme.of(context).textTheme.headline2),
