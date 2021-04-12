@@ -9,7 +9,10 @@ const double iconSize = 18;
 class LinksRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Align(
-        alignment: Alignment.bottomCenter,
+      alignment: Alignment.bottomCenter,
+      child: Material(
+        color: Colors.transparent,
+        elevation: 4,
         child: Container(
           color: Theme.of(context).focusColor,
           child: Row(
@@ -55,5 +58,5 @@ class LinksRow extends StatelessWidget {
             ],
           ),
         ),
-      );
+      ));
 }
