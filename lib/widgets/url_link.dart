@@ -13,6 +13,7 @@ class UrlLink extends StatelessWidget {
       padding: const EdgeInsets.only(top: 20),
       child: ElevatedButton.icon(
           style: ElevatedButton.styleFrom(
+            padding: const EdgeInsets.symmetric(horizontal: 60),
             primary: Theme.of(context).accentColor,
             elevation: 10,
           ),
