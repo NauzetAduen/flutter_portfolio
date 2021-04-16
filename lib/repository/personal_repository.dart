@@ -10,6 +10,7 @@ class PersonalRepository {
         PersonalPoint(title: "Education", points: [
           "Computer Engineer at ULPGC",
           "Software Engineer intensification",
+          "self taught mobile developer"
         ]),
         PersonalPoint(title: "Tech", points: getStack()),
         PersonalPoint(title: "Soft", points: getSoft()),
@@ -19,7 +20,6 @@ class PersonalRepository {
   static List<String> getStack() => [
         "CrossPlatform Dev with Flutter",
         "Android native development",
-        "Dev with Firebase, Api REST",
         "Postgress,MySQL, Firebase, Hive",
         "TTD and Clean Architecture",
         "UI/UX design experience",
@@ -30,9 +30,11 @@ class PersonalRepository {
         "Eager to learn new things",
         "Teamwork as principle",
         "Critical thinking",
-        "Stupidly optimistic",
       ];
 
-  static List<String> getInterests() =>
-      ["Multidisciplinary teams", "Medical apps development"];
+  static List<String> getInterests() => [
+        "Multidisciplinary teams",
+        "Medical apps development",
+        "Mobile development"
+      ];
 }
