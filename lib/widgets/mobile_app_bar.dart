@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:universal_html/html.dart';
+
+import 'mobile_nav_item.dart';
 
 class MobileAppBar extends PreferredSize {
   @override
@@ -9,41 +9,10 @@ class MobileAppBar extends PreferredSize {
       iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
       elevation: 0,
       backgroundColor: Colors.transparent,
-      actions: [
-        Padding(
-          padding: const EdgeInsets.only(right: 10),
-          child: IconButton(
-            hoverColor: Colors.transparent,
-            splashColor: Colors.transparent,
-            highlightColor: Colors.transparent,
-            icon: FaIcon(
-              FontAwesomeIcons.user,
-              color: Theme.of(context).accentColor,
-            ),
-            onPressed: () => onClick(context, "/personal"),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(right: 10),
-          child: IconButton(
-            hoverColor: Colors.transparent,
-            splashColor: Colors.transparent,
-            highlightColor: Colors.transparent,
-            icon: FaIcon(
-              FontAwesomeIcons.laptop,
-              color: Theme.of(context).accentColor,
-            ),
-            onPressed: () => onClick(context, "/work"),
-          ),
-        ),
+      actions: const [
+        MobileNavBarItem(destination: "personal"),
+        MobileNavBarItem(destination: "work")
       ],
     );
-  }
-
-  void onClick(BuildContext context, String pattern) {
-    final String url = window.location.href;
-    if (!url.endsWith(pattern)) {
-      Navigator.pushNamed(context, pattern);
-    }
   }
 }
