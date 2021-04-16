@@ -14,14 +14,23 @@ class MobileNavBarItem extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.only(right: 10),
-        child: Align(
-          child: GestureDetector(
-            onTap: () => onClick(context, "/$destination"),
-            child:
-                Text(destination, style: Theme.of(context).textTheme.headline4),
-          ),
-        ),
-      );
+  Widget build(BuildContext context) {
+    final String url = window.location.href;
+    return Padding(
+      padding: const EdgeInsets.only(right: 15),
+      child: Align(
+        child: url.endsWith(destination)
+            ? Text(destination,
+                style: Theme.of(context)
+                    .textTheme
+                    .headline4
+                    .copyWith(decoration: TextDecoration.underline))
+            : GestureDetector(
+                onTap: () => onClick(context, "/$destination"),
+                child: Text(destination,
+                    style: Theme.of(context).textTheme.headline4),
+              ),
+      ),
+    );
+  }
 }
