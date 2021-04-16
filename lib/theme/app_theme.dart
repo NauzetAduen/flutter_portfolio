@@ -33,7 +33,7 @@ const TextTheme textTheme = TextTheme(
   //dev landingpage //nav item on hover
   headline3: TextStyle(
       fontFamily: ptSans,
-      fontSize: 28,
+      fontSize: 24,
       letterSpacing: -2,
       color: accentColor,
       fontWeight: FontWeight.bold,
@@ -41,7 +41,7 @@ const TextTheme textTheme = TextTheme(
   // navbar
   headline4: TextStyle(
       fontFamily: ptSans,
-      fontSize: 28,
+      fontSize: 24,
       letterSpacing: -2,
       color: lightGray,
       fontWeight: FontWeight.bold,
@@ -79,15 +79,15 @@ const TextTheme textTheme = TextTheme(
   ),
   //work title
   subtitle1: TextStyle(
-    fontFamily: ptSans,
-    fontSize: 36,
-    letterSpacing: 4,
-    color: primaryColor,
+    fontFamily: arbutus,
+    fontSize: 30,
+    // letterSpacing: 4,
+    color: accentColor,
   ),
   subtitle2: TextStyle(
     fontFamily: ptSans,
     fontSize: 18,
-    letterSpacing: 4,
+    // letterSpacing: 4,
     color: accentColor,
   ),
   caption: TextStyle(
