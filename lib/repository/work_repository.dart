@@ -13,7 +13,8 @@ I use Clean Architecture by Uncle Bob adapted by ResoCoder, and I use package by
 
 I used the 'TDD metodology' to test each layer of the app but I didn't implement any UI test.
 
-You have a typeahead pattern, uses geolocation, allows you to like venues, shows a GoogleMap view""",
+You have a typeahead pattern, uses geolocation, allows you to like venues and shows a GoogleMap view.
+""",
         chips: [
           "Flutter",
           "Mobile Dev",
@@ -33,7 +34,7 @@ A place to learn about myself and flutter web.
 
 
 Work in progress.
-        """,
+""",
         chips: [
           "Flutter Web",
           "Dart",
@@ -52,7 +53,7 @@ It's based on a tipical diabetic journal that you show to your doctor.
 Theme, fonts and general UI/UX design may change.
 
 Work In Progress.
-        """,
+""",
         chips: [
           "Flutter",
           "Mobile Dev",
@@ -66,7 +67,6 @@ Work In Progress.
         title: "TFG",
         date: "apr, 2020",
         description: """
-
 This was my Final University Project.
 
 Users can create hiking trails and events, share, like and rate them.
@@ -74,7 +74,7 @@ Users can create hiking trails and events, share, like and rate them.
 The backend was Firebase, which helped me to create a completely reactive app.
           
 I Learned the Flutter framework, the Dart Programming Language and the cloud firestore ecosystem.
-        """,
+""",
         chips: [
           "Flutter",
           "Mobile Dev",

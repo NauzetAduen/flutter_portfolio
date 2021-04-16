@@ -10,7 +10,7 @@ class PersonalRepository {
         PersonalPoint(title: "Education", points: [
           "Computer Engineer at ULPGC",
           "Software Engineer intensification",
-          "self taught mobile developer"
+          "Self taught mobile developer"
         ]),
         PersonalPoint(title: "Tech", points: getStack()),
         PersonalPoint(title: "Soft", points: getSoft()),
