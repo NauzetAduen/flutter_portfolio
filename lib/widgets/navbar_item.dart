@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:universal_html/html.dart';
 
 import '../utils/animation.dart';
@@ -41,6 +42,7 @@ class _NavBarItemState extends State<NavBarItem>
       return GestureDetector(
         onTap: () => Navigator.pushNamed(context, "/${widget.title}"),
         child: MouseRegion(
+          cursor: SystemMouseCursors.click,
           onEnter: (_) {
             controller.forward();
             setState(() {
