@@ -5,6 +5,7 @@ import '../pages/landing_page_mobile.dart';
 import '../pages/personal_page.dart';
 import '../pages/personal_page_mobile.dart';
 import '../pages/work_page.dart';
+import '../pages/work_page_2.dart';
 import '../pages/work_page_mobile.dart';
 import '../widgets/responsive_layout.dart';
 
@@ -31,7 +32,11 @@ class CustomRouter {
           destination: const ResponsiveLayout(
               desktop: WorkPage(), mobile: WorkPageMobile()),
         );
-
+      case WorkPage2.routeName:
+        return AnimatedPageROuteBuilder(
+            routeName: routeName,
+            destination: const ResponsiveLayout(
+                desktop: WorkPage2(), mobile: WorkPageMobile()));
       default:
         return AnimatedPageROuteBuilder(
           routeName: LandingPage.routeName,
