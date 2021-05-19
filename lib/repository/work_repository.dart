@@ -65,7 +65,7 @@ Work In Progress.
       ),
       Work(
         title: "TFG",
-        date: "apr, 2020",
+        date: "apr, 2019",
         description: """
 This was my Final University Project.
 
