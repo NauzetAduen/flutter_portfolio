@@ -38,7 +38,7 @@ class _PersonalPageState extends State<PersonalPage>
     // ..reverse();
     arrowAnimation = getTweenAnimation(
         beginY: -1, controller: animationController, cubic: Curves.easeOut);
-    personal = PersonalRepository.getPersonal();
+    personal = getPersonal();
     welcomeMessage = personal.welcome.split(pattern);
     scrollController = ScrollController();
     scrollController.addListener(() {
@@ -115,7 +115,7 @@ class _PersonalPageState extends State<PersonalPage>
                     isNotAtEnd
                         ? FontAwesomeIcons.chevronDown
                         : FontAwesomeIcons.chevronUp,
-                    color: Theme.of(context).accentColor,
+                    color: Theme.of(context).colorScheme.secondary,
                     size: 30,
                   ),
                   onPressed: () => scrollController.animateTo(

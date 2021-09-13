@@ -31,7 +31,7 @@ class _WorkPageState extends State<WorkPage> {
   @override
   void initState() {
     super.initState();
-    works = WorkRepository.getWorks();
+    works = getWorks();
     scrollController = ScrollController();
     scrollController.addListener(() {
       if (scrollController.offset >=
@@ -203,7 +203,7 @@ class _WorkPageState extends State<WorkPage> {
               bottom: 10,
               child: StepProgressIndicator(
                 totalSteps: works.length,
-                selectedColor: Theme.of(context).accentColor,
+                selectedColor: Theme.of(context).colorScheme.secondary,
                 currentStep: currentStep,
               ),
             ),
@@ -217,7 +217,7 @@ class _WorkPageState extends State<WorkPage> {
                   icon: FaIcon(isNotAtEnd
                       ? FontAwesomeIcons.chevronRight
                       : FontAwesomeIcons.chevronLeft),
-                  color: Theme.of(context).accentColor,
+                  color: Theme.of(context).colorScheme.secondary,
                   onPressed: () {
                     setState(() {
                       currentStep =

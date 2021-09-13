@@ -22,7 +22,7 @@ class _PersonalPageMobileState extends State<PersonalPageMobile> {
   @override
   void initState() {
     super.initState();
-    personal = PersonalRepository.getPersonal();
+    personal = getPersonal();
     welcomeMessage = personal.welcome.split(pattern);
     scrollController = ScrollController();
   }

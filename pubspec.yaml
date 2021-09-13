@@ -7,16 +7,16 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
-  cupertino_icons: ^0.1.2
+  cupertino_icons: ^1.0.3
   flutter:
     sdk: flutter
   font_awesome_flutter: ^9.0.0
     
   lint: ^1.5.3
   # smooth_scroll_web: ^0.0.4
-  step_progress_indicator: ^0.2.5+8
-  universal_html: ^2.0.7
-  url_launcher: ^6.0.3
+  step_progress_indicator: ^1.0.0
+  universal_html: ^2.0.8
+  url_launcher: ^6.0.6
   url_strategy: ^0.2.0
   
   

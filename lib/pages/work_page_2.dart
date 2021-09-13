@@ -22,7 +22,7 @@ class _WorkPage2State extends State<WorkPage2> {
   @override
   void initState() {
     super.initState();
-    works = WorkRepository.getWorks();
+    works = getWorks();
   }
 
   @override

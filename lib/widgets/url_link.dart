@@ -14,7 +14,7 @@ class UrlLink extends StatelessWidget {
       child: ElevatedButton.icon(
           style: ElevatedButton.styleFrom(
             padding: const EdgeInsets.symmetric(horizontal: 60),
-            primary: Theme.of(context).accentColor,
+            primary: Theme.of(context).colorScheme.secondary,
             elevation: 10,
           ),
           onPressed: () => launch(url),

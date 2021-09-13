@@ -51,7 +51,7 @@ class LinksColumn extends StatelessWidget {
                   IconButton(
                       icon: FaIcon(
                         FontAwesomeIcons.envelope,
-                        color: Theme.of(context).accentColor,
+                        color: Theme.of(context).colorScheme.secondary,
                         size: iconSize,
                       ),
                       onPressed: () async {

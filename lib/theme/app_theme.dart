@@ -5,7 +5,7 @@ const Color backGroundGreyColor = Color(0xff38383C);
 const Color lightGray = Color(0xff67676b);
 const Color primaryColor = Color(0xffedeeff);
 const Color accentColor = Color(0xffcfa616);
-// const Color accentColor = Color(0xffA2D729);
+// const Color colorScheme.secondary = Color(0xffA2D729);
 // const Color white = Color(0xffedeeff);
 const String ptSans = "PTsans";
 const String arbutus = "arbutusSlab";
@@ -100,7 +100,8 @@ const TextTheme textTheme = TextTheme(
 ThemeData themeData = ThemeData(
   scaffoldBackgroundColor: backGroundGreyColor,
   primaryColor: primaryColor,
-  accentColor: accentColor,
+  // colorScheme.secondary: colorScheme.secondary,
+  colorScheme: themeData.colorScheme.copyWith(secondary: accentColor),
   focusColor: lightGray,
   textTheme: textTheme,
 );

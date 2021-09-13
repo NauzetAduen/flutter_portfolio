@@ -16,7 +16,7 @@ class Portfolio extends StatelessWidget {
       title: 'nau',
       theme: themeData,
       initialRoute: "/work2",
-      onGenerateRoute: CustomRouter.generateRoute,
+      onGenerateRoute: generateRoute,
     );
   }
 }

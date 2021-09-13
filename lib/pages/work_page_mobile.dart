@@ -19,7 +19,7 @@ class _WorkPageMobileState extends State<WorkPageMobile> {
   @override
   void initState() {
     super.initState();
-    works = WorkRepository.getWorks();
+    works = getWorks();
     scrollController = ScrollController();
   }
 
